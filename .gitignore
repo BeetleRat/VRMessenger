@@ -23,6 +23,10 @@ Assets/Resources/OvrAvatarSettings.asset
 Assets/Resources/OculusPlatformSettings.asset
 Assets/Resources/OculusPlatformSettings.asset.meta
 
+Assets/Photon/Quantum/Assemblies/PhotonDeterministic.*
+Assets/Photon/Quantum/Assemblies/quantum.core.*
+Assets/Photon/Quantum/Assemblies/quantum.code.*
+
 # Visual Studio cache directory
 .vs/
 

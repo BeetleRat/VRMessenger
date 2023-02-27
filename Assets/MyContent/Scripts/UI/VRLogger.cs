@@ -10,7 +10,7 @@ public class VRLogger : MonoBehaviour
     [SerializeField] private int _maxLine;
     private List<string> _lines;
 
-    private void Start()
+    private void Awake()
     {
         _logField.text = "";
         _lines = new List<string>();
@@ -18,7 +18,7 @@ public class VRLogger : MonoBehaviour
 
     public void Log(string text)
     {
-        if(_lines.Count >= _maxLine)
+        if (_lines.Count >= _maxLine)
         {
             _lines.RemoveAt(0);
         }

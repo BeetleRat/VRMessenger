@@ -27,6 +27,8 @@ Assets/Photon/Quantum/Assemblies/PhotonDeterministic.*
 Assets/Photon/Quantum/Assemblies/quantum.core.*
 Assets/Photon/Quantum/Assemblies/quantum.code.*
 
+Assets/Photon/PhotonVoice/Demos/
+
 # Visual Studio cache directory
 .vs/
 

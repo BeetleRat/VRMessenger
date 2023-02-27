@@ -18,8 +18,8 @@ public class NetworkPlayerSpawner : MonoBehaviourPunCallbacks
 
     public override void OnLeftRoom()
     {
-        base.OnLeftRoom();
         string destroyedPlayerName = _spawnedPlayerPrefab.name;
+        base.OnLeftRoom();        
         PhotonNetwork.Destroy(_spawnedPlayerPrefab);
         _vrLogger.Log("Player " + destroyedPlayerName + " is destroy");
     }

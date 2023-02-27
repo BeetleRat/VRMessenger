@@ -8,6 +8,7 @@ public class HandUIManager : MonoBehaviour
     [SerializeField] private List<ChangeControllerTypeEvent> _uiHandHiders;
     private void Start()
     {
+        _uiHandHiders.RemoveAll(item => item == null);
         foreach (ChangeControllerTypeEvent hider in _uiHandHiders)
         {
             hider.MoveUI += OnMoveUI;

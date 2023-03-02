@@ -25,6 +25,23 @@ public class VRLogger : MonoBehaviour
         _lines.Add(text);
         FillLog();
     }
+    public string GetTextFromLogger()
+    {
+        return _logField.text;
+    }
+    public List<string> GetLoggerLines()
+    {
+        return _lines;
+    }
+
+    public void SetLoggerLines(List<string> lines)
+    {
+        this._lines = lines;
+    }
+    public void ClearLog()
+    {
+        _lines.Clear();
+    }
 
     private void FillLog()
     {

@@ -4022,7 +4022,7 @@ GameObject:
   - component: {fileID: 2028197054}
   m_Layer: 0
   m_Name: ServerLog
-  m_TagString: Untagged
+  m_TagString: VRLogger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4202,13 +4202,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0812e3a47251c464da699bca4a9eba9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playersPrefabName: PlayerPrefab
   _defaultRooms:
   - name: Room1
     sceneID: 1
     playersInRoom: 10
     isRoomVisible: 1
-  _vrLogger: {fileID: 2028197054}
-  _playersInRoom: 1
+  _autoStartTestRoom: 0
 --- !u!1 &2068422601
 GameObject:
   m_ObjectHideFlags: 0

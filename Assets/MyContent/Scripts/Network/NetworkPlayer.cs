@@ -8,7 +8,9 @@ public class NetworkPlayer : MonoBehaviour
     [SerializeField] private Transform _head;
     [SerializeField] private Transform _leftHand;
     [SerializeField] private Transform _rightHand;
+
     [SerializeField] private bool _dublicateMainPlayer;
+
 
     private PhotonView _photonView;
     private Transform _headRig;
@@ -23,19 +25,20 @@ public class NetworkPlayer : MonoBehaviour
         _headRig = ovrCameraRig.transform.Find("TrackingSpace/CenterEyeAnchor");
         _leftHandRig = ovrCameraRig.transform.Find("TrackingSpace/LeftHandAnchor");
         _rightHandRig = ovrCameraRig.transform.Find("TrackingSpace/RightHandAnchor");
+
+        if (_photonView.IsMine && !_dublicateMainPlayer)
+        {
+            foreach (Renderer renderer in GetComponentsInChildren<Renderer>())
+            {
+                renderer.enabled = false;
+            }
+        }
     }
 
     private void Update()
     {
         if (_photonView.IsMine)
         {
-            if (!_dublicateMainPlayer)
-            {
-                _head.gameObject.SetActive(false);
-                _leftHand.gameObject.SetActive(false);
-                _rightHand.gameObject.SetActive(false);
-            }
-
             MapPosition(_head, _headRig);
             MapPosition(_leftHand, _leftHandRig);
             MapPosition(_rightHand, _rightHandRig);
@@ -47,6 +50,5 @@ public class NetworkPlayer : MonoBehaviour
         target.position = rigTransform.position;
         target.rotation = rigTransform.rotation;
     }
-
 
 }

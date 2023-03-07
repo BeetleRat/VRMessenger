@@ -1643,8 +1643,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uiHandHiders:
-  - {fileID: 1480143693}
-  - {fileID: 1527640087}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &1254742720 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 435692190054465312, guid: c89b2c4e711f8a14ba3df7e4b3c71f12, type: 3}
@@ -2468,23 +2468,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
---- !u!1 &1480143692 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 112276, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
-  m_PrefabInstance: {fileID: 1480143691}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1480143693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1480143692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b3c1a4ba3fa3894f882f10e8135220d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1480979536
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2947,11 +2930,6 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 7079690332722676895, guid: c89b2c4e711f8a14ba3df7e4b3c71f12, type: 3}
   m_PrefabInstance: {fileID: 1527640071}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1527640084 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2272527983614111209, guid: c89b2c4e711f8a14ba3df7e4b3c71f12, type: 3}
-  m_PrefabInstance: {fileID: 1527640071}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1527640085 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2270047036264543471, guid: c89b2c4e711f8a14ba3df7e4b3c71f12, type: 3}
@@ -2962,18 +2940,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7084247102457277503, guid: c89b2c4e711f8a14ba3df7e4b3c71f12, type: 3}
   m_PrefabInstance: {fileID: 1527640071}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1527640087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1527640084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b3c1a4ba3fa3894f882f10e8135220d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1606885340
 GameObject:
   m_ObjectHideFlags: 0
@@ -4202,7 +4168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0812e3a47251c464da699bca4a9eba9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playersPrefabName: PlayerPrefab
+  _playersPrefabName: ControllerSyncPrefab
   _defaultRooms:
   - name: Room1
     sceneID: 1

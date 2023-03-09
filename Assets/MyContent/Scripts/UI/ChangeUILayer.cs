@@ -13,14 +13,13 @@ public enum Codes
 public class ChangeLayers
 {
     public NetworkCode Code;
-    public CanvasGroup FromLayer;
-    public CanvasGroup ToLayer;
-    public bool IsFromActive;
+    public CanvasGroup Layer;
 }
 
 public class ChangeUILayer : MonoBehaviour
 {
-    [SerializeField] private NetworkManager _networkManager;
+    [SerializeField] private ComponentCatcher _catcher;
+    [SerializeField] private CanvasGroup _startLayer;
     [SerializeField] private List<ChangeLayers> _layers;
     [Range(1, 120)]
     [SerializeField] private float _fadeDuration;
@@ -28,27 +27,36 @@ public class ChangeUILayer : MonoBehaviour
     [SerializeField] private float _fadeSmoothness;
 
 
-
+    private NetworkManager _networkManager;
     private Queue<ChangeLayers> _changeQueue;
     private float _currentFrame;
+    private CanvasGroup _currentLayer;
+    
 
     private void Awake()
     {
         _changeQueue = new Queue<ChangeLayers>();
-        _currentFrame = 0;
+        _currentFrame = 0;        
     }
     private void Start()
     {
-        _networkManager.NetworConnectionEvent += OnNetworConnection;
+        _networkManager = _catcher.GetNetworkManager();
+        if (_networkManager != null)
+        {
+            _networkManager.NetworConnectionEvent += OnNetworConnection;
+        }
+        
         if (_layers.Count > 0)
         {
             for (int i = 0; i < _layers.Count; i++)
             {
-                _layers[i].FromLayer.gameObject.SetActive(_layers[i].IsFromActive);
-                _layers[i].ToLayer.alpha = 0;
-                _layers[i].ToLayer.gameObject.SetActive(false);
+                _layers[i].Layer.alpha = 0;
+                _layers[i].Layer.gameObject.SetActive(false);
             }
         }
+        _startLayer.gameObject.SetActive(true);
+        _startLayer.alpha = 1;
+        _currentLayer = _startLayer;
     }
 
     private void Update()
@@ -60,20 +68,36 @@ public class ChangeUILayer : MonoBehaviour
             if (_changeQueue.Count > 0)
             {
                 ChangeLayers changeLayer = _changeQueue.Peek();
-                changeLayer.ToLayer.gameObject.SetActive(true);
-                if (changeLayer.FromLayer.alpha == 0 && changeLayer.ToLayer.alpha == 1)
+                if (changeLayer.Layer == _currentLayer)
                 {
-                    changeLayer.FromLayer.gameObject.SetActive(false);
                     _changeQueue.Dequeue();
                 }
                 else
                 {
-                    changeLayer.FromLayer.alpha = Mathf.Max(0, changeLayer.FromLayer.alpha - _fadeSmoothness);
-                    changeLayer.ToLayer.alpha = Mathf.Min(1, changeLayer.ToLayer.alpha + _fadeSmoothness);
+                    changeLayer.Layer.gameObject.SetActive(true);
+                    if (_currentLayer.alpha == 0 && changeLayer.Layer.alpha == 1)
+                    {
+                        _currentLayer.gameObject.SetActive(false);
+                        _currentLayer = changeLayer.Layer;
+                        _changeQueue.Dequeue();
+                    }
+                    else
+                    {
+                        _currentLayer.alpha = Mathf.Max(0, _currentLayer.alpha - _fadeSmoothness);
+                        changeLayer.Layer.alpha = Mathf.Min(1, changeLayer.Layer.alpha + _fadeSmoothness);
+                    }
                 }
             }
         }
 
+    }
+
+    private void OnDestroy()
+    {
+        if (_networkManager != null)
+        {
+            _networkManager.NetworConnectionEvent -= OnNetworConnection;
+        }
     }
 
     private void OnNetworConnection(NetworkCode code)

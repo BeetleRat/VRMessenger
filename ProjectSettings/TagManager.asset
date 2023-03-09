@@ -6,6 +6,7 @@ TagManager:
   tags:
   - UiCamera
   - VRLogger
+  - NetworkManager
   layers:
   - Default
   - TransparentFX

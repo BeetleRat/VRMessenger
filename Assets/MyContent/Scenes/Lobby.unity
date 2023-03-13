@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1565143, g: 0.33968535, b: 1.1452425, a: 1}
+  m_IndirectSpecularColor: {r: 0.15475097, g: 0.34008187, b: 1.1461469, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2958,6 +2958,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1707580840}
     m_Modifications:
+    - target: {fileID: 8393939965190852859, guid: 26f1353e7974b3d408c0c3bb18d0984c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8393939965190852859, guid: 26f1353e7974b3d408c0c3bb18d0984c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8393939965190852859, guid: 26f1353e7974b3d408c0c3bb18d0984c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1822040341}
+    - target: {fileID: 8393939965190852859, guid: 26f1353e7974b3d408c0c3bb18d0984c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8393939965190852859, guid: 26f1353e7974b3d408c0c3bb18d0984c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitFromApplication
+      objectReference: {fileID: 0}
+    - target: {fileID: 8393939965190852859, guid: 26f1353e7974b3d408c0c3bb18d0984c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: NetworkManagerProvider, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8393939965190852859, guid: 26f1353e7974b3d408c0c3bb18d0984c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8526681258094549771, guid: 26f1353e7974b3d408c0c3bb18d0984c, type: 3}
+      propertyPath: m_text
+      value: "\u0412\u044B\u0439\u0442\u0438 \u0438\u0437 \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u044F"
+      objectReference: {fileID: 0}
     - target: {fileID: 8526681258920047364, guid: 26f1353e7974b3d408c0c3bb18d0984c, type: 3}
       propertyPath: m_Name
       value: WatchMenu

@@ -6,7 +6,7 @@ using TMPro;
 public class VRLogger : MonoBehaviour
 {
     [SerializeField] private TMP_Text _logField;
-    [Range(1, 20)]
+    [Range(1, 1000)]
     [SerializeField] private int _maxLine;
     private List<string> _lines;
 

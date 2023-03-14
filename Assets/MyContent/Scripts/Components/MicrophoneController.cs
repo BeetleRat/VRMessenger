@@ -9,6 +9,7 @@ public class MicrophoneController : MonoBehaviour
     [SerializeField] private Image _microphoneOnImage;
     [SerializeField] private Image _microphoneOffImage;
     [SerializeField] private Recorder _microphone;
+
     private bool isMicrophoneActive;
     private void Start()
     {
@@ -25,5 +26,10 @@ public class MicrophoneController : MonoBehaviour
         _microphoneOnImage.enabled = isMicrophoneActive;
         _microphoneOffImage.enabled = !_microphoneOnImage.enabled;
         _microphone.RecordingEnabled = isMicrophoneActive;
+    }
+
+    public void ChangeMicrophoneVolume(int newVolume)
+    {
+       
     }
 }

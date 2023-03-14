@@ -55,7 +55,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public void ConnectToServer()
     {
         NetworConnectionEvent?.Invoke(NetworkCode.CONNECT_TO_SERVER_IN_PROGRESS);
-        _vrLogger.Log("Conecting to server...");
+        _vrLogger.Log("[" + this.name + "] Conecting to server...");
         PhotonNetwork.ConnectUsingSettings();
     }
 
@@ -64,7 +64,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         base.OnConnectedToMaster();
         NetworConnectionEvent?.Invoke(NetworkCode.CONNECT_TO_SERVER_COMPLETE);
         _isConnectedToServer = true;
-        _vrLogger.Log("Connected to master server.");
+        _vrLogger.Log("[" + this.name + "] Connected to master server.");
         NetworConnectionEvent?.Invoke(NetworkCode.CONNECT_TO_LOBBY_IN_PROGRESS);
         PhotonNetwork.JoinLobby();
     }
@@ -87,7 +87,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         }
         else
         {
-            _vrLogger.Log("Room index " + roomIndex + " is not correct.");
+            _vrLogger.Log("[" + this.name + "] Room index " + roomIndex + " is not correct.");
         }
     }
 
@@ -98,7 +98,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     public void DisconnectedFromServer(bool quitFromApplication = false)
     {
-        _vrLogger.Log("Disconnecting from server.");
+        _vrLogger.Log("[" + this.name + "] Disconnecting from server.");
         NetworConnectionEvent?.Invoke(NetworkCode.DISCONNECT_FROM_SERVER_IN_PROGRESS);
         _quitFromApplication = quitFromApplication;
         if (quitFromApplication && !_isConnectedToServer)
@@ -112,7 +112,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         base.OnJoinedRoom();
         NetworConnectionEvent?.Invoke(NetworkCode.CONNECT_TO_ROOM_COMPLETE);
-        _vrLogger.Log("You are join to the room.");
+        _vrLogger.Log("[" + this.name + "] You are join to the room.");
         SpawnPlayerPrefab();
     }
 
@@ -121,7 +121,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         string destroyedPlayerName = _spawnedPlayerPrefab.name;
         base.OnLeftRoom();
         PhotonNetwork.Destroy(_spawnedPlayerPrefab);
-        _vrLogger.Log("Player " + destroyedPlayerName + " is destroy");
+        _vrLogger.Log("[" + this.name + "] Player " + destroyedPlayerName + " is destroy");
         _sceneChanger.LoadStartScene();
     }
 
@@ -130,7 +130,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         base.OnDisconnected(cause);
         _isConnectedToServer = false;
         NetworConnectionEvent?.Invoke(NetworkCode.DISCONNECT_FROM_SERVER_COMPLETE);
-        _vrLogger.Log("You was disconnected from server.");
+        _vrLogger.Log("[" + this.name + "] You was disconnected from server.");
         if (_quitFromApplication)
         {
             _sceneChanger.ExitFromApplication();
@@ -141,7 +141,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         base.OnJoinedLobby();
         NetworConnectionEvent?.Invoke(NetworkCode.CONNECT_TO_LOBBY_COMPLETE);
-        _vrLogger.Log("Some user is join to the lobby.");
+        _vrLogger.Log("[" + this.name + "] Some user is join to the lobby.");
         if (_autoStartTestRoom)
         {
             _autoStartTestRoom = false;
@@ -151,7 +151,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             }
             else
             {
-                _vrLogger.Log("No rooms to connect.");
+                _vrLogger.Log("[" + this.name + "] No rooms to connect.");
             }
         }
     }
@@ -159,7 +159,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
         base.OnPlayerEnteredRoom(newPlayer);
-        _vrLogger.Log(
+        _vrLogger.Log("[" + this.name + "] "+
            newPlayer.NickName == null || newPlayer.NickName == ""
             ? "Some unknown user"
             : newPlayer.NickName
@@ -167,61 +167,12 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     }
 
 
-
-    //private void RefreshVrLogger()
-    //{
-    //    if (_vrLoggers == null)
-    //    {
-    //        _vrLoggers = new List<VRLogger>();
-    //    }
-    //    List<string> oldLines = new List<string>();
-    //    if (_vrLoggers.Count > 0)
-    //    {
-    //        oldLines.AddRange(_vrLoggers[0].GetLoggerLines());
-    //        foreach (VRLogger vrLogge in _vrLoggers)
-    //        {
-    //            vrLogge.ClearLog();
-    //        }
-    //    }
-    //    _vrLoggers.Clear();
-    //    VRLogger[] vrLoggers = FindObjectsByType<VRLogger>(FindObjectsSortMode.None);
-    //    if (vrLoggers.Length > 0)
-    //    {
-    //        foreach (VRLogger vrLogger in vrLoggers)
-    //        {
-    //            vrLogger.SetLoggerLines(oldLines);
-    //            _vrLoggers.Add(vrLogger);
-
-    //        }
-    //    }
-    //    else
-    //    {
-    //        Debug.LogWarning("No VRLogger found in scene.");
-    //    }
-    //}
-
     private void SpawnPlayerPrefab()
     {
         Vector3 playerPosition = new Vector3(transform.position.x + Random.Range(-10, 10), transform.position.y + Random.Range(-10, 10));
         _spawnedPlayerPrefab = PhotonNetwork.Instantiate(_playersPrefabName, playerPosition, transform.rotation);
-        _vrLogger.Log("Player " + _spawnedPlayerPrefab.name + " spawned at position(" + playerPosition.x + "," + playerPosition.y + "," + playerPosition.z + ")");
+        _vrLogger.Log("[" + this.name + "] Player " + _spawnedPlayerPrefab.name + " spawned at position(" + playerPosition.x + "," + playerPosition.y + "," + playerPosition.z + ")");
     }
-
-    //private void NetworkLog(string log)
-    //{
-    //    if (_vrLoggers != null)
-    //    {
-    //        foreach (VRLogger vrLogger in _vrLoggers)
-    //        {
-    //            vrLogger.Log(log);
-    //        }
-    //    }
-    //    else
-    //    {
-    //        Debug.LogWarning("No vrLogger found in scene.");
-    //        Debug.Log(log);
-    //    }
-    //}
 
     //private IEnumerator<int> FadeAndChangeScene(int roomIndex)
     //{

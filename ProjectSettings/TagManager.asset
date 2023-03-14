@@ -7,6 +7,8 @@ TagManager:
   - UiCamera
   - VRLogger
   - NetworkManager
+  - Speaker
+  - SamplesInfoPanel
   layers:
   - Default
   - TransparentFX

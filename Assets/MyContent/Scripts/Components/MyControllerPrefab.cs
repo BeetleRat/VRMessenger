@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-enum ControllerType
+public enum ControllerType
 {
     OculusController, HandsPrefabs
 }
@@ -15,35 +16,35 @@ class ControllerView
     public ControllerType Type;
 }
 
-public class MyControllerrPrefab : MonoBehaviour
+public class MyControllerPrefab : MonoBehaviour
 {
     [SerializeField] private ControllerView[] _controllers;
     [SerializeField] OVRInput.Controller _controller;
-    [SerializeField] private ControllerType _controllerType;
+    [SerializeField] PhotonView _myPhotonView;
 
-    private ControllerView currentControllerView;
+    private ControllerType _currentControllerType;
+    private ControllerView _currentControllerView;
 
     private void Start()
     {
-        switchControllerView(_controllerType);
+        SwitchControllerView(ControllerType.OculusController);
     }
 
     private void Update()
     {
-        switchControllerView(_controllerType);
-        UpdateAnimation(currentControllerView.Animator);
+        UpdateAnimation(_currentControllerView.Animator);
     }
-
-    private void switchControllerView(ControllerType controllerType)
+    public void SwitchControllerView(ControllerType controllerType)
     {
-        if (currentControllerView == null || currentControllerView.Type != _controllerType)
+        _currentControllerType = controllerType;
+        if (_currentControllerView == null || _currentControllerView.Type != controllerType)
         {
             foreach (ControllerView controllerView in _controllers)
             {
-                if (controllerView.Type == _controllerType)
+                if (controllerView.Type == controllerType)
                 {
                     controllerView.ControllerModel.SetActive(true);
-                    currentControllerView = controllerView;
+                    _currentControllerView = controllerView;
                 }
                 else
                 {
@@ -51,15 +52,13 @@ public class MyControllerrPrefab : MonoBehaviour
                 }
             }
         }
-
-
-
     }
+
     private void UpdateAnimation(Animator animator)
     {
-        if (animator != null)
+        if (animator != null && _myPhotonView.IsMine)
         {
-            switch (_controllerType)
+            switch (_currentControllerType)
             {
                 case ControllerType.OculusController:
                     animator.SetFloat("Button 1", OVRInput.Get(OVRInput.Button.One, _controller) ? 1.0f : 0.0f);

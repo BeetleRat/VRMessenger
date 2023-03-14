@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4711403666352097370}
   m_Layer: 0
   m_Name: Speaker
-  m_TagString: Untagged
+  m_TagString: Speaker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,7 +42,7 @@ AudioSource:
   m_GameObject: {fileID: 206034540911546935}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 1419fbda8e7b98c468f212396f740e63, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -226,6 +226,9 @@ MonoBehaviour:
   _head: {fileID: 8049110395845957923}
   _leftHand: {fileID: 5202212329706223036}
   _rightHand: {fileID: 568532679021984052}
+  _myControllerrPrefabs:
+  - {fileID: 3292806117968779483}
+  - {fileID: 8337410609526042776}
   _dublicateMainPlayer: 1
 --- !u!114 &7969025535319911411
 MonoBehaviour:
@@ -301,7 +304,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 8d4a3237bf70add4c823346ca2126893, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -390,7 +393,7 @@ MonoBehaviour:
     Animator: {fileID: 4323072593225857026}
     Type: 1
   _controller: 2
-  _controllerType: 1
+  _myPhotonView: {fileID: 9038313837189576999}
 --- !u!1 &4415432560077919717
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,7 +547,7 @@ MonoBehaviour:
     Animator: {fileID: 4393722175762896620}
     Type: 1
   _controller: 1
-  _controllerType: 1
+  _myPhotonView: {fileID: 9038313837189576999}
 --- !u!1 &9126978113379951579
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,30 +7,36 @@ public class ControllerEvents : MonoBehaviour
 {
     public UnityAction<bool> ControllerTypeChange;
 
-    private bool isAttachToController;
+    private bool _isAttachToController;
 
     private void Start()
     {
-        isAttachToController = OVRPlugin.GetHandTrackingEnabled();
+        _isAttachToController = OVRPlugin.GetHandTrackingEnabled();
+        ControllerTypeChange?.Invoke(_isAttachToController);
     }
 
     private void Update()
     {
         if (OVRPlugin.GetHandTrackingEnabled())
         {
-            if (isAttachToController)
+            if (_isAttachToController)
             {
-                isAttachToController = false;
-                ControllerTypeChange?.Invoke(isAttachToController);
+                _isAttachToController = false;
+                ControllerTypeChange?.Invoke(_isAttachToController);
             }
         }
         else
         {
-            if (!isAttachToController)
+            if (!_isAttachToController)
             {
-                isAttachToController = true;
-                ControllerTypeChange?.Invoke(isAttachToController);
+                _isAttachToController = true;
+                ControllerTypeChange?.Invoke(_isAttachToController);
             }
         }
+    }
+
+    public bool IsAttachToControllerNow()
+    {
+        return _isAttachToController;
     }
 }

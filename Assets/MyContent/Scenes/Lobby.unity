@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1565143, g: 0.33968535, b: 1.1452425, a: 1}
+  m_IndirectSpecularColor: {r: 0.15475097, g: 0.34008187, b: 1.1461469, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5065,7 +5065,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh137632
+  m_Name: pb_Mesh46212
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6144,6 +6144,10 @@ PrefabInstance:
       propertyPath: m_controller
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2027510510870650651, guid: c89b2c4e711f8a14ba3df7e4b3c71f12, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3256162501733948506, guid: c89b2c4e711f8a14ba3df7e4b3c71f12, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -6363,6 +6367,10 @@ PrefabInstance:
     - target: {fileID: 7079690332722676895, guid: c89b2c4e711f8a14ba3df7e4b3c71f12, type: 3}
       propertyPath: m_CullingMask.m_Bits
       value: 4294967263
+      objectReference: {fileID: 0}
+    - target: {fileID: 7391917729514040590, guid: c89b2c4e711f8a14ba3df7e4b3c71f12, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8124380523325519427, guid: c89b2c4e711f8a14ba3df7e4b3c71f12, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7352,6 +7360,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 057aad0ca99974245b286254860ca1b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _catchableComponents:
+    GesureAnimator: 0
+    NetworkVariables: 1
 --- !u!4 &1822040340
 Transform:
   m_ObjectHideFlags: 0
@@ -7736,6 +7747,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2063263208}
   - component: {fileID: 2063263209}
+  - component: {fileID: 2063263210}
   m_Layer: 0
   m_Name: Network
   m_TagString: NetworkManager
@@ -7772,13 +7784,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _vrLogger: {fileID: 942149978}
   _sceneChanger: {fileID: 1281743873}
-  _playersPrefabName: ControllerSyncPrefab
+  _playersPrefabName: NetworkPlayerPrefab
   _defaultRooms:
   - name: Room1
     sceneID: 1
     playersInRoom: 10
     isRoomVisible: 1
   _autoStartTestRoom: 0
+--- !u!114 &2063263210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063263207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5652093761406ad428f539f959c400cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2068422601
 GameObject:
   m_ObjectHideFlags: 0

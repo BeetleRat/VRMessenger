@@ -66,6 +66,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         _isConnectedToServer = true;
         _vrLogger.Log("[" + this.name + "] Connected to master server.");
         NetworConnectionEvent?.Invoke(NetworkCode.CONNECT_TO_LOBBY_IN_PROGRESS);
+        // PhotonNetwork.AutomaticallySyncScene = true;
         PhotonNetwork.JoinLobby();
     }
 
@@ -114,11 +115,16 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         NetworConnectionEvent?.Invoke(NetworkCode.CONNECT_TO_ROOM_COMPLETE);
         _vrLogger.Log("[" + this.name + "] You are join to the room.");
         SpawnPlayerPrefab();
+        NetworkVariables.SendPropertyToServer(PlayersProperty.UPDATE_STATUS, "Update");
     }
 
     public override void OnLeftRoom()
     {
-        string destroyedPlayerName = _spawnedPlayerPrefab.name;
+        string destroyedPlayerName = "#destroyed#";
+        if (_spawnedPlayerPrefab != null)
+        {
+            destroyedPlayerName = _spawnedPlayerPrefab.name;
+        }
         base.OnLeftRoom();
         PhotonNetwork.Destroy(_spawnedPlayerPrefab);
         _vrLogger.Log("[" + this.name + "] Player " + destroyedPlayerName + " is destroy");
@@ -159,7 +165,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
         base.OnPlayerEnteredRoom(newPlayer);
-        _vrLogger.Log("[" + this.name + "] "+
+        _vrLogger.Log("[" + this.name + "] " +
            newPlayer.NickName == null || newPlayer.NickName == ""
             ? "Some unknown user"
             : newPlayer.NickName
@@ -173,25 +179,4 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         _spawnedPlayerPrefab = PhotonNetwork.Instantiate(_playersPrefabName, playerPosition, transform.rotation);
         _vrLogger.Log("[" + this.name + "] Player " + _spawnedPlayerPrefab.name + " spawned at position(" + playerPosition.x + "," + playerPosition.y + "," + playerPosition.z + ")");
     }
-
-    //private IEnumerator<int> FadeAndChangeScene(int roomIndex)
-    //{
-    //    bool isFaded = true;
-    //    //Fader.instance.FadeIn(() => isFaded = true);
-    //    while (!isFaded)
-    //    {
-    //        yield return -1;
-    //    }
-    //    NetworConnectionEvent?.Invoke(NetworkCode.CONNECT_TO_ROOM_IN_PROGRESS);
-    //    RoomSettings defaultRoom = _defaultRooms[roomIndex];
-
-    //    PhotonNetwork.LoadLevel(defaultRoom.sceneID);
-
-    //    RoomOptions roomOptions = new RoomOptions();
-    //    roomOptions.MaxPlayers = defaultRoom.playersInRoom;
-    //    roomOptions.IsVisible = defaultRoom.isRoomVisible;
-    //    roomOptions.IsOpen = true;
-    //    PhotonNetwork.JoinOrCreateRoom(defaultRoom.name, roomOptions, TypedLobby.Default);
-    //    //Fader.instance.FadeOut(() => isFaded = false);
-    //}
 }

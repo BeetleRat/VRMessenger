@@ -439,7 +439,7 @@ GameObject:
   - component: {fileID: 3386506315639403639}
   - component: {fileID: 3386506315648687009}
   m_Layer: 0
-  m_Name: leftHandPrefab
+  m_Name: LeftHandPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

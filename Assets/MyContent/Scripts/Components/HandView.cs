@@ -17,6 +17,11 @@ public class HandView : MonoBehaviour
 
     public ControllerEvents GetControllerSwitcher()
     {
+        if (_catcher == null)
+        {
+            return null;
+        }
+
         return _catcher.GetControllerEvents();
     }
 }

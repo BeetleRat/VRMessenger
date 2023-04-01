@@ -6,7 +6,8 @@ using UnityEngine.XR;
 [System.Serializable]
 class CatchableComponents
 {
-
+    public bool GesureAnimator;
+    public bool NetworkVariables;
 }
 
 public class ComponentCatcher : MonoBehaviour
@@ -15,7 +16,7 @@ public class ComponentCatcher : MonoBehaviour
     private static readonly Dictionary<System.Type, string> typeToString =
        new Dictionary<System.Type, string>
        {
-            { typeof(string), "string" },            
+            { typeof(string), "string" },
             { typeof(bool), "bool" },
             { typeof(byte), "byte" },
             { typeof(char), "char" },
@@ -33,6 +34,8 @@ public class ComponentCatcher : MonoBehaviour
             { typeof(VRLoggersManager), "VRLoggersManager" },
             { typeof(NetworkManager), "NetworkManager" },
             { typeof(ControllerEvents), "ControllerEvents" },
+            { typeof(GestureAnimation), "GestureAnimation" },
+            { typeof(NetworkVariables), "NetworkVariables" },
 
             { typeof(object), "object" }
        };
@@ -41,6 +44,8 @@ public class ComponentCatcher : MonoBehaviour
     private VRLoggersManager _vrLogger;
     private NetworkManager _networkManager;
     private ControllerEvents _controllerEvents;
+    private GestureAnimation _gestureAnimator;
+    private NetworkVariables _networkVariables;
 
 
     private void Start()
@@ -62,22 +67,35 @@ public class ComponentCatcher : MonoBehaviour
         if (_networkManager == null)
         {
             _networkManager = FindObjectOfType<NetworkManager>();
-            if (_networkManager == null)
-            {
-                _vrLogger?.Log("[" + this.name + "] Не удалось поймать NetworkManager");
-                Debug.LogWarning("[" + this.name + "] Не удалось поймать NetworkManager");
-            }
+            CheckComponentState(_networkManager);
         }
         if (_controllerEvents == null)
         {
-            _controllerEvents= FindObjectOfType<ControllerEvents>();
-            if (_controllerEvents == null)
-            {
-                _vrLogger?.Log("[" + this.name + "] Не удалось поймать ControllerEvents");
-                Debug.LogWarning("[" + this.name + "] Не удалось поймать ControllerEvents");
-            }
+            _controllerEvents = FindObjectOfType<ControllerEvents>();
+            CheckComponentState(_controllerEvents);
         }
 
+        if (_catchableComponents.GesureAnimator && _gestureAnimator == null)
+        {
+            _gestureAnimator = FindObjectOfType<GestureAnimation>();
+            CheckComponentState(_gestureAnimator);
+        }
+
+        if (_catchableComponents.GesureAnimator && _networkVariables == null)
+        {
+            _networkVariables = FindObjectOfType<NetworkVariables>();
+            CheckComponentState(_networkVariables);
+        }
+
+    }
+
+    private void CheckComponentState<T>(T component)
+    {
+        if (component == null)
+        {
+            _vrLogger?.Log("[" + this.name + "] Не удалось поймать " + typeToString[typeof(T)]);
+            Debug.LogWarning("[" + this.name + "] Не удалось поймать " + typeToString[typeof(T)]);
+        }
     }
 
     private void TryToGetComponent<T>(ref T fild)
@@ -105,6 +123,20 @@ public class ComponentCatcher : MonoBehaviour
         TryToGetComponent(ref _controllerEvents);
 
         return _controllerEvents;
+    }
+
+    public GestureAnimation GetGestureAnimator()
+    {
+        TryToGetComponent(ref _gestureAnimator);
+
+        return _gestureAnimator;
+    }
+
+    public NetworkVariables GetNetworkVariables()
+    {
+        TryToGetComponent(ref _networkVariables);
+
+        return _networkVariables;
     }
 
     public VRLoggersManager GetVRLoggersManager()

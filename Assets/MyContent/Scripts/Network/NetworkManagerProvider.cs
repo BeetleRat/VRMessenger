@@ -8,13 +8,17 @@ public class NetworkManagerProvider : MonoBehaviour
     private NetworkManager _networkManager;
     private void Start()
     {
-        _networkManager = _catcher.GetNetworkManager();
+        if (_catcher != null)
+        {
+            _networkManager = _catcher.GetNetworkManager();
+        }        
     }
 
     public void ConnectToServer()
     {
         _networkManager?.ConnectToServer();
     }
+
     public void LeaveRoom()
     {
         _networkManager?.LeaveRoom();
@@ -24,7 +28,6 @@ public class NetworkManagerProvider : MonoBehaviour
     {
         _networkManager?.InitRoom(roomIndex);
     }
-
     public void DisconnectedFromServer()
     {
         _networkManager?.DisconnectedFromServer();

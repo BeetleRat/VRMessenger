@@ -36,7 +36,7 @@ public class NetworkPlayer : MonoBehaviour
     private void Start()
     {
         CreatePlayer();
-        ComponentCatcher catcher = FindAnyObjectByType<ComponentCatcher>();
+        ComponentCatcher catcher = FindObjectOfType<ComponentCatcher>();
         _networkVariables = catcher?.GetNetworkVariables();
         if (_networkVariables)
         {

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4493949011038393616}
   - component: {fileID: 6222136975342499485}
   - component: {fileID: 4711403666352097370}
+  - component: {fileID: 5494737001108711053}
   m_Layer: 0
   m_Name: Speaker
   m_TagString: Speaker
@@ -147,6 +148,19 @@ MonoBehaviour:
     Max: 1000
     SpeedUpPerc: 5
   restartOnDeviceChange: 1
+--- !u!114 &5494737001108711053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206034540911546935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3077204d557cc8a4ba58690e43ea4197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _myPhotonView: {fileID: 9038313837189576999}
 --- !u!1 &457992737282413412
 GameObject:
   m_ObjectHideFlags: 0

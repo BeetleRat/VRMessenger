@@ -11,6 +11,7 @@ public static class PlayersProperty
     public const string CONTROLLER_TYPE = "ControllerType";
     public const string GESTURE_FINGERS = "GestureFingers";
     public const string UPDATE_STATUS = "UpdateStatus";
+    public const string MICROPHONE_VOLUME = "MicrophoneVolume";
 }
 
 public class NetworkVariables : MonoBehaviourPunCallbacks

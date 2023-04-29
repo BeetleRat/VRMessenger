@@ -1,10 +1,18 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Voice.Unity;
 using Photon.Pun;
 using Photon.Realtime;
 
+/**
+ ### Класс взаимодействия с компонентами воспроизводящими звук с микрофона на сервере
+
+Данный класс дополняет класс MicrophoneController. Он обрабатывает запросы микрофона пришедшие на сервер.
+@attention Для корректной работы данный класс требует, что бы в сцене присутствовали скрипты:
+- ComponentCatcher;
+- NetworkVariables;
+ */
 [RequireComponent(typeof(Speaker)), RequireComponent(typeof(AudioSource))]
 public class MicrophoneNetworkSettings : MonoBehaviour
 {

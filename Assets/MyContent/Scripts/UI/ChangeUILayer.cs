@@ -1,21 +1,26 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Codes
-{
-    CONNECT_TO_SERVER_IN_PROGRESS,
-    CONNECT_TO_SERVER_COMPLETE,
-
-}
-
+/// Класс связывающий код состояния сервера и отображаемый в этом состоянии слой.
 [System.Serializable]
 public class ChangeLayers
 {
+    /// Код состояния сервера.
     public NetworkCode Code;
+    /// Отображаемый Canvas при поступлении данного кода от сервера.
     public CanvasGroup Layer;
 }
 
+/**
+ ### Класс отвечающий за плавную смену слоев на UI экране
+
+@param catcher ComponentCatcher находящийся на данной сцене;
+@param startLayer Canvas отображаемый изначально;
+@param layers Список ChangeLayers, которые будут меняться в соответствии с указанными кодами;
+@param fadeDuration Продолжительность затухания слоя;
+@param fadeSmoothness Плавность затухания слоя;
+ */
 public class ChangeUILayer : MonoBehaviour
 {
     [SerializeField] private ComponentCatcher _catcher;
@@ -26,18 +31,17 @@ public class ChangeUILayer : MonoBehaviour
     [Range(0.00001f, 0.1f)]
     [SerializeField] private float _fadeSmoothness;
 
-
     private NetworkManager _networkManager;
     private Queue<ChangeLayers> _changeQueue;
     private float _currentFrame;
     private CanvasGroup _currentLayer;
-    
 
     private void Awake()
     {
         _changeQueue = new Queue<ChangeLayers>();
-        _currentFrame = 0;        
+        _currentFrame = 0;
     }
+
     private void Start()
     {
         _networkManager = _catcher.GetNetworkManager();
@@ -45,7 +49,7 @@ public class ChangeUILayer : MonoBehaviour
         {
             _networkManager.NetworConnectionEvent += OnNetworConnection;
         }
-        
+
         if (_layers.Count > 0)
         {
             for (int i = 0; i < _layers.Count; i++)
@@ -107,6 +111,22 @@ public class ChangeUILayer : MonoBehaviour
             if (layer.Code == code)
             {
                 _changeQueue.Enqueue(layer);
+                break;
+            }
+        }
+    }
+
+    /**
+     Метод для произвольной смены слоя, не зависимо от состояния сервера.
+    @param layer Canvas, который мы хотим отобразить. Данный Canvas должен быть указан в layers.
+     */
+    public void ChangeLayer(CanvasGroup layer)
+    {
+        foreach (ChangeLayers changeLayer in _layers)
+        {
+            if (changeLayer.Layer == layer)
+            {
+                _changeQueue.Enqueue(changeLayer);
                 break;
             }
         }

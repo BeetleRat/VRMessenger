@@ -1,8 +1,22 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Oculus.Interaction;
 
+/**
+### Скрипт, прикрепляющий объект к якорю весящему на игроке
+
+Данный класс используется для того, чтобы объекты, которые прикрепляются к игроку не приходилось долго искать на самом игроке. 
+Идея в следующем: 
+1. В нужную(-ые) части тела игрока мы прикрепляем EmptyObject якорь;
+2. Создаем нужный нам объект, где нам будет угодно;
+3. Добавляем на объект данный скрипт и в его полях указываем якорь, к которому объект будет прикреплен при запуске приложения;
+4. *Если объект прикрепляется к рукам, то необходимо указать отдельный якорь для контроллеров и для рук*
+@param catcher ComponentCatcher данной сцены
+@param controllerBodyPart Якорь, к которому прикрепляется объект. 
+Если объект прикрепляется к рукам, то в данный параметр указывается якорь для прикрепления к контроллерам
+@param handBodyPart (*Не обязательно*) Если объект прикрепляется к рукам, то в данный параметр указывается якорь для прикрепления к рукам
+ */
 public class AttachToPlayersBody : MonoBehaviour
 {
     [SerializeField] private Transform _controllerBodyPart;
@@ -17,7 +31,6 @@ public class AttachToPlayersBody : MonoBehaviour
 
     private void Start()
     {
-
         _controllerEvents = _catcher.GetControllerEvents();
         _controllerEvents.ControllerTypeChange += OnAttachChange;
 

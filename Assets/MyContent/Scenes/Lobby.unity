@@ -7368,9 +7368,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 057aad0ca99974245b286254860ca1b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _catchableComponents:
-    GesureAnimator: 0
-    NetworkVariables: 1
+  _catchGesureAnimator: 0
+  _catchNetworkVariables: 1
 --- !u!4 &1822040340
 Transform:
   m_ObjectHideFlags: 0

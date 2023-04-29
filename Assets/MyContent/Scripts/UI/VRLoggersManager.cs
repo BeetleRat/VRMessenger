@@ -1,10 +1,16 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/**
+ ### Скрипт, отвечающий за вывод логов во все VRLogger на сцене
+
+@attention Для корректной работы vrLogger-а необходимо перед началом работы установить ему NetworkManager, 
+воспользовавшись методом SetNetworkManager(NetworkManager networkManager).
+ */
 public class VRLoggersManager : MonoBehaviour
 {
-    public List<VRLogger> _vrLoggers;
+    private List<VRLogger> _vrLoggers;
     private NetworkManager _networkManager;
 
     private void Awake()
@@ -51,6 +57,11 @@ public class VRLoggersManager : MonoBehaviour
             Debug.LogWarning("No VRLogger found in scene.");
         }
     }
+
+    /**
+     Метод для вывода лога.
+    @param text string текст выводимого лога.
+     */
     public void Log(string log)
     {
         if (_vrLoggers != null)
@@ -67,6 +78,11 @@ public class VRLoggersManager : MonoBehaviour
         }
     }
 
+    /**
+     Сеттер NetworkManager-а. 
+    @attention Для корректной работы vrLogger-а необходимо перед началом работы установить ему NetworkManager.
+    @param networkManager NetworkManager.
+     */
     public void SetNetworkManager(NetworkManager networkManager)
     {
         if (_networkManager != null)
@@ -76,10 +92,11 @@ public class VRLoggersManager : MonoBehaviour
         this._networkManager = networkManager;
         networkManager.NetworConnectionEvent += OnNetworConnection;
     }
+
     private void OnNetworConnection(NetworkCode code)
     {
-        // ���� ��������� ���������� ������-�� �����������
-        // ���� ���������� 2**
+        // Если произошло завершение какого-то подключения
+        // коды завершений 2**
         if (((int)code) / 100 == 2)
         {
             RefreshVrLogger();

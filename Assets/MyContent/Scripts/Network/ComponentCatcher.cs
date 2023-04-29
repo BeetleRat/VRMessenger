@@ -1,18 +1,36 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 
-[System.Serializable]
-class CatchableComponents
-{
-    public bool GesureAnimator;
-    public bool NetworkVariables;
-}
+/**
+### Класс, отлавливающий определенные компоненты в текущей сцене
 
+@attention Данный класс не должен быть Singletone. 
+Для каждой отдельной сцены должен быть свой экземпляр данного класса, если он в ней нужен.
+
+@attention В сцене достаточно одного экземпляра такого класса.
+
+Данный класс находит в сцене указанные компоненты. 
+Это компоненты, запрашиваемые другими скриптами в ходе работы приложения. 
+Так же компоненты пришедшие из других сцен.
+
+Логика работы следующая. При старте сцены ComponentCatcher отлавливает все важные компоненты. 
+В дальнейшем, если какому-то скрипту понадобиться один из этих компонентов он будет обращаться к ComponentCatcher.
+
+Локальные компоненты запрашивают данный класс через свои свойства. 
+А компоненты спавнемые сервером будут искать ComponentCatcher в сцене.
+
+ComponentCatcher безусловно отлавливает компоненты:
+ - VRLoggersManager;
+ - NetworkManager;
+ - ControllerEvents;
+@param catchGestureAnimation Отлавливать ли в текущей сцене GestureAnimation.
+@param catchNetworkVariables Отлавливать ли в текущей сцене NetworkVariables.
+ */
 public class ComponentCatcher : MonoBehaviour
 {
-    // ������� ����� �������
+    /// Словарь типов классов
     private static readonly Dictionary<System.Type, string> typeToString =
        new Dictionary<System.Type, string>
        {
@@ -40,7 +58,10 @@ public class ComponentCatcher : MonoBehaviour
             { typeof(object), "object" }
        };
 
-    [SerializeField] CatchableComponents _catchableComponents;
+    [Header("Catchable Components")]
+    [SerializeField] private bool _catchGestureAnimation;
+    [SerializeField] private bool _catchNetworkVariables;
+
     private VRLoggersManager _vrLogger;
     private NetworkManager _networkManager;
     private ControllerEvents _controllerEvents;
@@ -61,7 +82,7 @@ public class ComponentCatcher : MonoBehaviour
             _vrLogger = FindObjectOfType<VRLoggersManager>();
             if (_vrLogger == null)
             {
-                Debug.LogWarning("[" + this.name + "] �� ������� ������� VRLoggersManager");
+                Debug.LogWarning("[" + this.name + "] Не удалось поймать VRLoggersManager");
             }
         }
         if (_networkManager == null)
@@ -75,13 +96,13 @@ public class ComponentCatcher : MonoBehaviour
             CheckComponentState(_controllerEvents);
         }
 
-        if (_catchableComponents.GesureAnimator && _gestureAnimator == null)
+        if (_catchGestureAnimation && _gestureAnimator == null)
         {
             _gestureAnimator = FindObjectOfType<GestureAnimation>();
             CheckComponentState(_gestureAnimator);
         }
 
-        if (_catchableComponents.GesureAnimator && _networkVariables == null)
+        if (_catchNetworkVariables && _networkVariables == null)
         {
             _networkVariables = FindObjectOfType<NetworkVariables>();
             CheckComponentState(_networkVariables);
@@ -93,8 +114,8 @@ public class ComponentCatcher : MonoBehaviour
     {
         if (component == null)
         {
-            _vrLogger?.Log("[" + this.name + "] �� ������� ������� " + typeToString[typeof(T)]);
-            Debug.LogWarning("[" + this.name + "] �� ������� ������� " + typeToString[typeof(T)]);
+            _vrLogger?.Log("[" + this.name + "] Не удалось поймать " + typeToString[typeof(T)]);
+            Debug.LogWarning("[" + this.name + "] Не удалось поймать " + typeToString[typeof(T)]);
         }
     }
 
@@ -105,12 +126,16 @@ public class ComponentCatcher : MonoBehaviour
             RefreshComponents();
             if (fild == null)
             {
-                _vrLogger?.Log("[" + this.name + "] Catcher �� �������� " + typeToString[typeof(T)]);
-                Debug.LogWarning("[" + this.name + "] Catcher �� �������� " + typeToString[typeof(T)]);
+                _vrLogger?.Log("[" + this.name + "] Catcher не содержит " + typeToString[typeof(T)]);
+                Debug.LogWarning("[" + this.name + "] Catcher не содержит " + typeToString[typeof(T)]);
             }
         }
     }
 
+    /**
+     Геттер NetworkManager
+    @return NetworkManager, если он был найден в сцене.
+     */
     public NetworkManager GetNetworkManager()
     {
         TryToGetComponent(ref _networkManager);
@@ -118,6 +143,10 @@ public class ComponentCatcher : MonoBehaviour
         return _networkManager;
     }
 
+    /**
+     Геттер ControllerEvents
+    @return ControllerEvents, если он был найден в сцене.
+     */
     public ControllerEvents GetControllerEvents()
     {
         TryToGetComponent(ref _controllerEvents);
@@ -125,6 +154,10 @@ public class ComponentCatcher : MonoBehaviour
         return _controllerEvents;
     }
 
+    /**
+     Геттер GestureAnimation
+    @return GestureAnimation, если он был найден в сцене.
+     */
     public GestureAnimation GetGestureAnimator()
     {
         TryToGetComponent(ref _gestureAnimator);
@@ -132,6 +165,10 @@ public class ComponentCatcher : MonoBehaviour
         return _gestureAnimator;
     }
 
+    /**
+     Геттер NetworkVariables
+    @return NetworkVariables, если он был найден в сцене.
+     */
     public NetworkVariables GetNetworkVariables()
     {
         TryToGetComponent(ref _networkVariables);
@@ -139,6 +176,10 @@ public class ComponentCatcher : MonoBehaviour
         return _networkVariables;
     }
 
+    /**
+     Геттер VRLoggersManager
+    @return VRLoggersManager, если он был найден в сцене.
+     */
     public VRLoggersManager GetVRLoggersManager()
     {
         TryToGetComponent(ref _vrLogger);

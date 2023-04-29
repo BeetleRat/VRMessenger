@@ -1,8 +1,32 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.XR;
 using Photon.Pun;
 using Photon.Realtime;
 
+/**
+ ### Класс, отвечающий за синхронизацию локального игрока и его отображения на сервере
+
+Данный класс используется в prefab-е игрока, находящегося по пути Assets/Resources.
+
+
+Данный класс отвечает за:
+- синхронизацию положения головы (шлема oculus);
+- синхронизацию положения рук (контроллеров oculus/отслеживаемых человеческих рук);
+- вид контроллеров (контроллеры oculus/отслеживаемые человеческие руки);
+
+@attention Для корректной работы данный класс требует, что бы в сцене присутствовали скрипты:
+- ComponentCatcher;
+- NetworkVariables;
+- HandView;
+- OVRCameraRig;
+
+@param head Объект отображения головы на сервере (голова в prefab-е игрока).
+@param leftHand Объект отображения левой руки на сервере (левая рука в prefab-е игрока).
+@param rightHand Объект отображения правой руки на сервере (правая рука в prefab-е игрока).
+@param controllertTypeController Массив ControllerTypeController, которыми управляет данный класс.
+@param dublicateMainPlayer Если true, то пользователь будет видеть как его контроллеры отображаются на сервере.
+@param handsOpacity Прозрачность своих контроллеров на сервере (если dublicateMainPlayer == true).
+ */
 [RequireComponent(typeof(PhotonView))]
 public class NetworkPlayer : MonoBehaviour
 {
@@ -15,6 +39,7 @@ public class NetworkPlayer : MonoBehaviour
     [SerializeField] private bool _dublicateMainPlayer;
     [Range(0.0f, 1.0f)]
     [SerializeField] private float _handsOpacity;
+
     private bool _isAttachToController;
 
     private PhotonView _photonView;
@@ -26,7 +51,6 @@ public class NetworkPlayer : MonoBehaviour
     private ControllerEvents _controllerChangeTypeEvent;
 
     private NetworkVariables _networkVariables;
-
 
     private void Awake()
     {
@@ -110,7 +134,7 @@ public class NetworkPlayer : MonoBehaviour
                 {
                     for (int i = 0; i < renderer.materials.Length; i++)
                     {
-                        // ������������� ������������ ����������� �����
+                        // Устанавливаем прозрачность дублирующим рукам
                         Color oldColor = renderer.materials[i].color;
                         Color newColor = new Color(oldColor.r, oldColor.g, oldColor.b, _handsOpacity);
                         renderer.materials[i].SetColor("_Color", newColor);
@@ -141,11 +165,12 @@ public class NetworkPlayer : MonoBehaviour
             }
         }
     }
+
     private void ChangeControllerView(ControllerType type)
     {
-        // ��������� ���������� player-a
+        // Обновляем локального player-a
         ChangeLocalControllerView(type);
-        // ��������� player-a �� ������� ����� �������� photon
+        // Обновляем player-a на сервере через свойства photon
         NetworkVariables.SendPropertyToServer(PlayersProperty.CONTROLLER_TYPE, type);
     }
 

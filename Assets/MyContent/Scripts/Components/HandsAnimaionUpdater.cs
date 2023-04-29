@@ -1,15 +1,24 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 
+/**
+ ### Скрипт обеспечивающий проигрывание анимации моделей рук на сервере
 
+Данный класс обновляет анимацию моделей рук на сервере, в зависимости от жестов распознанных системой GestureAnimation.
+
+@attention Для корректной работы данный класс требует, что бы в сцене присутствовали скрипты:
+- ComponentCatcher;
+- NetworkVariables;
+- GestureAnimation;
+ */
 public class HandsAnimaionUpdater : ModelAnimator
 {
     private GestureAnimation _gestureAnimation;
 
-    private GestureFingers _fingers;
+    private GestureProperties _fingers;
 
     private NetworkVariables _networkVariables;
 
@@ -20,16 +29,16 @@ public class HandsAnimaionUpdater : ModelAnimator
         _gestureAnimation = catcher?.GetGestureAnimator();
         if (_gestureAnimation)
         {
-            _fingers = new GestureFingers();
+            _fingers = new GestureProperties();
             if (_controllerType == OVRInput.Controller.LTouch || _controllerType == OVRInput.Controller.LHand)
             {
                 _gestureAnimation.LeftGestChange += ChangeHandPose;
-                _fingers.Type = GestureFingers.HandType.Left;
+                _fingers.Type = HandType.Left;
             }
             if (_controllerType == OVRInput.Controller.RTouch || _controllerType == OVRInput.Controller.RHand)
             {
                 _gestureAnimation.RightGestChange += ChangeHandPose;
-                _fingers.Type = GestureFingers.HandType.Right;
+                _fingers.Type = HandType.Right;
             }
         }
 

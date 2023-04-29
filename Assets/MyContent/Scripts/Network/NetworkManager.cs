@@ -1,34 +1,65 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using Photon.Pun;
 using Photon.Realtime;
 
+/**
+ ### Класс, хранящий настройки комнаты
+ */
 [System.Serializable]
 public class RoomSettings
 {
+    /// Название комнаты.
     public string name;
+    /// ID сцены, из которой будет создана комната.
     public int sceneID;
+    /// Количество игроков в комнате.
     public byte playersInRoom;
+    /// Будет ли комната видима.
     public bool isRoomVisible;
 }
 
+/// Коды состояний сервера
 public enum NetworkCode
 {
-    CONNECT_TO_SERVER_IN_PROGRESS = 100,
-    CONNECT_TO_SERVER_COMPLETE = 200,
-    CONNECT_TO_LOBBY_IN_PROGRESS = 101,
-    CONNECT_TO_LOBBY_COMPLETE = 201,
-    CONNECT_TO_ROOM_IN_PROGRESS = 102,
-    CONNECT_TO_ROOM_COMPLETE = 202,
-    CONNECT_TO_ROOM_FAILD = 402,
-    PLAYER_ENTER_THE_ROOM = 203,
-    DISCONNECT_FROM_SERVER_IN_PROGRESS = 104,
-    DISCONNECT_FROM_SERVER_COMPLETE = 204
-
+    NO_CODE = 619, ///< Отсутствие кода (необходимо, если действие должно произойти не зависимо от состояния сервера).
+    CONNECT_TO_SERVER_IN_PROGRESS = 100, ///< В процессе подключения к серверу.
+    CONNECT_TO_SERVER_COMPLETE = 200, ///< Подключение к серверу завершено.
+    CONNECT_TO_LOBBY_IN_PROGRESS = 101, ///< В процессе подключения к лобби.
+    CONNECT_TO_LOBBY_COMPLETE = 201, ///< Подключение к лобби завершено.
+    CONNECT_TO_ROOM_IN_PROGRESS = 102, ///< В процессе подключения к комнате.
+    CONNECT_TO_ROOM_COMPLETE = 202, ///< Подключение к комнате завершено.
+    CONNECT_TO_ROOM_FAILD = 402, ///< Не удалось подключиться к комнате.
+    PLAYER_ENTER_THE_ROOM = 203, ///< К комнате подключился новый игрок.
+    DISCONNECT_FROM_SERVER_IN_PROGRESS = 104, ///< В процессе отключения от сервера.
+    DISCONNECT_FROM_SERVER_COMPLETE = 204 ///< Отключение от сервера завершено.
 }
+
+/**
+ ### Класс, отвечающий за взаимодействие с сервером Photon
+
+Данный класс отвечает за:
+ - Подключение к серверу;
+ - Отключение от сервера;
+ - Создание и подключение к лобби;
+ - Создание и подключение к комнате;
+ - Отключение от комнаты;
+ - Отключение от лобби;
+ - Отключение от сервера;
+ - Спавн игрока на сервере.
+
+@param vrLogger VRLoggersManager для вывода логов внутри игры.
+@param sceneChanger SceneChanger для перехода между сценами.
+@param playersPrefabName string название prefab-а игрока лежащего в Assets/Resources. 
+Данный prefab будет заспавнен в комнате на сервере при подключении.
+@param defaultRooms Список RoomSettings комнат, к которым будет производиться подключение.
+@param autoStartTestRoom bool Параметр для отладки. 
+Если true, то автоматически подключает в первую комнату при запуске приложения.
+ */
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
+    /// Событие сервера.
     public event UnityAction<NetworkCode> NetworConnectionEvent;
 
     [SerializeField] private VRLoggersManager _vrLogger;
@@ -52,6 +83,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         }
     }
 
+    /// Осуществить подключение к серверу.
     public void ConnectToServer()
     {
         NetworConnectionEvent?.Invoke(NetworkCode.CONNECT_TO_SERVER_IN_PROGRESS);
@@ -59,6 +91,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         PhotonNetwork.ConnectUsingSettings();
     }
 
+    /// Метод, выполняемый при подключении к серверу.
     public override void OnConnectedToMaster()
     {
         base.OnConnectedToMaster();
@@ -70,6 +103,13 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinLobby();
     }
 
+    /**
+    Создание/подключение к комнате.
+
+    Если комнаты не существует - она будет создана. 
+    Иначе произойдет подключение к существующей комнате.
+    @param [in] roomIndex Индекс комнаты в defaultRooms, к которой мы хотим подключиться.
+     */
     public void InitRoom(int roomIndex)
     {
         if (roomIndex >= 0 && roomIndex < _defaultRooms.Count)
@@ -92,11 +132,16 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         }
     }
 
+    /// Покинуть текущую комнату
     public void LeaveRoom()
     {
         PhotonNetwork.LeaveRoom();
     }
 
+    /**
+    Отключиться от сервера.
+    @param [in] quitFromApplication Если true, то после отключения от сервера произойдет выход из приложения.
+     */
     public void DisconnectedFromServer(bool quitFromApplication = false)
     {
         _vrLogger.Log("[" + this.name + "] Disconnecting from server.");
@@ -109,6 +154,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         PhotonNetwork.Disconnect();
     }
 
+    /// Метод, выполняемый при подключении к комнате.
     public override void OnJoinedRoom()
     {
         base.OnJoinedRoom();
@@ -118,6 +164,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         NetworkVariables.SendPropertyToServer(PlayersProperty.UPDATE_STATUS, "Update");
     }
 
+    /// Метод, выполняемый при отключении от комнаты.
     public override void OnLeftRoom()
     {
         string destroyedPlayerName = "#destroyed#";
@@ -131,6 +178,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         _sceneChanger.LoadStartScene();
     }
 
+    /** 
+    Метод, выполняемый при отключении от сервера.
+    @param cause Причина отключения от сервера.
+     */
     public override void OnDisconnected(DisconnectCause cause)
     {
         base.OnDisconnected(cause);
@@ -143,6 +194,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         }
     }
 
+    /// Метод, выполняемый при подключении к лобби.
     public override void OnJoinedLobby()
     {
         base.OnJoinedLobby();
@@ -162,6 +214,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         }
     }
 
+    /** 
+    Метод выполняемый, когда другой игрок подключился к комнате.
+    @param newPlayer Данные подключившегося игрока.
+     */
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
         base.OnPlayerEnteredRoom(newPlayer);
@@ -171,7 +227,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             : newPlayer.NickName
             + "is join to the room.");
     }
-
 
     private void SpawnPlayerPrefab()
     {

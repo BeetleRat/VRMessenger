@@ -1,8 +1,16 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
+/**
+ ### Класс, отвечающий за переключение типов контроллеров на сервере
+
+Данный класс используется в prefab-е игрока на сервере. 
+Когда локальный игрок меняет тип контроллера (с контроллеров на руки или наоборот), 
+данный класс изменяет меняет отображаемый тип контроллера на сервере.
+@param controllers ModelAnimator[] Массив переключаемых контроллеров.
+ */
 public class ControllerTypeController : MonoBehaviour
 {
     [SerializeField] private ModelAnimator[] _controllers;

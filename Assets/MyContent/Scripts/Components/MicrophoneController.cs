@@ -1,10 +1,18 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Voice.Unity;
 using Photon.Realtime;
 
+/**
+ ### Класс отвечающий за взаимодействие с локальным микрофоном
+
+@param catcher ComponentCatcher находящийся в данной сцене.
+@param microphoneOnImage Изображение включенного микрофона.
+@param microphoneOffImage Изображение выключенного микрофона.
+@param microphone Recorder микрофона из Photon.Voice.Unity.
+ */
 public class MicrophoneController : MonoBehaviour
 {
     [SerializeField] private ComponentCatcher _catcher;
@@ -15,7 +23,6 @@ public class MicrophoneController : MonoBehaviour
     private bool isMicrophoneActive;
     private float _currentMicrophoneVolume;
     private NetworkVariables _networkVariables;
-
 
     private void Start()
     {
@@ -39,6 +46,7 @@ public class MicrophoneController : MonoBehaviour
         }
     }
 
+    /// Вкл/выкл микрофон.
     public void SwitchMicrophoneActivity()
     {
         isMicrophoneActive = !isMicrophoneActive;
@@ -47,6 +55,7 @@ public class MicrophoneController : MonoBehaviour
         _microphone.RecordingEnabled = isMicrophoneActive;
     }
 
+    /// Изменить громкость микрофона через UI компонент Slider.
     public void ChangeMicrophoneVolume(Slider slider)
     {
         _currentMicrophoneVolume = (float)slider.value;

@@ -6,56 +6,60 @@ using Oculus.Interaction.HandGrab;
 using Photon.Pun;
 using Photon.Realtime;
 
-[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Grabbable))]
 public class OwnershipTransfer : MonoBehaviourPun, IPunOwnershipCallbacks
 {
     private VRLoggersManager _vrLogger;
-    private Rigidbody _rigidBody;
     private bool _isGrab;
+    private Grabbable _grabbable;
 
     private void Awake()
     {
         PhotonNetwork.AddCallbackTarget(this);
-        _rigidBody = GetComponent<Rigidbody>();
+        _grabbable = GetComponent<Grabbable>();
+        _grabbable.WhenPointerEventRaised += HandlePointerEventRaised;
         _isGrab = false;
     }
 
     private void Start()
     {
-        ComponentCatcher componentCatcher = FindFirstObjectByType<ComponentCatcher>();
-        if (componentCatcher == null)
+        ComponentCatcher catcher = FindObjectOfType<ComponentCatcher>();
+        if (catcher == null)
         {
             Debug.LogWarning("[" + this.name + "] Can not find ComponentCatcher in scene");
         }
         else
         {
-            _vrLogger = componentCatcher.GetVRLoggersManager();
-        }
-    }
-
-    private void Update()
-    {
-        if (!_isGrab)
-        {
-            if (_rigidBody.isKinematic)
-            {
-                _isGrab = true;
-                base.photonView.RequestOwnership();
-            }
-        }
-        else
-        {
-            if (!_rigidBody.isKinematic)
-            {
-                _isGrab = false;
-            }
+            _vrLogger = catcher.GetVRLoggersManager();
         }
     }
 
     private void OnDestroy()
     {
         PhotonNetwork.RemoveCallbackTarget(this);
+        _grabbable.WhenPointerEventRaised -= HandlePointerEventRaised;
     }
+
+    private void HandlePointerEventRaised(PointerEvent evt)
+    {
+        switch (evt.Type)
+        {
+            case PointerEventType.Select:
+                if (!_isGrab)
+                {
+                    _isGrab = true;
+                    base.photonView.RequestOwnership();
+                }
+                break;
+            case PointerEventType.Unselect:
+                if (_isGrab)
+                {
+                    _isGrab = false;
+                }
+                break;
+        }
+    }
+
     public void OnOwnershipRequest(PhotonView targetView, Player requestingPlayer)
     {
         if (targetView != base.photonView)
@@ -81,16 +85,4 @@ public class OwnershipTransfer : MonoBehaviourPun, IPunOwnershipCallbacks
         _vrLogger?.Log("Ownership Transfer Failed");
         Debug.LogWarning("Ownership Transfer Failed");
     }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.TryGetComponent(out SimpleCapsuleWithStickMovement player)
-             /*collision.gameObject.TryGetComponent(out GrabInteractor playerController)
-              * || collision.gameObject.TryGetComponent(out HandGrabInteractable playerHands)*/
-             )
-        {
-            base.photonView.RequestOwnership();
-        }
-    }
-
 }

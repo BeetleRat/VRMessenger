@@ -7790,7 +7790,7 @@ MonoBehaviour:
     sceneID: 1
     playersInRoom: 10
     isRoomVisible: 1
-  _autoStartTestRoom: 0
+  _autoStartTestRoom: 1
 --- !u!114 &2063263210
 MonoBehaviour:
   m_ObjectHideFlags: 0

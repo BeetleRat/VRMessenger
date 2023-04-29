@@ -38,9 +38,11 @@ public class VRLogger : MonoBehaviour
     {
         this._lines = lines;
     }
+
     public void ClearLog()
     {
         _lines.Clear();
+        FillLog();
     }
 
     private void FillLog()

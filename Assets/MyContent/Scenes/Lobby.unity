@@ -3009,6 +3009,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8115328720731611427, guid: 26f1353e7974b3d408c0c3bb18d0984c, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8393939965190852859, guid: 26f1353e7974b3d408c0c3bb18d0984c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -3044,6 +3048,10 @@ PrefabInstance:
     - target: {fileID: 8526681258596362108, guid: 26f1353e7974b3d408c0c3bb18d0984c, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8526681258596362108, guid: 26f1353e7974b3d408c0c3bb18d0984c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.000015258789
       objectReference: {fileID: 0}
     - target: {fileID: 8526681258920047364, guid: 26f1353e7974b3d408c0c3bb18d0984c, type: 3}
       propertyPath: m_Name
@@ -5065,7 +5073,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh46212
+  m_Name: pb_Mesh29712
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7790,7 +7798,7 @@ MonoBehaviour:
     sceneID: 1
     playersInRoom: 10
     isRoomVisible: 1
-  _autoStartTestRoom: 1
+  _autoStartTestRoom: 0
 --- !u!114 &2063263210
 MonoBehaviour:
   m_ObjectHideFlags: 0

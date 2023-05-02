@@ -18,8 +18,12 @@ using Photon.Realtime;
 
 Данный скрипт вешается на объект. Если объект кто-то берет, то этот кто-то становится его владельцем, 
 независимо от того есть ли у объекта сейчас другой владелец.
+
+@attention Для корректной работы данный класс требует, что бы в сцене присутствовали скрипты:
+- ComponentCatcher;
+- VRLoggersManager;
  */
-[RequireComponent(typeof(Grabbable)), RequireComponent(typeof(Grabbable))]
+[RequireComponent(typeof(Grabbable))]
 public class OwnershipTransfer : MonoBehaviourPun, IPunOwnershipCallbacks
 {
     private VRLoggersManager _vrLogger;

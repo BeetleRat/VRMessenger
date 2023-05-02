@@ -8,6 +8,9 @@ using Photon.Realtime;
 /**
  ### Класс отвечающий за взаимодействие с локальным микрофоном
 
+@attention Для корректной работы данный класс требует, что бы в сцене присутствовали скрипты:
+- NetworkVariables;
+
 @param catcher ComponentCatcher находящийся в данной сцене.
 @param microphoneOnImage Изображение включенного микрофона.
 @param microphoneOffImage Изображение выключенного микрофона.

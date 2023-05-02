@@ -137,18 +137,19 @@ $(document).ready(function(){initNavTree('class_component_catcher.html',''); ini
 <p>Данный класс находит в сцене указанные компоненты. Это компоненты, запрашиваемые другими скриптами в ходе работы приложения. Так же компоненты пришедшие из других сцен.</p>
 <p>Логика работы следующая. При старте сцены <a class="el" href="class_component_catcher.html">ComponentCatcher</a> отлавливает все важные компоненты. В дальнейшем, если какому-то скрипту понадобиться один из этих компонентов он будет обращаться к <a class="el" href="class_component_catcher.html">ComponentCatcher</a>.</p>
 <p>Локальные компоненты запрашивают данный класс через свои свойства. А компоненты спавнемые сервером будут искать <a class="el" href="class_component_catcher.html">ComponentCatcher</a> в сцене.</p>
-<p><a class="el" href="class_component_catcher.html">ComponentCatcher</a> безусловно отлавливает компоненты:</p><ul>
+<dl class="section note"><dt>Заметки</dt><dd><a class="el" href="class_component_catcher.html">ComponentCatcher</a> безусловно отлавливает компоненты:<ul>
 <li><a class="el" href="class_v_r_loggers_manager.html">VRLoggersManager</a>;</li>
 <li><a class="el" href="class_network_manager.html">NetworkManager</a>;</li>
-<li><a class="el" href="class_controller_events.html">ControllerEvents</a>; <dl class="params"><dt>Аргументы</dt><dd>
+<li><a class="el" href="class_controller_events.html">ControllerEvents</a>; </li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
     <tr><td class="paramname">catchGestureAnimation</td><td>Отлавливать ли в текущей сцене <a class="el" href="class_gesture_animation.html">GestureAnimation</a>. </td></tr>
     <tr><td class="paramname">catchNetworkVariables</td><td>Отлавливать ли в текущей сцене <a class="el" href="class_network_variables.html">NetworkVariables</a>. </td></tr>
   </table>
   </dd>
 </dl>
-</li>
-</ul>
 </div><h2 class="groupheader">Методы</h2>
 <a id="a60d8b292e1f1ebe486567b400de7f913" name="a60d8b292e1f1ebe486567b400de7f913"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a60d8b292e1f1ebe486567b400de7f913">&#9670;&#160;</a></span>GetControllerEvents()</h2>

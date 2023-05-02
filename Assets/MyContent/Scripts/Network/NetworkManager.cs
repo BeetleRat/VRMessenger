@@ -10,6 +10,17 @@ using Photon.Realtime;
 [System.Serializable]
 public class RoomSettings
 {
+    /** 
+     Ключ для поля CustomProperties в RoomInfo. 
+     Поле с данным ключем хранит ID сцены, из которой будет создана комната.
+     */
+    public const string SCENE_ID = "SceneID";
+    /** 
+     Ключ для поля CustomProperties в RoomInfo. 
+     Поле с данным ключем хранит индекс сцены в списке defaultRooms
+     */
+    public const string ROOM_INDEX = "RoomIndex";
+
     /// Название комнаты.
     public string name;
     /// ID сцены, из которой будет создана комната.
@@ -33,7 +44,8 @@ public enum NetworkCode
     CONNECT_TO_ROOM_FAILD = 402, ///< Не удалось подключиться к комнате.
     PLAYER_ENTER_THE_ROOM = 203, ///< К комнате подключился новый игрок.
     DISCONNECT_FROM_SERVER_IN_PROGRESS = 104, ///< В процессе отключения от сервера.
-    DISCONNECT_FROM_SERVER_COMPLETE = 204 ///< Отключение от сервера завершено.
+    DISCONNECT_FROM_SERVER_COMPLETE = 204, ///< Отключение от сервера завершено.
+    ROOM_LIST_UPDATE = 105 ///< Список комнат обновился.
 }
 
 /**
@@ -61,6 +73,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 {
     /// Событие сервера.
     public event UnityAction<NetworkCode> NetworConnectionEvent;
+    /// Событие обновление списка комнат.
+    public event UnityAction<List<RoomInfo>> RoomListUpdate;
 
     [SerializeField] private VRLoggersManager _vrLogger;
     [SerializeField] private SceneChanger _sceneChanger;
@@ -99,7 +113,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         _isConnectedToServer = true;
         _vrLogger.Log("[" + this.name + "] Connected to master server.");
         NetworConnectionEvent?.Invoke(NetworkCode.CONNECT_TO_LOBBY_IN_PROGRESS);
-        // PhotonNetwork.AutomaticallySyncScene = true;
+        PhotonNetwork.AutomaticallySyncScene = true;
         PhotonNetwork.JoinLobby();
     }
 
@@ -109,12 +123,12 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     Если комнаты не существует - она будет создана. 
     Иначе произойдет подключение к существующей комнате.
     @param [in] roomIndex Индекс комнаты в defaultRooms, к которой мы хотим подключиться.
+    @param [in] roomID Индекс комнаты. При создании нескольких комнат из одного шаблона мы хотим различать их по ID
      */
-    public void InitRoom(int roomIndex)
+    public void InitRoom(int roomIndex, int roomID)
     {
         if (roomIndex >= 0 && roomIndex < _defaultRooms.Count)
         {
-            //StartCoroutine(FadeAndChangeScene(roomIndex));
             NetworConnectionEvent?.Invoke(NetworkCode.CONNECT_TO_ROOM_IN_PROGRESS);
             RoomSettings defaultRoom = _defaultRooms[roomIndex];
 
@@ -124,11 +138,34 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             roomOptions.MaxPlayers = defaultRoom.playersInRoom;
             roomOptions.IsVisible = defaultRoom.isRoomVisible;
             roomOptions.IsOpen = true;
-            PhotonNetwork.JoinOrCreateRoom(defaultRoom.name, roomOptions, TypedLobby.Default);
+            roomOptions.CustomRoomProperties = new ExitGames.Client.Photon.Hashtable();
+            roomOptions.CustomRoomProperties.Add(RoomSettings.ROOM_INDEX, roomIndex);
+            roomOptions.CustomRoomProperties.Add(RoomSettings.SCENE_ID, defaultRoom.sceneID);
+            PhotonNetwork.JoinOrCreateRoom(defaultRoom.name + " " + roomID, roomOptions, TypedLobby.Default);
         }
         else
         {
             _vrLogger.Log("[" + this.name + "] Room index " + roomIndex + " is not correct.");
+        }
+    }
+
+    /**
+    Подключение к комнате.
+
+    @param [in] roomInfo Информация о комнате, к которой производится подключение.
+    @note Внутри roomInfo.CustomProperties должен храниться ключ RoomSettings.SCENE_ID, хранящий значением id сцены, к которой необходимо подключиться.
+    Иначе подключение к комнате не произойдет.
+     */
+    public void JoinRoom(RoomInfo roomInfo)
+    {
+        if (roomInfo.CustomProperties.ContainsKey(RoomSettings.SCENE_ID))
+        {
+            PhotonNetwork.LoadLevel((int)roomInfo.CustomProperties[RoomSettings.SCENE_ID]);
+            PhotonNetwork.JoinRoom(roomInfo.Name);
+        }
+        else
+        {
+            _vrLogger.Log("[" + this.name + "] Room Info has not contain custom property: \"" + RoomSettings.SCENE_ID + "\".");
         }
     }
 
@@ -198,6 +235,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public override void OnJoinedLobby()
     {
         base.OnJoinedLobby();
+        
         NetworConnectionEvent?.Invoke(NetworkCode.CONNECT_TO_LOBBY_COMPLETE);
         _vrLogger.Log("[" + this.name + "] Some user is join to the lobby.");
         if (_autoStartTestRoom)
@@ -205,7 +243,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             _autoStartTestRoom = false;
             if (_defaultRooms.Count > 0)
             {
-                InitRoom(0);
+                InitRoom(0, 0);
             }
             else
             {
@@ -226,6 +264,25 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             ? "Some unknown user"
             : newPlayer.NickName
             + "is join to the room.");
+    }
+
+    /// Метод выполняемый при обновлении списка комнат. При добавлении/удалении комнаты.
+    public override void OnRoomListUpdate(List<RoomInfo> roomList)
+    {
+        NetworConnectionEvent?.Invoke(NetworkCode.ROOM_LIST_UPDATE);
+        foreach (RoomInfo room in roomList)
+        {
+            for (int i = 0; i < _defaultRooms.Count; i++)
+            {
+                if (_defaultRooms[i].name == room.Name.TrimEnd(new char[] { ' ', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' }))
+                {
+                    room.CustomProperties.Add(RoomSettings.ROOM_INDEX, i);
+                    room.CustomProperties.Add(RoomSettings.SCENE_ID, _defaultRooms[i].sceneID);
+                    break;
+                }
+            }
+        }
+        RoomListUpdate?.Invoke(roomList);
     }
 
     private void SpawnPlayerPrefab()

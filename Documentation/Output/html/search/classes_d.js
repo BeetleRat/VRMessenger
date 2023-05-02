@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['vrlogger_0',['VRLogger',['../class_v_r_logger.html',1,'']]],
-  ['vrloggersmanager_1',['VRLoggersManager',['../class_v_r_loggers_manager.html',1,'']]]
+  ['uiroomlistcontroller_0',['UIRoomListController',['../class_u_i_room_list_controller.html',1,'']]]
 ];

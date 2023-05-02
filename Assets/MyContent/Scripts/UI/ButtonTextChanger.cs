@@ -13,6 +13,7 @@ using TMPro;
 public class ButtonTextChanger : MonoBehaviour, IPointerEnterHandler
 {
     [SerializeField] private TMP_Text _textField;
+    [TextArea(2,4)]
     [SerializeField] private string _text;
 
     /// Реализация метода интерфейса. Метод вызываемый при наведении курсора на кнопку.

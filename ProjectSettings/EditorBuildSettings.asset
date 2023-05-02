@@ -9,8 +9,11 @@ EditorBuildSettings:
     path: Assets/MyContent/Scenes/Lobby.unity
     guid: caabe6d6ebc80a249bb0b99272060344
   - enabled: 1
-    path: Assets/MyContent/Scenes/VoiceRoom.unity
+    path: Assets/MyContent/Scenes/Rooms/AliceRoom.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/MyContent/Scenes/Rooms/ClassRoom.unity
+    guid: 8de4d838a4efb8847a14f4fa8ee28ad8
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 430793e93e2d35647adda8d664e3b4a9, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 49898377d3729c14eb8a4ad2728958b9, type: 2}

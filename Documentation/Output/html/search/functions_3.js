@@ -13,6 +13,7 @@ var searchData=
   ['getloggerlines_10',['GetLoggerLines',['../class_v_r_logger.html#a75bf5cfef64c42e3d9fc7cc0d053a6ba',1,'VRLogger']]],
   ['getnetworkmanager_11',['GetNetworkManager',['../class_component_catcher.html#a4a3d35aad10efd236f996ccfc36da811',1,'ComponentCatcher']]],
   ['getnetworkvariables_12',['GetNetworkVariables',['../class_component_catcher.html#a262cdb3e4fa9bd926ae918cbd23e4c9f',1,'ComponentCatcher']]],
-  ['gettextfromlogger_13',['GetTextFromLogger',['../class_v_r_logger.html#a087ddb963b1e608f126b8dec96f53644',1,'VRLogger']]],
-  ['getvrloggersmanager_14',['GetVRLoggersManager',['../class_component_catcher.html#a5012acd103f10a6ef1ba8962e57633aa',1,'ComponentCatcher']]]
+  ['getroominfo_13',['GetRoomInfo',['../class_room_list_item.html#a30ec046e0f82aaa3c23d29e930f6c148',1,'RoomListItem']]],
+  ['gettextfromlogger_14',['GetTextFromLogger',['../class_v_r_logger.html#a087ddb963b1e608f126b8dec96f53644',1,'VRLogger']]],
+  ['getvrloggersmanager_15',['GetVRLoggersManager',['../class_component_catcher.html#a5012acd103f10a6ef1ba8962e57633aa',1,'ComponentCatcher']]]
 ];

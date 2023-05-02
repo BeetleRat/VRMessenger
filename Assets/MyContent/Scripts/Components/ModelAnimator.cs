@@ -45,13 +45,19 @@ public class ModelAnimator : MonoBehaviour
     /// PhotonView отвечающий за синхронизацию данного объекта.
     [SerializeField] protected PhotonView _myPhotonView;
 
-    /// Геттер ControllerView.
+    /** 
+     Геттер ControllerView.
+     @return ControllerView данной модели.
+     */
     public ControllerView GetControllerView()
     {
         return _controller;
     }
 
-    /// Геттер ControllerType.
+    /**
+     Геттер ControllerType.
+     @return ControllerType данной модели.
+     */
     public ControllerType GetControllerType()
     {
         return _controller.Type;

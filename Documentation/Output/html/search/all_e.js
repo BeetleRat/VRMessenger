@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['right_0',['Right',['../_gesture_properties_8cs.html#a812eb479932da74350ebf90be87ccf13a92b09c7c48c520c3c55e497875da437c',1,'GestureProperties.cs']]],
-  ['rightgestchange_1',['RightGestChange',['../class_gesture_animation.html#a7a4e4a6474ba5dc22e939949b076b67e',1,'GestureAnimation']]],
-  ['ring_2',['Ring',['../class_gesture_properties.html#aa3f7df18380b3daf6cf1b36a1b3780ae',1,'GestureProperties']]],
-  ['roomsettings_3',['RoomSettings',['../class_room_settings.html',1,'']]]
+  ['pinky_0',['Pinky',['../class_gesture_properties.html#a96426808f6f17859b49d01dbaffeb352',1,'GestureProperties']]],
+  ['player_5fenter_5fthe_5froom_1',['PLAYER_ENTER_THE_ROOM',['../_network_manager_8cs.html#af47c12507cac2281b0b90a2bc21d2014a2282cda1b8d10c6b04ffdabce3ad74d7',1,'NetworkManager.cs']]],
+  ['playersinroom_2',['playersInRoom',['../class_room_settings.html#a14dcf0ae71f0faecde6821dec82a1d7f',1,'RoomSettings']]],
+  ['playersproperty_3',['PlayersProperty',['../class_players_property.html',1,'']]]
 ];

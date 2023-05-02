@@ -36,7 +36,10 @@
 
 - ChangeUILayer;
 - ButtonTextChanger;
+- UIRoomListController;
 - GifAnimation;
+- RoomListItem;
+- SetupRoomName;
 - InterfaceHider;
 - MenuSwapper;
 - VRLogger;

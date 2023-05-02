@@ -15,6 +15,9 @@ public class ChangeLayers
 /**
  ### Класс отвечающий за плавную смену слоев на UI экране
 
+@attention Для корректной работы данный класс требует, что бы в сцене присутствовали скрипты:
+- NetworkManager;
+
 @param catcher ComponentCatcher находящийся на данной сцене;
 @param startLayer Canvas отображаемый изначально;
 @param layers Список ChangeLayers, которые будут меняться в соответствии с указанными кодами;

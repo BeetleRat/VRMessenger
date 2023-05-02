@@ -118,9 +118,9 @@ $(document).ready(function(){initNavTree('class_network_manager_provider.html','
 <tr class="memitem:a381556e1845ed9ad39fb85e924d67766"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_manager_provider.html#a381556e1845ed9ad39fb85e924d67766">LeaveRoom</a> ()</td></tr>
 <tr class="memdesc:a381556e1845ed9ad39fb85e924d67766"><td class="mdescLeft">&#160;</td><td class="mdescRight">Покинуть комнату.  <br /></td></tr>
 <tr class="separator:a381556e1845ed9ad39fb85e924d67766"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afaf6526656d859b6e71f1b17a2eefbe3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_manager_provider.html#afaf6526656d859b6e71f1b17a2eefbe3">InitRoom</a> (int roomIndex)</td></tr>
-<tr class="memdesc:afaf6526656d859b6e71f1b17a2eefbe3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создание/подключение к комнате.  <br /></td></tr>
-<tr class="separator:afaf6526656d859b6e71f1b17a2eefbe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4df77cd1bb6374640830054af3fe95da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_manager_provider.html#a4df77cd1bb6374640830054af3fe95da">InitDefaultRoom</a> (int roomIndex)</td></tr>
+<tr class="memdesc:a4df77cd1bb6374640830054af3fe95da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создание/подключение к комнате нулевой комнате.  <br /></td></tr>
+<tr class="separator:a4df77cd1bb6374640830054af3fe95da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6107d4fcc9a3708c5897d8641806fbf8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_manager_provider.html#a6107d4fcc9a3708c5897d8641806fbf8">DisconnectedFromServer</a> ()</td></tr>
 <tr class="memdesc:a6107d4fcc9a3708c5897d8641806fbf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отключиться от сервера.  <br /></td></tr>
 <tr class="separator:a6107d4fcc9a3708c5897d8641806fbf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -131,7 +131,12 @@ $(document).ready(function(){initNavTree('class_network_manager_provider.html','
 <a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
 <div class="textblock"><h3><a class="anchor" id="autotoc_md19"></a>
 Класс, обеспечивающий взаимодействие UI с NetworkManager</h3>
-<p>Взаимодействую с <a class="el" href="class_component_catcher.html">ComponentCatcher</a>, данный класс предоставляет элементам UI взаимодействовать с <a class="el" href="class_network_manager.html">NetworkManager</a>. </p><dl class="params"><dt>Аргументы</dt><dd>
+<p>Взаимодействую с <a class="el" href="class_component_catcher.html">ComponentCatcher</a>, данный класс предоставляет элементам UI взаимодействовать с <a class="el" href="class_network_manager.html">NetworkManager</a>.</p>
+<dl class="section attention"><dt>Внимание</dt><dd>Для корректной работы данный класс требует, что бы в сцене присутствовали скрипты:<ul>
+<li><a class="el" href="class_network_manager.html">NetworkManager</a>;</li>
+</ul>
+</dd></dl>
+<dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
     <tr><td class="paramname">catcher</td><td><a class="el" href="class_component_catcher.html">ComponentCatcher</a>, который используется для получения доступа к <a class="el" href="class_network_manager.html">NetworkManager</a>. </td></tr>
   </table>
@@ -220,8 +225,8 @@ $(document).ready(function(){initNavTree('class_network_manager_provider.html','
 
 </div>
 </div>
-<a id="afaf6526656d859b6e71f1b17a2eefbe3" name="afaf6526656d859b6e71f1b17a2eefbe3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afaf6526656d859b6e71f1b17a2eefbe3">&#9670;&#160;</a></span>InitRoom()</h2>
+<a id="a4df77cd1bb6374640830054af3fe95da" name="a4df77cd1bb6374640830054af3fe95da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4df77cd1bb6374640830054af3fe95da">&#9670;&#160;</a></span>InitDefaultRoom()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -230,7 +235,7 @@ $(document).ready(function(){initNavTree('class_network_manager_provider.html','
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void NetworkManagerProvider.InitRoom </td>
+          <td class="memname">void NetworkManagerProvider.InitDefaultRoom </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>roomIndex</em></td><td>)</td>
@@ -244,7 +249,7 @@ $(document).ready(function(){initNavTree('class_network_manager_provider.html','
 </table>
 </div><div class="memdoc">
 
-<p>Создание/подключение к комнате. </p>
+<p>Создание/подключение к комнате нулевой комнате. </p>
 <p>Если комнаты не существует - она будет создана. Иначе произойдет подключение к существующей комнате. </p><dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">roomIndex</td><td>Индекс комнаты в defaultRooms, к которой мы хотим подключиться. </td></tr>

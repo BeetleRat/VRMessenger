@@ -1,15 +1,16 @@
 var searchData=
 [
-  ['sendpropertytoserver_3c_20t_20_3e_0',['SendPropertyToServer&lt; T &gt;',['../class_network_variables.html#ac5f437ebb0ac05479324c45eb8a8471f',1,'NetworkVariables']]],
-  ['setactive_1',['SetActive',['../class_model_animator.html#a279a3da1c1a8dd2f8d949352c4004415',1,'ModelAnimator']]],
-  ['setfromanothergestureproperties_2',['SetFromAnotherGestureProperties',['../class_gesture_properties.html#a7a635baec46e49fbe42ce0a422e4aa63',1,'GestureProperties']]],
-  ['setfromboolarray_3',['SetFromBoolArray',['../class_gesture_properties.html#ac55bb97cee88c62e4a788659b06d4d9f',1,'GestureProperties']]],
-  ['setloggerlines_4',['SetLoggerLines',['../class_v_r_logger.html#acb32511edf8461056d47ee85257c5e53',1,'VRLogger']]],
-  ['setnetworkmanager_5',['SetNetworkManager',['../class_v_r_loggers_manager.html#a5f4c7f067b80c3127d1a9065e3d7c8f3',1,'VRLoggersManager']]],
-  ['showinterface_6',['ShowInterface',['../class_interface_hider.html#a40d597c17c7bc544715d3206a62cf6e5',1,'InterfaceHider']]],
-  ['switchcontrollerview_7',['SwitchControllerView',['../class_controller_type_controller.html#a3462594b17128bc0dc6e76da0cbe1bbf',1,'ControllerTypeController']]],
-  ['switchmenu_8',['SwitchMenu',['../class_menu_swapper.html#a7fd40e78ed0942b6933d20d3a03ee77b',1,'MenuSwapper']]],
-  ['switchmicrophoneactivity_9',['SwitchMicrophoneActivity',['../class_microphone_controller.html#a57aa67280670f573251d60b98b0e68c5',1,'MicrophoneController']]],
-  ['switchmute_10',['SwitchMute',['../class_audio_controller.html#a579d65568a6ab4074a5d732489ac590d',1,'AudioController']]],
-  ['switchmutetoall_11',['SwitchMuteToAll',['../class_audio_controller.html#a1ca5d5e7af4481ed873c185ee3de49ad',1,'AudioController']]]
+  ['onclick_0',['OnClick',['../class_room_list_item.html#a0d42f2ae4d2676f7a7fb623bcd07a03b',1,'RoomListItem']]],
+  ['onconnectedtomaster_1',['OnConnectedToMaster',['../class_network_manager.html#a2907d28a8bca9550377fda2b1b7c468c',1,'NetworkManager']]],
+  ['ondisconnected_2',['OnDisconnected',['../class_network_manager.html#ac375b47ddedb708c005e91a0f6408acf',1,'NetworkManager']]],
+  ['onjoinedlobby_3',['OnJoinedLobby',['../class_network_manager.html#ad3c58c6698265458e5d4286927841bbd',1,'NetworkManager']]],
+  ['onjoinedroom_4',['OnJoinedRoom',['../class_network_manager.html#ac15073b611b251554ddd342f2a7f5922',1,'NetworkManager']]],
+  ['onleftroom_5',['OnLeftRoom',['../class_network_manager.html#a805d6d5bf3f07b909c08ba75677114d1',1,'NetworkManager']]],
+  ['onownershiprequest_6',['OnOwnershipRequest',['../class_ownership_transfer.html#aeb9d652b7706e1588203bacab7d815fe',1,'OwnershipTransfer']]],
+  ['onownershiptransfered_7',['OnOwnershipTransfered',['../class_ownership_transfer.html#a5b9cbecf6177455f3b350b9a02ad6fe6',1,'OwnershipTransfer']]],
+  ['onownershiptransferfailed_8',['OnOwnershipTransferFailed',['../class_ownership_transfer.html#ae90530f8f964adbc566e22db16959865',1,'OwnershipTransfer']]],
+  ['onplayerenteredroom_9',['OnPlayerEnteredRoom',['../class_network_manager.html#a3dc46f673d499dd599d05dab242092f1',1,'NetworkManager']]],
+  ['onplayerpropertiesupdate_10',['OnPlayerPropertiesUpdate',['../class_network_variables.html#a5dff42ff4478ad2611de4410c584f08c',1,'NetworkVariables']]],
+  ['onpointerenter_11',['OnPointerEnter',['../class_button_text_changer.html#aff50552f8a5b46f20fad6ca366112835',1,'ButtonTextChanger']]],
+  ['onroomlistupdate_12',['OnRoomListUpdate',['../class_network_manager.html#a6433e83098e4ba237c4d9132491750cc',1,'NetworkManager']]]
 ];

@@ -34,7 +34,10 @@ var hierarchy =
       ] ],
       [ "NetworkManagerProvider", "class_network_manager_provider.html", null ],
       [ "NetworkPlayer", "class_network_player.html", null ],
+      [ "RoomListItem", "class_room_list_item.html", null ],
       [ "SceneChanger", "class_scene_changer.html", null ],
+      [ "SetupRoomName", "class_setup_room_name.html", null ],
+      [ "UIRoomListController", "class_u_i_room_list_controller.html", null ],
       [ "VRLogger", "class_v_r_logger.html", null ],
       [ "VRLoggersManager", "class_v_r_loggers_manager.html", null ]
     ] ],

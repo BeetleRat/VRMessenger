@@ -21,7 +21,7 @@ using UnityEngine.XR;
 Локальные компоненты запрашивают данный класс через свои свойства. 
 А компоненты спавнемые сервером будут искать ComponentCatcher в сцене.
 
-ComponentCatcher безусловно отлавливает компоненты:
+@note ComponentCatcher безусловно отлавливает компоненты:
  - VRLoggersManager;
  - NetworkManager;
  - ControllerEvents;

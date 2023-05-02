@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Photon.Pun;
 
 /**
  ### Класс обеспечивающий проигрывание анимации контроллеров Oculus на сервере
 
 Данный класс обновляет анимацию моделей контроллера на сервере, в зависимости от нажатых на локальном контроллере кнопок/стиков/триггеров.
+@bug При возвращении из комнаты в лобби возникает NullPointerException, связанный с данным классом.
  */
 public class ControllerAnimationUpdater : ModelAnimator
 {

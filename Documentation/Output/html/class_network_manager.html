@@ -119,9 +119,12 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
 <tr class="memitem:a2907d28a8bca9550377fda2b1b7c468c"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_manager.html#a2907d28a8bca9550377fda2b1b7c468c">OnConnectedToMaster</a> ()</td></tr>
 <tr class="memdesc:a2907d28a8bca9550377fda2b1b7c468c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Метод, выполняемый при подключении к серверу.  <br /></td></tr>
 <tr class="separator:a2907d28a8bca9550377fda2b1b7c468c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8325ef9af6103df17adb4e7c50c80c16"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_manager.html#a8325ef9af6103df17adb4e7c50c80c16">InitRoom</a> (int roomIndex)</td></tr>
-<tr class="memdesc:a8325ef9af6103df17adb4e7c50c80c16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создание/подключение к комнате.  <br /></td></tr>
-<tr class="separator:a8325ef9af6103df17adb4e7c50c80c16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94718c92cb00dc9edb8fa7cebd5be785"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_manager.html#a94718c92cb00dc9edb8fa7cebd5be785">InitRoom</a> (int roomIndex, int roomID)</td></tr>
+<tr class="memdesc:a94718c92cb00dc9edb8fa7cebd5be785"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создание/подключение к комнате.  <br /></td></tr>
+<tr class="separator:a94718c92cb00dc9edb8fa7cebd5be785"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8371b748d88d400c9b4f1c884fc8065c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_manager.html#a8371b748d88d400c9b4f1c884fc8065c">JoinRoom</a> (RoomInfo roomInfo)</td></tr>
+<tr class="memdesc:a8371b748d88d400c9b4f1c884fc8065c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Подключение к комнате.  <br /></td></tr>
+<tr class="separator:a8371b748d88d400c9b4f1c884fc8065c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb1af2a4063a6959605a3bc7d11cff40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_manager.html#abb1af2a4063a6959605a3bc7d11cff40">LeaveRoom</a> ()</td></tr>
 <tr class="memdesc:abb1af2a4063a6959605a3bc7d11cff40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Покинуть текущую комнату  <br /></td></tr>
 <tr class="separator:abb1af2a4063a6959605a3bc7d11cff40"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -143,12 +146,18 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
 <tr class="memitem:a3dc46f673d499dd599d05dab242092f1"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_manager.html#a3dc46f673d499dd599d05dab242092f1">OnPlayerEnteredRoom</a> (Player newPlayer)</td></tr>
 <tr class="memdesc:a3dc46f673d499dd599d05dab242092f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Метод выполняемый, когда другой игрок подключился к комнате.  <br /></td></tr>
 <tr class="separator:a3dc46f673d499dd599d05dab242092f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6433e83098e4ba237c4d9132491750cc"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_manager.html#a6433e83098e4ba237c4d9132491750cc">OnRoomListUpdate</a> (List&lt; RoomInfo &gt; roomList)</td></tr>
+<tr class="memdesc:a6433e83098e4ba237c4d9132491750cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Метод выполняемый при обновлении списка комнат. При добавлении/удалении комнаты.  <br /></td></tr>
+<tr class="separator:a6433e83098e4ba237c4d9132491750cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="events" name="events"></a>
 События</h2></td></tr>
 <tr class="memitem:a804831067d73f1f8d70136ac58456c89"><td class="memItemLeft" align="right" valign="top">UnityAction&lt; <a class="el" href="_network_manager_8cs.html#af47c12507cac2281b0b90a2bc21d2014">NetworkCode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_manager.html#a804831067d73f1f8d70136ac58456c89">NetworConnectionEvent</a></td></tr>
 <tr class="memdesc:a804831067d73f1f8d70136ac58456c89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Событие сервера.  <br /></td></tr>
 <tr class="separator:a804831067d73f1f8d70136ac58456c89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98ae49a486704046f5a604039463cfd2"><td class="memItemLeft" align="right" valign="top">UnityAction&lt; List&lt; RoomInfo &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_manager.html#a98ae49a486704046f5a604039463cfd2">RoomListUpdate</a></td></tr>
+<tr class="memdesc:a98ae49a486704046f5a604039463cfd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Событие обновление списка комнат.  <br /></td></tr>
+<tr class="separator:a98ae49a486704046f5a604039463cfd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
 <div class="textblock"><h3><a class="anchor" id="autotoc_md18"></a>
@@ -235,8 +244,8 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
 
 </div>
 </div>
-<a id="a8325ef9af6103df17adb4e7c50c80c16" name="a8325ef9af6103df17adb4e7c50c80c16"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8325ef9af6103df17adb4e7c50c80c16">&#9670;&#160;</a></span>InitRoom()</h2>
+<a id="a94718c92cb00dc9edb8fa7cebd5be785" name="a94718c92cb00dc9edb8fa7cebd5be785"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94718c92cb00dc9edb8fa7cebd5be785">&#9670;&#160;</a></span>InitRoom()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -248,8 +257,18 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
           <td class="memname">void NetworkManager.InitRoom </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>roomIndex</em></td><td>)</td>
+          <td class="paramname"><em>roomIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>roomID</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -263,9 +282,45 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
 <p>Если комнаты не существует - она будет создана. Иначе произойдет подключение к существующей комнате. </p><dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">roomIndex</td><td>Индекс комнаты в defaultRooms, к которой мы хотим подключиться. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">roomID</td><td>Индекс комнаты. При создании нескольких комнат из одного шаблона мы хотим различать их по ID </td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a8371b748d88d400c9b4f1c884fc8065c" name="a8371b748d88d400c9b4f1c884fc8065c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8371b748d88d400c9b4f1c884fc8065c">&#9670;&#160;</a></span>JoinRoom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NetworkManager.JoinRoom </td>
+          <td>(</td>
+          <td class="paramtype">RoomInfo&#160;</td>
+          <td class="paramname"><em>roomInfo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Подключение к комнате. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">roomInfo</td><td>Информация о комнате, к которой производится подключение. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Заметки</dt><dd>Внутри roomInfo.CustomProperties должен храниться ключ <a class="el" href="class_room_settings.html#a71cf680d7f3e8cbe82bb5b6005513a67" title="Ключ для поля CustomProperties в RoomInfo.">RoomSettings.SCENE_ID</a>, хранящий значением id сцены, к которой необходимо подключиться. Иначе подключение к комнате не произойдет. </dd></dl>
 
 </div>
 </div>
@@ -472,6 +527,34 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
 
 </div>
 </div>
+<a id="a6433e83098e4ba237c4d9132491750cc" name="a6433e83098e4ba237c4d9132491750cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6433e83098e4ba237c4d9132491750cc">&#9670;&#160;</a></span>OnRoomListUpdate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">override void NetworkManager.OnRoomListUpdate </td>
+          <td>(</td>
+          <td class="paramtype">List&lt; RoomInfo &gt;&#160;</td>
+          <td class="paramname"><em>roomList</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Метод выполняемый при обновлении списка комнат. При добавлении/удалении комнаты. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Cобытия</h2>
 <a id="a804831067d73f1f8d70136ac58456c89" name="a804831067d73f1f8d70136ac58456c89"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a804831067d73f1f8d70136ac58456c89">&#9670;&#160;</a></span>NetworConnectionEvent</h2>
@@ -486,6 +569,22 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
 </div><div class="memdoc">
 
 <p>Событие сервера. </p>
+
+</div>
+</div>
+<a id="a98ae49a486704046f5a604039463cfd2" name="a98ae49a486704046f5a604039463cfd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98ae49a486704046f5a604039463cfd2">&#9670;&#160;</a></span>RoomListUpdate</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">UnityAction&lt;List&lt;RoomInfo&gt; &gt; NetworkManager.RoomListUpdate</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Событие обновление списка комнат. </p>
 
 </div>
 </div>

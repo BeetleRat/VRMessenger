@@ -6,6 +6,10 @@ using UnityEngine;
  ### Класс, обеспечивающий взаимодействие UI с NetworkManager
 
 Взаимодействую с ComponentCatcher, данный класс предоставляет элементам UI взаимодействовать с NetworkManager.
+
+@attention Для корректной работы данный класс требует, что бы в сцене присутствовали скрипты:
+- NetworkManager;
+
 @param catcher ComponentCatcher, который используется для получения доступа к NetworkManager.
  */
 public class NetworkManagerProvider : MonoBehaviour
@@ -35,15 +39,15 @@ public class NetworkManagerProvider : MonoBehaviour
     }
 
     /**
-    Создание/подключение к комнате.
+    Создание/подключение к комнате нулевой комнате.
 
     Если комнаты не существует - она будет создана. 
     Иначе произойдет подключение к существующей комнате.
     @param [in] roomIndex Индекс комнаты в defaultRooms, к которой мы хотим подключиться.
      */
-    public void InitRoom(int roomIndex)
+    public void InitDefaultRoom(int roomIndex)
     {
-        _networkManager?.InitRoom(roomIndex);
+        _networkManager?.InitRoom(roomIndex, 0);
     }
 
     /// Отключиться от сервера.

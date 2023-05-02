@@ -5,6 +5,9 @@ var dir_6f3fc9751db760227e98ac1a71462b7a =
     [ "GifAnimation.cs", "_gif_animation_8cs.html", "_gif_animation_8cs" ],
     [ "InterfaceHider.cs", "_interface_hider_8cs.html", "_interface_hider_8cs" ],
     [ "MenuSwapper.cs", "_menu_swapper_8cs.html", "_menu_swapper_8cs" ],
+    [ "RoomListItem.cs", "_room_list_item_8cs.html", "_room_list_item_8cs" ],
+    [ "SetupRoomName.cs", "_setup_room_name_8cs.html", "_setup_room_name_8cs" ],
+    [ "UIRoomListController.cs", "_u_i_room_list_controller_8cs.html", "_u_i_room_list_controller_8cs" ],
     [ "VRLogger.cs", "_v_r_logger_8cs.html", "_v_r_logger_8cs" ],
     [ "VRLoggersManager.cs", "_v_r_loggers_manager_8cs.html", "_v_r_loggers_manager_8cs" ]
 ];

@@ -26,6 +26,7 @@ var NAVTREE =
 [
   [ "VRMessenger", "index.html", [
     [ "Многопользовательский интерфейс для общения в виртуальной реальности с использованием аватаров", "index.html", "index" ],
+    [ "Ошибки", "bug.html", null ],
     [ "Классы", "annotated.html", [
       [ "Классы", "annotated.html", "annotated_dup" ],
       [ "Алфавитный указатель классов", "classes.html", null ],

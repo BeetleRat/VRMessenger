@@ -29,8 +29,11 @@ var annotated_dup =
     [ "NetworkVariables", "class_network_variables.html", "class_network_variables" ],
     [ "OwnershipTransfer", "class_ownership_transfer.html", "class_ownership_transfer" ],
     [ "PlayersProperty", "class_players_property.html", null ],
+    [ "RoomListItem", "class_room_list_item.html", "class_room_list_item" ],
     [ "RoomSettings", "class_room_settings.html", "class_room_settings" ],
     [ "SceneChanger", "class_scene_changer.html", "class_scene_changer" ],
+    [ "SetupRoomName", "class_setup_room_name.html", null ],
+    [ "UIRoomListController", "class_u_i_room_list_controller.html", "class_u_i_room_list_controller" ],
     [ "VRLogger", "class_v_r_logger.html", "class_v_r_logger" ],
     [ "VRLoggersManager", "class_v_r_loggers_manager.html", "class_v_r_loggers_manager" ]
 ];

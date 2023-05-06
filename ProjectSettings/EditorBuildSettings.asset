@@ -13,7 +13,7 @@ EditorBuildSettings:
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/MyContent/Scenes/Rooms/ClassRoom.unity
-    guid: 8de4d838a4efb8847a14f4fa8ee28ad8
+    guid: 5055ebd0cf6610a488e3f0457aaa19ab
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 430793e93e2d35647adda8d664e3b4a9, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 49898377d3729c14eb8a4ad2728958b9, type: 2}

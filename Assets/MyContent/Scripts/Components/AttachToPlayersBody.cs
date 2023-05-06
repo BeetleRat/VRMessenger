@@ -36,7 +36,10 @@ public class AttachToPlayersBody : MonoBehaviour
     private void Start()
     {
         _controllerEvents = _catcher.GetControllerEvents();
-        _controllerEvents.ControllerTypeChange += OnAttachChange;
+        if (_controllerEvents != null)
+        {
+            _controllerEvents.ControllerTypeChange += OnAttachChange;           
+        }
 
         _currentPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z);
         _currentRotation = new Vector3(transform.localRotation.eulerAngles.x, transform.localRotation.eulerAngles.y, transform.localRotation.eulerAngles.z);

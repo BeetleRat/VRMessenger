@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15475097, g: 0.34008187, b: 1.1461469, a: 1}
+  m_IndirectSpecularColor: {r: 0.1565143, g: 0.33968535, b: 1.1452425, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9997,7 +9997,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _vrLogger: {fileID: 942149978}
   _sceneChanger: {fileID: 1281743873}
-  _playersPrefabName: NetworkPlayerPrefab
+  _playersPrefabName: NetworkPlayerPrefabGostHands
   _defaultRooms:
   - name: Alice Room
     sceneID: 1

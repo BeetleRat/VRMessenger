@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['oculuscontroller_0',['OculusController',['../_model_animator_8cs.html#a81059b4122c9dd4608d347eb117ae8c9a916fc1c295e02732c591192a8b3fa69d',1,'ModelAnimator.cs']]],
+  ['oculuscontroller_0',['OculusController',['../_controller_model_8cs.html#a81059b4122c9dd4608d347eb117ae8c9a916fc1c295e02732c591192a8b3fa69d',1,'ControllerModel.cs']]],
   ['onclick_1',['OnClick',['../class_room_list_item.html#a0d42f2ae4d2676f7a7fb623bcd07a03b',1,'RoomListItem']]],
   ['onconnectedtomaster_2',['OnConnectedToMaster',['../class_network_manager.html#a2907d28a8bca9550377fda2b1b7c468c',1,'NetworkManager']]],
   ['ondisconnected_3',['OnDisconnected',['../class_network_manager.html#ac375b47ddedb708c005e91a0f6408acf',1,'NetworkManager']]],

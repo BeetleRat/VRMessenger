@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['pinky_0',['Pinky',['../class_gesture_properties.html#a96426808f6f17859b49d01dbaffeb352',1,'GestureProperties']]],
-  ['playersinroom_1',['playersInRoom',['../class_room_settings.html#a14dcf0ae71f0faecde6821dec82a1d7f',1,'RoomSettings']]]
+  ['rightgestchange_0',['RightGestChange',['../class_gesture_animation.html#a7a4e4a6474ba5dc22e939949b076b67e',1,'GestureAnimation']]],
+  ['ring_1',['Ring',['../class_gesture_properties.html#aa3f7df18380b3daf6cf1b36a1b3780ae',1,'GestureProperties']]],
+  ['room_5findex_2',['ROOM_INDEX',['../class_room_settings.html#ab2fc1334f002a485d3e40ec6245fe269',1,'RoomSettings']]]
 ];

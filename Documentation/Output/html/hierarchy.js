@@ -1,7 +1,6 @@
 var hierarchy =
 [
     [ "ChangeLayers", "class_change_layers.html", null ],
-    [ "ControllerView", "class_controller_view.html", null ],
     [ "IPointerEnterHandler", null, [
       [ "ButtonTextChanger", "class_button_text_changer.html", null ]
     ] ],
@@ -15,6 +14,11 @@ var hierarchy =
       [ "ChangeUILayer", "class_change_u_i_layer.html", null ],
       [ "ComponentCatcher", "class_component_catcher.html", null ],
       [ "ControllerEvents", "class_controller_events.html", null ],
+      [ "ControllerModel", "class_controller_model.html", [
+        [ "ControllerAnimationUpdater", "class_controller_animation_updater.html", null ],
+        [ "GostHandTransformUpdater", "class_gost_hand_transform_updater.html", null ],
+        [ "HandsAnimaionUpdater", "class_hands_animaion_updater.html", null ]
+      ] ],
       [ "ControllerTypeController", "class_controller_type_controller.html", null ],
       [ "EasySingleton", "class_easy_singleton.html", null ],
       [ "GestureDetector", "class_gesture_detector.html", [
@@ -28,10 +32,6 @@ var hierarchy =
       [ "MenuSwapper", "class_menu_swapper.html", null ],
       [ "MicrophoneController", "class_microphone_controller.html", null ],
       [ "MicrophoneNetworkSettings", "class_microphone_network_settings.html", null ],
-      [ "ModelAnimator", "class_model_animator.html", [
-        [ "ControllerAnimationUpdater", "class_controller_animation_updater.html", null ],
-        [ "HandsAnimaionUpdater", "class_hands_animaion_updater.html", null ]
-      ] ],
       [ "NetworkManagerProvider", "class_network_manager_provider.html", null ],
       [ "NetworkPlayer", "class_network_player.html", null ],
       [ "RoomListItem", "class_room_list_item.html", null ],

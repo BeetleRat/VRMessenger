@@ -9,14 +9,14 @@ using Photon.Pun;
 Данный класс используется в prefab-е игрока на сервере. 
 Когда локальный игрок меняет тип контроллера (с контроллеров на руки или наоборот), 
 данный класс изменяет меняет отображаемый тип контроллера на сервере.
-@param controllers ModelAnimator[] Массив переключаемых контроллеров.
+@param controllers ControllerModel[] Массив переключаемых контроллеров.
  */
 public class ControllerTypeController : MonoBehaviour
 {
-    [SerializeField] private ModelAnimator[] _controllers;
+    [SerializeField] private ControllerModel[] _controllers;
 
     private ControllerType _currentControllerType;
-    private ModelAnimator _currentController;
+    private ControllerModel _currentController;
 
     private void Start()
     {
@@ -28,7 +28,7 @@ public class ControllerTypeController : MonoBehaviour
         _currentControllerType = controllerType;
         if (_currentController == null || _currentController.GetControllerType() != controllerType)
         {
-            foreach (ModelAnimator controller in _controllers)
+            foreach (ControllerModel controller in _controllers)
             {
                 if (controller.GetControllerType() == controllerType)
                 {

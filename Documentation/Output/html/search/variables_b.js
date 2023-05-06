@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['scene_5fid_0',['SCENE_ID',['../class_room_settings.html#a71cf680d7f3e8cbe82bb5b6005513a67',1,'RoomSettings']]],
-  ['sceneid_1',['sceneID',['../class_room_settings.html#afc9a0480408a75cbf692cb22c12cf543',1,'RoomSettings']]]
+  ['thumb_0',['Thumb',['../class_gesture_properties.html#a5728ad04b62f327b20873f5a72a84ea2',1,'GestureProperties']]],
+  ['type_1',['Type',['../class_gesture_properties.html#a5f3dd3320ae82d4de6895524a3ec680b',1,'GestureProperties']]]
 ];

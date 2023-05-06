@@ -5,7 +5,7 @@ var searchData=
   ['scenechanger_2ecs_2',['SceneChanger.cs',['../_scene_changer_8cs.html',1,'']]],
   ['sceneid_3',['sceneID',['../class_room_settings.html#afc9a0480408a75cbf692cb22c12cf543',1,'RoomSettings']]],
   ['sendpropertytoserver_3c_20t_20_3e_4',['SendPropertyToServer&lt; T &gt;',['../class_network_variables.html#ac5f437ebb0ac05479324c45eb8a8471f',1,'NetworkVariables']]],
-  ['setactive_5',['SetActive',['../class_model_animator.html#a279a3da1c1a8dd2f8d949352c4004415',1,'ModelAnimator']]],
+  ['setactive_5',['SetActive',['../class_controller_model.html#ac8f1e6e6d660a0c41fc2aab7ff690031',1,'ControllerModel']]],
   ['setfromanothergestureproperties_6',['SetFromAnotherGestureProperties',['../class_gesture_properties.html#a7a635baec46e49fbe42ce0a422e4aa63',1,'GestureProperties']]],
   ['setfromboolarray_7',['SetFromBoolArray',['../class_gesture_properties.html#ac55bb97cee88c62e4a788659b06d4d9f',1,'GestureProperties']]],
   ['setloggerlines_8',['SetLoggerLines',['../class_v_r_logger.html#acb32511edf8461056d47ee85257c5e53',1,'VRLogger']]],

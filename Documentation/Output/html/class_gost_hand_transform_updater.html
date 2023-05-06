@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VRMessenger: Класс ControllerAnimationUpdater</title>
+<title>VRMessenger: Класс GostHandTransformUpdater</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('class_controller_animation_updater.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('class_gost_hand_transform_updater.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -98,17 +98,17 @@ $(document).ready(function(){initNavTree('class_controller_animation_updater.htm
 
 <div class="header">
   <div class="summary">
-<a href="class_controller_animation_updater-members.html">Полный список членов класса</a>  </div>
-  <div class="headertitle"><div class="title">Класс ControllerAnimationUpdater</div></div>
+<a href="class_gost_hand_transform_updater-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс GostHandTransformUpdater</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
-Граф наследования:ControllerAnimationUpdater:</div>
+Граф наследования:GostHandTransformUpdater:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="class_controller_animation_updater.png" usemap="#ControllerAnimationUpdater_map" alt=""/>
-  <map id="ControllerAnimationUpdater_map" name="ControllerAnimationUpdater_map">
-<area href="class_controller_model.html" alt="ControllerModel" shape="rect" coords="0,56,167,80"/>
+  <img src="class_gost_hand_transform_updater.png" usemap="#GostHandTransformUpdater_map" alt=""/>
+  <map id="GostHandTransformUpdater_map" name="GostHandTransformUpdater_map">
+<area href="class_controller_model.html" alt="ControllerModel" shape="rect" coords="0,56,168,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -139,15 +139,64 @@ $(document).ready(function(){initNavTree('class_controller_animation_updater.htm
 <tr class="separator:a74df3537ccdf4ee38bf884ee3a092e3b inherit pro_attribs_class_controller_model"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
-<div class="textblock"><h3><a class="anchor" id="autotoc_md2"></a>
-Класс обеспечивающий проигрывание анимации контроллеров Oculus на сервере</h3>
-<p>Данный класс обновляет анимацию моделей контроллера на сервере, в зависимости от нажатых на локальном контроллере кнопок/стиков/триггеров. </p><dl class="bug"><dt><b><a class="el" href="bug.html#_bug000001">Ошибка:</a></b></dt><dd>При возвращении из комнаты в лобби возникает NullPointerException, связанный с данным классом.</dd></dl>
+<div class="textblock"><h3><a class="anchor" id="autotoc_md7"></a>
+�����, ���������� �� ������������� ��������� ��� �� �������</h3>
+<p>������ ����� �������������� ���� �� prefab-� LeftHandSynthetic/RightHandSynthetic.</p>
+<p>����� ������������� �� �������� ������ � �����. � ������ �� ���� � ����� � � ���������� ������� ������� � ����������:</p><ul>
+<li>b_l_wrist;</li>
+<li>b_r_wrist;</li>
+<li>b_l_index1;</li>
+<li>b_r_index1;</li>
+<li>b_l_index2;</li>
+<li>b_r_index2;</li>
+<li>b_l_index3;</li>
+<li>b_r_index3;</li>
+<li>b_l_middle1;</li>
+<li>b_r_middle1;</li>
+<li>b_l_middle2;</li>
+<li>b_r_middle2;</li>
+<li>b_l_middle3;</li>
+<li>b_r_middle3;</li>
+<li>b_l_pinky0;</li>
+<li>b_r_pinky0;</li>
+<li>b_l_pinky1;</li>
+<li>b_r_pinky1;</li>
+<li>b_l_pinky2;</li>
+<li>b_r_pinky2;</li>
+<li>b_l_pinky3;</li>
+<li>b_r_pinky3;</li>
+<li>b_l_ring1;</li>
+<li>b_r_ring1;</li>
+<li>b_l_ring2;</li>
+<li>b_r_ring2;</li>
+<li>b_l_ring3;</li>
+<li>b_r_ring3;</li>
+<li>b_l_thumb0;</li>
+<li>b_r_thumb0;</li>
+<li>b_l_thumb1;</li>
+<li>b_r_thumb1;</li>
+<li>b_l_thumb2;</li>
+<li>b_r_thumb2;</li>
+<li>b_l_thumb3;</li>
+<li>b_r_thumb3; <dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">handType</td><td>��� ����:<ul>
+<li>None;</li>
+<li>Right;</li>
+<li>Left; </li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+</li>
+</ul>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="class_controller_animation_updater.html">ControllerAnimationUpdater</a></li>
+    <li class="navelem"><a class="el" href="class_gost_hand_transform_updater.html">GostHandTransformUpdater</a></li>
     <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
   </ul>
 </div>

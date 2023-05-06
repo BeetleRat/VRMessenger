@@ -206,12 +206,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b599ee163ab32ee458e042da6eba3a47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _controller:
-    ControllerModel: {fileID: 4389880965629056043}
-    Animator: {fileID: 4389880965619574779}
-    Type: 0
-  _controllerType: 1
   _myPhotonView: {fileID: 9038313837189576999}
+  _objectModel: {fileID: 4389880965629056043}
+  _type: 0
+  _controllerType: 1
+  _animator: {fileID: 4389880965619574779}
 --- !u!1 &738892789763373324
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,12 +352,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd49b2b7775a61f4baa6696a8bdd9338, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _controller:
-    ControllerModel: {fileID: 3077820370031251861}
-    Animator: {fileID: 8583123297080774997}
-    Type: 1
-  _controllerType: 1
   _myPhotonView: {fileID: 9038313837189576999}
+  _objectModel: {fileID: 3077820370031251861}
+  _type: 1
+  _controllerType: 32
+  _animator: {fileID: 8583123297080774997}
 --- !u!1 &3078234833764095597
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,12 +402,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd49b2b7775a61f4baa6696a8bdd9338, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _controller:
-    ControllerModel: {fileID: 7946142400653004291}
-    Animator: {fileID: 3741825062170922691}
-    Type: 1
-  _controllerType: 2
   _myPhotonView: {fileID: 9038313837189576999}
+  _objectModel: {fileID: 7946142400653004291}
+  _type: 1
+  _controllerType: 64
+  _animator: {fileID: 3741825062170922691}
 --- !u!1 &3584607859917531988
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,12 +648,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b599ee163ab32ee458e042da6eba3a47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _controller:
-    ControllerModel: {fileID: 8983374337303040834}
-    Animator: {fileID: 8983374337312530576}
-    Type: 0
-  _controllerType: 2
   _myPhotonView: {fileID: 9038313837189576999}
+  _objectModel: {fileID: 8983374337303040834}
+  _type: 0
+  _controllerType: 2
+  _animator: {fileID: 8983374337312530576}
 --- !u!1 &6638621432576407339
 GameObject:
   m_ObjectHideFlags: 0

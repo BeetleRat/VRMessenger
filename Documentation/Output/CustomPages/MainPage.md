@@ -13,9 +13,10 @@
 
 @section section2 Скрипты для работы с компонентами
 
-- ModelAnimator;
+- ControllerModel;
 - ControllerAnimationUpdater;
 - HandsAnimaionUpdater;
+- GostHandTransformUpdater;
 - MicrophoneController;
 - MicrophoneNetworkSettings;
 - AudioController;

@@ -8,11 +8,14 @@ using UnityEngine;
 Данный класс обновляет анимацию моделей контроллера на сервере, в зависимости от нажатых на локальном контроллере кнопок/стиков/триггеров.
 @bug При возвращении из комнаты в лобби возникает NullPointerException, связанный с данным классом.
  */
-public class ControllerAnimationUpdater : ModelAnimator
+public class ControllerAnimationUpdater : ControllerModel
 {
+    /// Аниматор, который используется для анимации модели контроллера.
+    [SerializeField] private Animator _animator;
+
     private void Update()
     {
-        UpdateAnimation(_controller.Animator);
+        UpdateAnimation(_animator);
     }
 
     private void UpdateAnimation(Animator animator)

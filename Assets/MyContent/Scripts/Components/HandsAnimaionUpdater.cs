@@ -14,8 +14,11 @@ using Photon.Realtime;
 - NetworkVariables;
 - GestureAnimation;
  */
-public class HandsAnimaionUpdater : ModelAnimator
+public class HandsAnimaionUpdater : ControllerModel
 {
+    /// Аниматор, который используется для анимации модели контроллера.
+    [SerializeField] private Animator _animator;
+
     private GestureAnimation _gestureAnimation;
 
     private GestureProperties _fingers;
@@ -51,7 +54,7 @@ public class HandsAnimaionUpdater : ModelAnimator
 
     private void Update()
     {
-        UpdateAnimation(_controller.Animator);
+        UpdateAnimation(_animator);
     }
 
     private void UpdateAnimation(Animator animator)

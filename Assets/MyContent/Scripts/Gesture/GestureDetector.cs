@@ -17,8 +17,15 @@ public abstract class GestureDetector : MonoBehaviour
     {
         foreach (ActiveStateSelector gesture in _gestures)
         {
-            gesture.WhenSelected += () => GestureSelected(gesture);
-            gesture.WhenUnselected += () => GestureUnselected(gesture);
+            if (gesture != null)
+            {
+                gesture.WhenSelected += () => GestureSelected(gesture);
+                gesture.WhenUnselected += () => GestureUnselected(gesture);
+            }
+            else
+            {
+                Debug.LogWarning("[" + gameObject.name + "] В массиве жестов есть null.");
+            }
         }
     }
 

@@ -34,6 +34,7 @@ var hierarchy =
       [ "MicrophoneNetworkSettings", "class_microphone_network_settings.html", null ],
       [ "NetworkManagerProvider", "class_network_manager_provider.html", null ],
       [ "NetworkPlayer", "class_network_player.html", null ],
+      [ "RigidBodySycn", "class_rigid_body_sycn.html", null ],
       [ "RoomListItem", "class_room_list_item.html", null ],
       [ "SceneChanger", "class_scene_changer.html", null ],
       [ "SetupRoomName", "class_setup_room_name.html", null ],

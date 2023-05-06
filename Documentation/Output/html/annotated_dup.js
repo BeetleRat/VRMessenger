@@ -29,6 +29,7 @@ var annotated_dup =
     [ "NetworkVariables", "class_network_variables.html", "class_network_variables" ],
     [ "OwnershipTransfer", "class_ownership_transfer.html", "class_ownership_transfer" ],
     [ "PlayersProperty", "class_players_property.html", null ],
+    [ "RigidBodySycn", "class_rigid_body_sycn.html", null ],
     [ "RoomListItem", "class_room_list_item.html", "class_room_list_item" ],
     [ "RoomSettings", "class_room_settings.html", "class_room_settings" ],
     [ "SceneChanger", "class_scene_changer.html", "class_scene_changer" ],

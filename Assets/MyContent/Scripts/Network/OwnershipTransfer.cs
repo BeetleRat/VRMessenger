@@ -22,6 +22,7 @@ using Photon.Realtime;
 @attention Для корректной работы данный класс требует, что бы в сцене присутствовали скрипты:
 - ComponentCatcher;
 - VRLoggersManager;
+- NetworkVariables;
  */
 [RequireComponent(typeof(Grabbable))]
 public class OwnershipTransfer : MonoBehaviourPun, IPunOwnershipCallbacks
@@ -33,7 +34,7 @@ public class OwnershipTransfer : MonoBehaviourPun, IPunOwnershipCallbacks
     private void Awake()
     {
         PhotonNetwork.AddCallbackTarget(this);
-        _grabbable = GetComponent<Grabbable>();
+        _grabbable = GetComponent<Grabbable>();        
         _grabbable.WhenPointerEventRaised += OnObjectGrabChange;
         _isGrab = false;
     }
@@ -47,7 +48,7 @@ public class OwnershipTransfer : MonoBehaviourPun, IPunOwnershipCallbacks
         }
         else
         {
-            _vrLogger = catcher.GetVRLoggersManager();
+            _vrLogger = catcher.GetVRLoggersManager();            
         }
     }
 
@@ -65,7 +66,7 @@ public class OwnershipTransfer : MonoBehaviourPun, IPunOwnershipCallbacks
                 if (!_isGrab)
                 {
                     _isGrab = true;
-                    base.photonView.RequestOwnership();
+                    base.photonView.RequestOwnership();                    
                 }
                 break;
             case PointerEventType.Unselect:

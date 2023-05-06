@@ -845,6 +845,10 @@ PrefabInstance:
       propertyPath: _syntheticHand
       value: 
       objectReference: {fileID: 2068310595}
+    - target: {fileID: 8553364197529364881, guid: 885ecae56b16f13428a67de5ae482a72, type: 3}
+      propertyPath: _velocityCalculator
+      value: 
+      objectReference: {fileID: 521934950}
     - target: {fileID: 8646129326984794350, guid: 885ecae56b16f13428a67de5ae482a72, type: 3}
       propertyPath: _hand
       value: 
@@ -3754,7 +3758,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &585162176
 Transform:
   m_ObjectHideFlags: 0
@@ -5137,7 +5141,7 @@ GameObject:
   - component: {fileID: 713048652}
   - component: {fileID: 713048651}
   m_Layer: 0
-  m_Name: HandVelocityCalculatorLeft
+  m_Name: HandVelocityCalculatorRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9602,6 +9606,10 @@ PrefabInstance:
       propertyPath: _syntheticHand
       value: 
       objectReference: {fileID: 803529832}
+    - target: {fileID: 8553364197529364881, guid: 885ecae56b16f13428a67de5ae482a72, type: 3}
+      propertyPath: _velocityCalculator
+      value: 
+      objectReference: {fileID: 713048651}
     - target: {fileID: 8646129326984794350, guid: 885ecae56b16f13428a67de5ae482a72, type: 3}
       propertyPath: _hand
       value: 

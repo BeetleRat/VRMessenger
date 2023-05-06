@@ -17,6 +17,8 @@ public class PlayersProperty
     public const string UPDATE_STATUS = "UpdateStatus";
     /// Изменить громкость микрофона.
     public const string MICROPHONE_VOLUME = "MicrophoneVolume";
+    /// Изменить kinematic объекта
+    public const string CHANGE_KINEMATIC = "ChangeKinematic";
 }
 
 /**

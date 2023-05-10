@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /**
- ### Скрипт для переключения различных UI через InterfaceHider
+Скрипт для переключения различных UI через InterfaceHider
 
 Переключение вкладок меню может быть реализовано различными способами.
 В данном случае, у нас есть множество UI, каждый из которых это отдельная вкладка меню.
 Данный скрипт отображает одну из этих вкладок и скрывает все остальные.
 @param menuUIs Массив InterfaceHider, которым управляет данный скрипт.
+@see InterfaceHider
  */
 public class MenuSwapper : MonoBehaviour
 {

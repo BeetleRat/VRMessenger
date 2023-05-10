@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 /**
- ### Класс, вызывающий события смены жестов левой и правой руки
+Класс, вызывающий события смены жестов левой и правой руки
 
 Данный класс используется для анимации моделей рук на сервере. 
 
@@ -14,6 +14,7 @@ using UnityEngine.Events;
 Жесты, используемые для анимации моделей рук, имеют компонент GestureProperties. 
 В данном компоненте указано, какие пальцы загнуты у данного жеста. 
 Данный класс отлавливает жесты с компонентом GestureProperties, переводит его в массив bool и отправляет его скрипту HandsAnimaionUpdater.
+@see GestureDetector
  */
 public class GestureAnimation : GestureDetector
 {

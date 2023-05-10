@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 /**
- ### Класс, отслеживающий переключение с контроллеров на руки
+Класс, отслеживающий переключение с контроллеров на руки
  */
 public class ControllerEvents : MonoBehaviour
 {

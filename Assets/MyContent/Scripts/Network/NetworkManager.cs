@@ -5,7 +5,7 @@ using Photon.Pun;
 using Photon.Realtime;
 
 /**
- ### Класс, хранящий настройки комнаты
+Класс, хранящий настройки комнаты
  */
 [System.Serializable]
 public class RoomSettings
@@ -49,7 +49,7 @@ public enum NetworkCode
 }
 
 /**
- ### Класс, отвечающий за взаимодействие с сервером Photon
+Класс, отвечающий за взаимодействие с сервером Photon
 
 Данный класс отвечает за:
  - Подключение к серверу;
@@ -68,6 +68,7 @@ public enum NetworkCode
 @param defaultRooms Список RoomSettings комнат, к которым будет производиться подключение.
 @param autoStartTestRoom bool Параметр для отладки. 
 Если true, то автоматически подключает в первую комнату при запуске приложения.
+@see VRLoggersManager; SceneChanger; RoomSettings
  */
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
@@ -235,7 +236,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public override void OnJoinedLobby()
     {
         base.OnJoinedLobby();
-        
+
         NetworConnectionEvent?.Invoke(NetworkCode.CONNECT_TO_LOBBY_COMPLETE);
         _vrLogger.Log("[" + this.name + "] Some user is join to the lobby.");
         if (_autoStartTestRoom)
@@ -283,6 +284,16 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             }
         }
         RoomListUpdate?.Invoke(roomList);
+    }
+
+    /**
+     Сеттер названия prefab-а игрока.
+
+    @param playersPrefabName string название prefab-а игрока лежащего в Assets/Resources. 
+     */
+    public void SetPlayersPrefabName(string playersPrefabName)
+    {
+        _playersPrefabName = playersPrefabName;
     }
 
     private void SpawnPlayerPrefab()

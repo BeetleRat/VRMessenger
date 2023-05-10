@@ -1,5 +1,6 @@
 var index =
 [
+    [ "Общее описание работы скриптов", "index.html#section_water", null ],
     [ "Скрипты для работы с сетью", "index.html#section1", null ],
     [ "Скрипты для работы с компонентами", "index.html#section2", null ],
     [ "Скрипты для работы с жестами", "index.html#section3", null ],

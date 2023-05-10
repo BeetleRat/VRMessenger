@@ -4,7 +4,7 @@ using Photon.Pun;
 using Photon.Realtime;
 
 /**
- ### Класс, отвечающий за синхронизацию локального игрока и его отображения на сервере
+ Класс, отвечающий за синхронизацию локального игрока и его отображения на сервере
 
 Данный класс используется в prefab-е игрока, находящегося по пути Assets/Resources.
 
@@ -19,6 +19,7 @@ using Photon.Realtime;
 - NetworkVariables;
 - HandView;
 - OVRCameraRig;
+- ControllerEvents;
 
 @param head Объект отображения головы на сервере (голова в prefab-е игрока).
 @param leftHand Объект отображения левой руки на сервере (левая рука в prefab-е игрока).
@@ -26,6 +27,7 @@ using Photon.Realtime;
 @param controllertTypeController Массив ControllerTypeController, которыми управляет данный класс.
 @param dublicateMainPlayer Если true, то пользователь будет видеть как его контроллеры отображаются на сервере.
 @param handsOpacity Прозрачность своих контроллеров на сервере (если dublicateMainPlayer == true).
+@see ControllerTypeController; HandView; ControllerEvents; NetworkVariables; ComponentCatcher
  */
 [RequireComponent(typeof(PhotonView))]
 public class NetworkPlayer : MonoBehaviour

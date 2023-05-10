@@ -1,18 +1,19 @@
-using System.Collections;
+п»їusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 
 /**
-### Скрипт для синхронизации RigidBody на сервере
+ РЎРєСЂРёРїС‚ РґР»СЏ СЃРёРЅС…СЂРѕРЅРёР·Р°С†РёРё RigidBody РЅР° СЃРµСЂРІРµСЂРµ
 
-Данный скрипт синхронизирует с сервером параметры RigidBody объекта:
+Р”Р°РЅРЅС‹Р№ СЃРєСЂРёРїС‚ СЃРёРЅС…СЂРѕРЅРёР·РёСЂСѓРµС‚ СЃ СЃРµСЂРІРµСЂРѕРј РїР°СЂР°РјРµС‚СЂС‹ RigidBody РѕР±СЉРµРєС‚Р°:
 - isKinematic;
 
-@attention Для корректной работы данный класс требует, что бы в сцене присутствовали скрипты:
+@attention Р”Р»СЏ РєРѕСЂСЂРµРєС‚РЅРѕР№ СЂР°Р±РѕС‚С‹ РґР°РЅРЅС‹Р№ РєР»Р°СЃСЃ С‚СЂРµР±СѓРµС‚, С‡С‚Рѕ Р±С‹ РІ СЃС†РµРЅРµ РїСЂРёСЃСѓС‚СЃС‚РІРѕРІР°Р»Рё СЃРєСЂРёРїС‚С‹:
 - ComponentCatcher;
 - NetworkVariables;
+@see NetworkVariables; ComponentCatcher
  */
 [RequireComponent(typeof(Rigidbody)), RequireComponent(typeof(PhotonView))]
 public class RigidBodySycn : MonoBehaviour

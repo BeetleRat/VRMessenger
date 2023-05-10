@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /**
- ### Скрипт, отвечающий за вывод логов во все VRLogger на сцене
+Скрипт, отвечающий за вывод логов во все VRLogger на сцене
 
 @attention Для корректной работы vrLogger-а необходимо перед началом работы установить ему NetworkManager, 
 воспользовавшись методом SetNetworkManager(NetworkManager networkManager).
+@see NetworkManager; VRLogger
  */
 public class VRLoggersManager : MonoBehaviour
 {

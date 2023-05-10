@@ -104,6 +104,9 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
   <div class="headertitle"><div class="title">Класс NetworkManager</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Класс, отвечающий за взаимодействие с сервером Photon.  
+ <a href="class_network_manager.html#details">Подробнее...</a></p>
 <div class="dynheader">
 Граф наследования:NetworkManager:</div>
 <div class="dyncontent">
@@ -149,6 +152,9 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
 <tr class="memitem:a6433e83098e4ba237c4d9132491750cc"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_manager.html#a6433e83098e4ba237c4d9132491750cc">OnRoomListUpdate</a> (List&lt; RoomInfo &gt; roomList)</td></tr>
 <tr class="memdesc:a6433e83098e4ba237c4d9132491750cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Метод выполняемый при обновлении списка комнат. При добавлении/удалении комнаты.  <br /></td></tr>
 <tr class="separator:a6433e83098e4ba237c4d9132491750cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cadf8645347796615a7dab473281e58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_manager.html#a7cadf8645347796615a7dab473281e58">SetPlayersPrefabName</a> (string playersPrefabName)</td></tr>
+<tr class="memdesc:a7cadf8645347796615a7dab473281e58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сеттер названия prefab-а игрока.  <br /></td></tr>
+<tr class="separator:a7cadf8645347796615a7dab473281e58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="events" name="events"></a>
 События</h2></td></tr>
@@ -160,8 +166,7 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
 <tr class="separator:a98ae49a486704046f5a604039463cfd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
-<div class="textblock"><h3><a class="anchor" id="autotoc_md18"></a>
-Класс, отвечающий за взаимодействие с сервером Photon</h3>
+<div class="textblock"><p>Класс, отвечающий за взаимодействие с сервером Photon. </p>
 <p>Данный класс отвечает за:</p><ul>
 <li>Подключение к серверу;</li>
 <li>Отключение от сервера;</li>
@@ -174,14 +179,15 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
 </ul>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">vrLogger</td><td><a class="el" href="class_v_r_loggers_manager.html">VRLoggersManager</a> для вывода логов внутри игры. </td></tr>
-    <tr><td class="paramname">sceneChanger</td><td><a class="el" href="class_scene_changer.html">SceneChanger</a> для перехода между сценами. </td></tr>
+    <tr><td class="paramname">vrLogger</td><td><a class="el" href="class_v_r_loggers_manager.html" title="Скрипт, отвечающий за вывод логов во все VRLogger на сцене">VRLoggersManager</a> для вывода логов внутри игры. </td></tr>
+    <tr><td class="paramname">sceneChanger</td><td><a class="el" href="class_scene_changer.html" title="Скрипт, отвечающий за смену сцен в приложении">SceneChanger</a> для перехода между сценами. </td></tr>
     <tr><td class="paramname">playersPrefabName</td><td>string название prefab-а игрока лежащего в Assets/Resources. Данный prefab будет заспавнен в комнате на сервере при подключении. </td></tr>
-    <tr><td class="paramname">defaultRooms</td><td>Список <a class="el" href="class_room_settings.html">RoomSettings</a> комнат, к которым будет производиться подключение. </td></tr>
+    <tr><td class="paramname">defaultRooms</td><td>Список <a class="el" href="class_room_settings.html" title="Класс, хранящий настройки комнаты">RoomSettings</a> комнат, к которым будет производиться подключение. </td></tr>
     <tr><td class="paramname">autoStartTestRoom</td><td>bool Параметр для отладки. Если true, то автоматически подключает в первую комнату при запуске приложения. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="class_v_r_loggers_manager.html" title="Скрипт, отвечающий за вывод логов во все VRLogger на сцене">VRLoggersManager</a>; <a class="el" href="class_scene_changer.html" title="Скрипт, отвечающий за смену сцен в приложении">SceneChanger</a>; <a class="el" href="class_room_settings.html" title="Класс, хранящий настройки комнаты">RoomSettings</a> </dd></dl>
 </div><h2 class="groupheader">Методы</h2>
 <a id="aa079da652b2fd90e86f433a3b10e9ef6" name="aa079da652b2fd90e86f433a3b10e9ef6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa079da652b2fd90e86f433a3b10e9ef6">&#9670;&#160;</a></span>ConnectToServer()</h2>
@@ -552,6 +558,40 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
 </div><div class="memdoc">
 
 <p>Метод выполняемый при обновлении списка комнат. При добавлении/удалении комнаты. </p>
+
+</div>
+</div>
+<a id="a7cadf8645347796615a7dab473281e58" name="a7cadf8645347796615a7dab473281e58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cadf8645347796615a7dab473281e58">&#9670;&#160;</a></span>SetPlayersPrefabName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NetworkManager.SetPlayersPrefabName </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>playersPrefabName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Сеттер названия prefab-а игрока. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">playersPrefabName</td><td>string название prefab-а игрока лежащего в Assets/Resources. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

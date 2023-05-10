@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /**
- ### Скрипт для воспроизведения gif анимации в UI
+Скрипт для воспроизведения gif анимации в UI
 
 @param frameRate Количество кадров в секунду (30 оптимально).
 @param frames Массив кадров gif анимации.

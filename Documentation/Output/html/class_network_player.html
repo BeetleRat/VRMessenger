@@ -102,6 +102,9 @@ $(document).ready(function(){initNavTree('class_network_player.html',''); initRe
   <div class="headertitle"><div class="title">Класс NetworkPlayer</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Класс, отвечающий за синхронизацию локального игрока и его отображения на сервере  
+ <a href="class_network_player.html#details">Подробнее...</a></p>
 <div class="dynheader">
 Граф наследования:NetworkPlayer:</div>
 <div class="dyncontent">
@@ -109,8 +112,7 @@ $(document).ready(function(){initNavTree('class_network_player.html',''); initRe
   <img src="class_network_player.png" alt=""/>
  </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
-<div class="textblock"><h3><a class="anchor" id="autotoc_md20"></a>
-Класс, отвечающий за синхронизацию локального игрока и его отображения на сервере</h3>
+<div class="textblock"><p>Класс, отвечающий за синхронизацию локального игрока и его отображения на сервере </p>
 <p>Данный класс используется в prefab-е игрока, находящегося по пути Assets/Resources.</p>
 <p>Данный класс отвечает за:</p><ul>
 <li>синхронизацию положения головы (шлема oculus);</li>
@@ -118,10 +120,11 @@ $(document).ready(function(){initNavTree('class_network_player.html',''); initRe
 <li>вид контроллеров (контроллеры oculus/отслеживаемые человеческие руки);</li>
 </ul>
 <dl class="section attention"><dt>Внимание</dt><dd>Для корректной работы данный класс требует, что бы в сцене присутствовали скрипты:<ul>
-<li><a class="el" href="class_component_catcher.html">ComponentCatcher</a>;</li>
-<li><a class="el" href="class_network_variables.html">NetworkVariables</a>;</li>
-<li><a class="el" href="class_hand_view.html">HandView</a>;</li>
+<li><a class="el" href="class_component_catcher.html" title="Класс, отлавливающий определенные компоненты в текущей сцене">ComponentCatcher</a>;</li>
+<li><a class="el" href="class_network_variables.html" title="Класс работы с переменными сервера">NetworkVariables</a>;</li>
+<li><a class="el" href="class_hand_view.html" title="Компонент якорь для отображения контроллеров на сервере">HandView</a>;</li>
 <li>OVRCameraRig;</li>
+<li><a class="el" href="class_controller_events.html" title="Класс, отслеживающий переключение с контроллеров на руки">ControllerEvents</a>;</li>
 </ul>
 </dd></dl>
 <dl class="params"><dt>Аргументы</dt><dd>
@@ -129,12 +132,13 @@ $(document).ready(function(){initNavTree('class_network_player.html',''); initRe
     <tr><td class="paramname">head</td><td>Объект отображения головы на сервере (голова в prefab-е игрока). </td></tr>
     <tr><td class="paramname">leftHand</td><td>Объект отображения левой руки на сервере (левая рука в prefab-е игрока). </td></tr>
     <tr><td class="paramname">rightHand</td><td>Объект отображения правой руки на сервере (правая рука в prefab-е игрока). </td></tr>
-    <tr><td class="paramname">controllertTypeController</td><td>Массив <a class="el" href="class_controller_type_controller.html">ControllerTypeController</a>, которыми управляет данный класс. </td></tr>
+    <tr><td class="paramname">controllertTypeController</td><td>Массив <a class="el" href="class_controller_type_controller.html" title="Класс, отвечающий за переключение типов контроллеров на сервере">ControllerTypeController</a>, которыми управляет данный класс. </td></tr>
     <tr><td class="paramname">dublicateMainPlayer</td><td>Если true, то пользователь будет видеть как его контроллеры отображаются на сервере. </td></tr>
     <tr><td class="paramname">handsOpacity</td><td>Прозрачность своих контроллеров на сервере (если dublicateMainPlayer == true). </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="class_controller_type_controller.html" title="Класс, отвечающий за переключение типов контроллеров на сервере">ControllerTypeController</a>; <a class="el" href="class_hand_view.html" title="Компонент якорь для отображения контроллеров на сервере">HandView</a>; <a class="el" href="class_controller_events.html" title="Класс, отслеживающий переключение с контроллеров на руки">ControllerEvents</a>; <a class="el" href="class_network_variables.html" title="Класс работы с переменными сервера">NetworkVariables</a>; <a class="el" href="class_component_catcher.html" title="Класс, отлавливающий определенные компоненты в текущей сцене">ComponentCatcher</a> </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

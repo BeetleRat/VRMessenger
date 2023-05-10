@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 
 /**
- ### Скрипт для вывода логов внутри игры
+Скрипт для вывода логов внутри игры
 
 @param logField TextMeshPro, в который будут выводиться логи.
 @param maxLine Максимальное число строк в логах.

@@ -103,6 +103,9 @@ $(document).ready(function(){initNavTree('class_ownership_transfer.html',''); in
   <div class="headertitle"><div class="title">Класс OwnershipTransfer</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Скрипт, передающий права на объект  
+ <a href="class_ownership_transfer.html#details">Подробнее...</a></p>
 <div class="dynheader">
 Граф наследования:OwnershipTransfer:</div>
 <div class="dyncontent">
@@ -123,18 +126,18 @@ $(document).ready(function(){initNavTree('class_ownership_transfer.html',''); in
 <tr class="separator:ae90530f8f964adbc566e22db16959865"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
-<div class="textblock"><h3><a class="anchor" id="autotoc_md22"></a>
-Скрипт, передающий права на объект</h3>
+<div class="textblock"><p>Скрипт, передающий права на объект </p>
 <p>В Photon у интерактивных объектов есть владелец. И Photon синхронизирует с сервером только данные владельца объекта. Владельцем становится первый схвативший объект.</p>
 <p>Но нам необходимо, что бы все пользователи могли взаимодействовать с объектами.</p>
 <p>Для этого необходимо передавать владение объектом тому пользователю, который взял объект. Этим и занимается данный скрипт.</p>
 <p>Данный скрипт вешается на объект. Если объект кто-то берет, то этот кто-то становится его владельцем, независимо от того есть ли у объекта сейчас другой владелец.</p>
 <dl class="section attention"><dt>Внимание</dt><dd>Для корректной работы данный класс требует, что бы в сцене присутствовали скрипты:<ul>
-<li><a class="el" href="class_component_catcher.html">ComponentCatcher</a>;</li>
-<li><a class="el" href="class_v_r_loggers_manager.html">VRLoggersManager</a>;</li>
-<li><a class="el" href="class_network_variables.html">NetworkVariables</a>; </li>
+<li><a class="el" href="class_component_catcher.html" title="Класс, отлавливающий определенные компоненты в текущей сцене">ComponentCatcher</a>;</li>
+<li><a class="el" href="class_v_r_loggers_manager.html" title="Скрипт, отвечающий за вывод логов во все VRLogger на сцене">VRLoggersManager</a>;</li>
+<li><a class="el" href="class_network_variables.html" title="Класс работы с переменными сервера">NetworkVariables</a>; </li>
 </ul>
 </dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="class_v_r_loggers_manager.html" title="Скрипт, отвечающий за вывод логов во все VRLogger на сцене">VRLoggersManager</a>; <a class="el" href="class_component_catcher.html" title="Класс, отлавливающий определенные компоненты в текущей сцене">ComponentCatcher</a> </dd></dl>
 </div><h2 class="groupheader">Методы</h2>
 <a id="aeb9d652b7706e1588203bacab7d815fe" name="aeb9d652b7706e1588203bacab7d815fe"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeb9d652b7706e1588203bacab7d815fe">&#9670;&#160;</a></span>OnOwnershipRequest()</h2>

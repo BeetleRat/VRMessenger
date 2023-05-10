@@ -6,7 +6,7 @@ using Photon.Pun;
 using Photon.Realtime;
 
 /**
-### Скрипт, передающий права на объект
+Скрипт, передающий права на объект
 
 В Photon у интерактивных объектов есть владелец. И Photon синхронизирует с сервером только данные владельца объекта.
 Владельцем становится первый схвативший объект. 
@@ -23,6 +23,7 @@ using Photon.Realtime;
 - ComponentCatcher;
 - VRLoggersManager;
 - NetworkVariables;
+@see VRLoggersManager; ComponentCatcher
  */
 [RequireComponent(typeof(Grabbable))]
 public class OwnershipTransfer : MonoBehaviourPun, IPunOwnershipCallbacks

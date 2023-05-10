@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /**
- ### Класс, контролирующий все элементы списка комнат, к которым можно подключиться
+Класс, контролирующий все элементы списка комнат, к которым можно подключиться
 
 Данный класс хранит информацию о всех существующий на данный момент комнатах.
 Он отображает эту информацию через элементы списка комнат, к которым можно подключиться.
@@ -27,6 +27,7 @@ using UnityEngine.UI;
 @param connectToRoomButton Кнопка подключения к комнате, которая сейчас выбрана в списке.
 @param defaultButtonColor Цвет не выбранного элемента списка.
 @param selectedButtonColor Цвет выбранного элемента списка.
+@see ComponentCatcher; NetworkManager; RoomListItem
  */
 public class UIRoomListController : MonoBehaviour
 {

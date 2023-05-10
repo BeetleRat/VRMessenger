@@ -13,7 +13,7 @@ public class ChangeLayers
 }
 
 /**
- ### Класс отвечающий за плавную смену слоев на UI экране
+ Класс отвечающий за плавную смену слоев на UI экране
 
 @attention Для корректной работы данный класс требует, что бы в сцене присутствовали скрипты:
 - NetworkManager;
@@ -23,6 +23,7 @@ public class ChangeLayers
 @param layers Список ChangeLayers, которые будут меняться в соответствии с указанными кодами;
 @param fadeDuration Продолжительность затухания слоя;
 @param fadeSmoothness Плавность затухания слоя;
+@see ComponentCatcher; ChangeLayers; NetworkManager.
  */
 public class ChangeUILayer : MonoBehaviour
 {

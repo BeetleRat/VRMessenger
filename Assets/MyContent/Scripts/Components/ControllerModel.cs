@@ -1,33 +1,33 @@
-using System.Collections;
+п»їusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-/// Тип внешнего вида контроллеров.
+/// РўРёРї РІРЅРµС€РЅРµРіРѕ РІРёРґР° РєРѕРЅС‚СЂРѕР»Р»РµСЂРѕРІ.
 public enum ControllerType
 {
-    OculusController, ///< Контроллеры Oculus.
-    HandsPrefabs ///< Руки игрока.
+    OculusController, ///< РљРѕРЅС‚СЂРѕР»Р»РµСЂС‹ Oculus.
+    HandsPrefabs ///< Р СѓРєРё РёРіСЂРѕРєР°.
 }
 
 /**
- ### Суперкласс хранящий информацию о отображаемом на сервере контроллере
+РЎСѓРїРµСЂРєР»Р°СЃСЃ С…СЂР°РЅСЏС‰РёР№ РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ РѕС‚РѕР±СЂР°Р¶Р°РµРјРѕРј РЅР° СЃРµСЂРІРµСЂРµ РєРѕРЅС‚СЂРѕР»Р»РµСЂРµ
  */
 public class ControllerModel : MonoBehaviour
 {
-    /// PhotonView отвечающий за синхронизацию данного объекта.
+    /// PhotonView РѕС‚РІРµС‡Р°СЋС‰РёР№ Р·Р° СЃРёРЅС…СЂРѕРЅРёР·Р°С†РёСЋ РґР°РЅРЅРѕРіРѕ РѕР±СЉРµРєС‚Р°.
     [SerializeField] protected PhotonView _myPhotonView;
 
-    /// Отображаемая модель контроллера.
+    /// РћС‚РѕР±СЂР°Р¶Р°РµРјР°СЏ РјРѕРґРµР»СЊ РєРѕРЅС‚СЂРѕР»Р»РµСЂР°.
     [SerializeField] protected GameObject _objectModel;
 
-    /** ControllerType отображаемого контроллера.
+    /** ControllerType РѕС‚РѕР±СЂР°Р¶Р°РµРјРѕРіРѕ РєРѕРЅС‚СЂРѕР»Р»РµСЂР°.
      - OculusController;
      - HandsPrefabs;
      */
     [SerializeField] protected ControllerType _type;
     /**
-     Тип контроллера.
+     РўРёРї РєРѕРЅС‚СЂРѕР»Р»РµСЂР°.
     - OVRInput.Controller.LTouch;
     - OVRInput.Controller.RTouch;
     - OVRInput.Controller.LHand;
@@ -36,8 +36,8 @@ public class ControllerModel : MonoBehaviour
     [SerializeField] protected OVRInput.Controller _controllerType;
 
     /**
-     Геттер модели контроллера.
-    @return GameObject используемая модель контроллера.
+     Р“РµС‚С‚РµСЂ РјРѕРґРµР»Рё РєРѕРЅС‚СЂРѕР»Р»РµСЂР°.
+    @return GameObject РёСЃРїРѕР»СЊР·СѓРµРјР°СЏ РјРѕРґРµР»СЊ РєРѕРЅС‚СЂРѕР»Р»РµСЂР°.
      */
     public GameObject GetObjectModel()
     {
@@ -45,8 +45,8 @@ public class ControllerModel : MonoBehaviour
     }
 
     /**
-     Геттер типа контроллера.
-    @return ControllerType данного контроллера
+     Р“РµС‚С‚РµСЂ С‚РёРїР° РєРѕРЅС‚СЂРѕР»Р»РµСЂР°.
+    @return ControllerType РґР°РЅРЅРѕРіРѕ РєРѕРЅС‚СЂРѕР»Р»РµСЂР°
      */
     public ControllerType GetControllerType()
     {
@@ -54,9 +54,9 @@ public class ControllerModel : MonoBehaviour
     }
 
     /** 
-     Установка существования данного объекта. 
+     РЈСЃС‚Р°РЅРѕРІРєР° СЃСѓС‰РµСЃС‚РІРѕРІР°РЅРёСЏ РґР°РЅРЅРѕРіРѕ РѕР±СЉРµРєС‚Р°. 
  
-     Когда мы переключаемся на другое отображение контроллеров, мы должны отключить предыдущее и включить новое отображение.
+     РљРѕРіРґР° РјС‹ РїРµСЂРµРєР»СЋС‡Р°РµРјСЃСЏ РЅР° РґСЂСѓРіРѕРµ РѕС‚РѕР±СЂР°Р¶РµРЅРёРµ РєРѕРЅС‚СЂРѕР»Р»РµСЂРѕРІ, РјС‹ РґРѕР»Р¶РЅС‹ РѕС‚РєР»СЋС‡РёС‚СЊ РїСЂРµРґС‹РґСѓС‰РµРµ Рё РІРєР»СЋС‡РёС‚СЊ РЅРѕРІРѕРµ РѕС‚РѕР±СЂР°Р¶РµРЅРёРµ.
      */
     public void SetActive(bool isActive)
     {

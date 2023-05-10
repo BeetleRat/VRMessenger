@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /**
- ### Класс, обеспечивающий взаимодействие UI с NetworkManager
+Класс, обеспечивающий взаимодействие UI с NetworkManager
 
 Взаимодействую с ComponentCatcher, данный класс предоставляет элементам UI взаимодействовать с NetworkManager.
 
@@ -11,6 +11,7 @@ using UnityEngine;
 - NetworkManager;
 
 @param catcher ComponentCatcher, который используется для получения доступа к NetworkManager.
+@see ComponentCatcher; NetworkManager
  */
 public class NetworkManagerProvider : MonoBehaviour
 {

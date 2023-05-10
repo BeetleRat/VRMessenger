@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /**
- ### Класс, манипулирующий звуками сцены
+Класс, манипулирующий звуками сцены
 
 @param controlledSources Массив AudioSource сцены, над которыми будут производиться манипуляции.
  */

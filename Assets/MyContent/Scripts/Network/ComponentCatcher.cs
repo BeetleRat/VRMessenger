@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.XR;
 
 /**
-### Класс, отлавливающий определенные компоненты в текущей сцене
+Класс, отлавливающий определенные компоненты в текущей сцене
 
 @attention Данный класс не должен быть Singletone. 
 Для каждой отдельной сцены должен быть свой экземпляр данного класса, если он в ней нужен.
@@ -27,6 +27,7 @@ using UnityEngine.XR;
  - ControllerEvents;
 @param catchGestureAnimation Отлавливать ли в текущей сцене GestureAnimation.
 @param catchNetworkVariables Отлавливать ли в текущей сцене NetworkVariables.
+@see VRLoggersManager; NetworkManager; ControllerEvents; GestureAnimation; NetworkVariables
  */
 public class ComponentCatcher : MonoBehaviour
 {

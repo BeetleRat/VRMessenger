@@ -12,6 +12,7 @@ var class_network_manager =
     [ "OnLeftRoom", "class_network_manager.html#a805d6d5bf3f07b909c08ba75677114d1", null ],
     [ "OnPlayerEnteredRoom", "class_network_manager.html#a3dc46f673d499dd599d05dab242092f1", null ],
     [ "OnRoomListUpdate", "class_network_manager.html#a6433e83098e4ba237c4d9132491750cc", null ],
+    [ "SetPlayersPrefabName", "class_network_manager.html#a7cadf8645347796615a7dab473281e58", null ],
     [ "NetworConnectionEvent", "class_network_manager.html#a804831067d73f1f8d70136ac58456c89", null ],
     [ "RoomListUpdate", "class_network_manager.html#a98ae49a486704046f5a604039463cfd2", null ]
 ];

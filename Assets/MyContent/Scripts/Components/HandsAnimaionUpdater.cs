@@ -5,7 +5,7 @@ using Photon.Pun;
 using Photon.Realtime;
 
 /**
- ### Скрипт обеспечивающий проигрывание анимации моделей рук на сервере
+Скрипт обеспечивающий проигрывание анимации моделей рук на сервере
 
 Данный класс обновляет анимацию моделей рук на сервере, в зависимости от жестов распознанных системой GestureAnimation.
 
@@ -13,6 +13,7 @@ using Photon.Realtime;
 - ComponentCatcher;
 - NetworkVariables;
 - GestureAnimation;
+@see ControllerModel; GestureAnimation; GestureProperties; NetworkVariables; ComponentCatcher
  */
 public class HandsAnimaionUpdater : ControllerModel
 {

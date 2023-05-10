@@ -102,6 +102,9 @@ $(document).ready(function(){initNavTree('class_attach_to_players_body.html','')
   <div class="headertitle"><div class="title">Класс AttachToPlayersBody</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Скрипт, прикрепляющий объект к якорю весящему на игроке  
+ <a href="class_attach_to_players_body.html#details">Подробнее...</a></p>
 <div class="dynheader">
 Граф наследования:AttachToPlayersBody:</div>
 <div class="dyncontent">
@@ -109,8 +112,7 @@ $(document).ready(function(){initNavTree('class_attach_to_players_body.html','')
   <img src="class_attach_to_players_body.png" alt=""/>
  </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
-<div class="textblock"><h3><a class="anchor" id="autotoc_md0"></a>
-Скрипт, прикрепляющий объект к якорю весящему на игроке</h3>
+<div class="textblock"><p>Скрипт, прикрепляющий объект к якорю весящему на игроке </p>
 <p>Данный класс используется для того, чтобы объекты, которые прикрепляются к игроку не приходилось долго искать на самом игроке. Идея в следующем:</p><ol type="1">
 <li>В нужную(-ые) части тела игрока мы прикрепляем EmptyObject якорь;</li>
 <li>Создаем нужный нам объект, где нам будет угодно;</li>
@@ -118,17 +120,18 @@ $(document).ready(function(){initNavTree('class_attach_to_players_body.html','')
 <li><em>Если объект прикрепляется к рукам, то необходимо указать отдельный якорь для контроллеров и для рук</em></li>
 </ol>
 <dl class="section attention"><dt>Внимание</dt><dd>Для корректной работы данный класс требует, что бы в сцене присутствовали скрипты:<ul>
-<li><a class="el" href="class_controller_events.html">ControllerEvents</a>;</li>
+<li><a class="el" href="class_controller_events.html" title="Класс, отслеживающий переключение с контроллеров на руки">ControllerEvents</a>;</li>
 </ul>
 </dd></dl>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">catcher</td><td><a class="el" href="class_component_catcher.html">ComponentCatcher</a> данной сцены. </td></tr>
+    <tr><td class="paramname">catcher</td><td><a class="el" href="class_component_catcher.html" title="Класс, отлавливающий определенные компоненты в текущей сцене">ComponentCatcher</a> данной сцены. </td></tr>
     <tr><td class="paramname">controllerBodyPart</td><td>Якорь, к которому прикрепляется объект. Если объект прикрепляется к рукам, то в данный параметр указывается якорь для прикрепления к контроллерам </td></tr>
     <tr><td class="paramname">handBodyPart</td><td>(<em>Не обязательно</em>) Если объект прикрепляется к рукам, то в данный параметр указывается якорь для прикрепления к рукам </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="class_component_catcher.html" title="Класс, отлавливающий определенные компоненты в текущей сцене">ComponentCatcher</a>; <a class="el" href="class_controller_events.html" title="Класс, отслеживающий переключение с контроллеров на руки">ControllerEvents</a> </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

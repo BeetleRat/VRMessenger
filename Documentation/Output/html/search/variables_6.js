@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['name_0',['name',['../class_room_settings.html#a6a86268a1accd88f521e5c65c614a5d6',1,'RoomSettings']]]
+  ['layer_0',['Layer',['../class_change_layers.html#a85a856d87b1a7267e9f0962905412697',1,'ChangeLayers']]],
+  ['leftgestchange_1',['LeftGestChange',['../class_gesture_animation.html#acd260cdac920936a3d1a309ebdbbf35c',1,'GestureAnimation']]]
 ];

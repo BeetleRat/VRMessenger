@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['initdefaultroom_0',['InitDefaultRoom',['../class_network_manager_provider.html#a4df77cd1bb6374640830054af3fe95da',1,'NetworkManagerProvider']]],
-  ['initroom_1',['InitRoom',['../class_network_manager.html#a94718c92cb00dc9edb8fa7cebd5be785',1,'NetworkManager']]],
-  ['isattachtocontrollernow_2',['IsAttachToControllerNow',['../class_controller_events.html#aee5856e9656813d34bc5345ff285210b',1,'ControllerEvents']]]
+  ['hideall_0',['HideAll',['../class_menu_swapper.html#a613833697b76cdee838daebff9fe1f0d',1,'MenuSwapper']]],
+  ['hideinterface_1',['HideInterface',['../class_interface_hider.html#a45ec836d223bdcb4d79a152382887b1d',1,'InterfaceHider']]]
 ];

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['menuswapper_0',['MenuSwapper',['../class_menu_swapper.html',1,'']]],
-  ['microphonecontroller_1',['MicrophoneController',['../class_microphone_controller.html',1,'']]],
-  ['microphonenetworksettings_2',['MicrophoneNetworkSettings',['../class_microphone_network_settings.html',1,'']]]
+  ['keyboardbutton_0',['KeyboardButton',['../class_keyboard_button.html',1,'']]],
+  ['keyboardprovider_1',['KeyboardProvider',['../class_keyboard_provider.html',1,'']]]
 ];

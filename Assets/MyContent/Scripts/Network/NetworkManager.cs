@@ -63,7 +63,7 @@ public enum NetworkCode
 
 @param vrLogger VRLoggersManager для вывода логов внутри игры.
 @param sceneChanger SceneChanger для перехода между сценами.
-@param playersPrefabName string название prefab-а игрока лежащего в Assets/Resources. 
+@param playersPrefabName string название prefab-а игрока лежащего в Assets/Resources/Avatars. 
 Данный prefab будет заспавнен в комнате на сервере при подключении.
 @param defaultRooms Список RoomSettings комнат, к которым будет производиться подключение.
 @param autoStartTestRoom bool Параметр для отладки. 
@@ -110,6 +110,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster()
     {
         base.OnConnectedToMaster();
+        SetRandomName();
         NetworConnectionEvent?.Invoke(NetworkCode.CONNECT_TO_SERVER_COMPLETE);
         _isConnectedToServer = true;
         _vrLogger.Log("[" + this.name + "] Connected to master server.");
@@ -289,17 +290,40 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     /**
      Сеттер названия prefab-а игрока.
 
-    @param playersPrefabName string название prefab-а игрока лежащего в Assets/Resources. 
+    @param playersPrefabName string название prefab-а игрока лежащего в Assets/Resources/Avatars. 
      */
     public void SetPlayersPrefabName(string playersPrefabName)
     {
         _playersPrefabName = playersPrefabName;
     }
 
+    private void SetRandomName()
+    {
+        if (PhotonNetwork.NickName.Length == 0)
+        {
+            char[] lettersArray = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+            string randomName = ""
+                + lettersArray[Random.Range(0, lettersArray.Length - 1)]
+                + ""
+                + lettersArray[Random.Range(0, lettersArray.Length - 1)]
+                + "-"
+                + Random.Range(0, 99)
+                + " "
+                + lettersArray[Random.Range(0, lettersArray.Length - 1)]
+                + lettersArray[Random.Range(0, lettersArray.Length - 1)]
+                + lettersArray[Random.Range(0, lettersArray.Length - 1)]
+                + lettersArray[Random.Range(0, lettersArray.Length - 1)]
+                + "-"
+                + lettersArray[Random.Range(0, lettersArray.Length - 1)];
+
+            PhotonNetwork.NickName = randomName;
+        }
+    }
+
     private void SpawnPlayerPrefab()
     {
         Vector3 playerPosition = new Vector3(transform.position.x + Random.Range(-10, 10), transform.position.y + Random.Range(-10, 10));
         _spawnedPlayerPrefab = PhotonNetwork.Instantiate(_playersPrefabName, playerPosition, transform.rotation);
-        _vrLogger.Log("[" + this.name + "] Player " + _spawnedPlayerPrefab.name + " spawned at position(" + playerPosition.x + "," + playerPosition.y + "," + playerPosition.z + ")");
+        _vrLogger.Log("[" + this.name + "] Player " + _spawnedPlayerPrefab.GetComponent<PhotonView>().Owner.NickName + " spawned at position(" + playerPosition.x + "," + playerPosition.y + "," + playerPosition.z + ")");
     }
 }

@@ -98,6 +98,7 @@ $(document).ready(function(){initNavTree('class_network_player.html',''); initRe
 
 <div class="header">
   <div class="summary">
+<a href="#pro-methods">Защищенные члены</a> &#124;
 <a href="class_network_player-members.html">Полный список членов класса</a>  </div>
   <div class="headertitle"><div class="title">Класс NetworkPlayer</div></div>
 </div><!--header-->
@@ -111,9 +112,16 @@ $(document).ready(function(){initNavTree('class_network_player.html',''); initRe
  <div class="center">
   <img src="class_network_player.png" alt=""/>
  </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Защищенные члены</h2></td></tr>
+<tr class="memitem:a57eb15790a6c9a13e42e20ecd089dbd3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_player.html#a57eb15790a6c9a13e42e20ecd089dbd3">MapPosition</a> (Transform target, Transform rigTransform)</td></tr>
+<tr class="memdesc:a57eb15790a6c9a13e42e20ecd089dbd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Метод для установки положения и поворота одного объекта, согласно соответствующим характеристикам другого объекта.  <br /></td></tr>
+<tr class="separator:a57eb15790a6c9a13e42e20ecd089dbd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
 <div class="textblock"><p>Класс, отвечающий за синхронизацию локального игрока и его отображения на сервере </p>
-<p>Данный класс используется в prefab-е игрока, находящегося по пути Assets/Resources.</p>
+<p>Данный класс используется в prefab-е игрока, находящегося по пути Assets/Resources/Avatars.</p>
 <p>Данный класс отвечает за:</p><ul>
 <li>синхронизацию положения головы (шлема oculus);</li>
 <li>синхронизацию положения рук (контроллеров oculus/отслеживаемых человеческих рук);</li>
@@ -134,12 +142,57 @@ $(document).ready(function(){initNavTree('class_network_player.html',''); initRe
     <tr><td class="paramname">rightHand</td><td>Объект отображения правой руки на сервере (правая рука в prefab-е игрока). </td></tr>
     <tr><td class="paramname">controllertTypeController</td><td>Массив <a class="el" href="class_controller_type_controller.html" title="Класс, отвечающий за переключение типов контроллеров на сервере">ControllerTypeController</a>, которыми управляет данный класс. </td></tr>
     <tr><td class="paramname">dublicateMainPlayer</td><td>Если true, то пользователь будет видеть как его контроллеры отображаются на сервере. </td></tr>
-    <tr><td class="paramname">handsOpacity</td><td>Прозрачность своих контроллеров на сервере (если dublicateMainPlayer == true). </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section see"><dt>См. также</dt><dd><a class="el" href="class_controller_type_controller.html" title="Класс, отвечающий за переключение типов контроллеров на сервере">ControllerTypeController</a>; <a class="el" href="class_hand_view.html" title="Компонент якорь для отображения контроллеров на сервере">HandView</a>; <a class="el" href="class_controller_events.html" title="Класс, отслеживающий переключение с контроллеров на руки">ControllerEvents</a>; <a class="el" href="class_network_variables.html" title="Класс работы с переменными сервера">NetworkVariables</a>; <a class="el" href="class_component_catcher.html" title="Класс, отлавливающий определенные компоненты в текущей сцене">ComponentCatcher</a> </dd></dl>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Методы</h2>
+<a id="a57eb15790a6c9a13e42e20ecd089dbd3" name="a57eb15790a6c9a13e42e20ecd089dbd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57eb15790a6c9a13e42e20ecd089dbd3">&#9670;&#160;</a></span>MapPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NetworkPlayer.MapPosition </td>
+          <td>(</td>
+          <td class="paramtype">Transform&#160;</td>
+          <td class="paramname"><em>target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Transform&#160;</td>
+          <td class="paramname"><em>rigTransform</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Метод для установки положения и поворота одного объекта, согласно соответствующим характеристикам другого объекта. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target</td><td>Объект, которому устанавливаются положение и поворот. </td></tr>
+    <tr><td class="paramname">rigTransform</td><td>Объект, из которого берутся положение и поворот для первого объекта. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

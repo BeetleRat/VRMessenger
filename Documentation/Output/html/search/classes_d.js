@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['uiroomlistcontroller_0',['UIRoomListController',['../class_u_i_room_list_controller.html',1,'']]]
+  ['scenechanger_0',['SceneChanger',['../class_scene_changer.html',1,'']]],
+  ['setuproomname_1',['SetupRoomName',['../class_setup_room_name.html',1,'']]]
 ];

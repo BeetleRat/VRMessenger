@@ -517,6 +517,7 @@ MonoBehaviour:
     Enabled: 0
     ExitDistance: 0.02
     ReEnterDistance: 0.02
+  _closeDistanceThreshold: 0.001
   _tiebreakerScore: 0
 --- !u!114 &5030868672158057657
 MonoBehaviour:

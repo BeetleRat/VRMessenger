@@ -104,7 +104,7 @@ $(document).ready(function(){initNavTree('class_u_i_room_list_controller.html','
 </div><!--header-->
 <div class="contents">
 
-<p>Класс, контролирующий все элементы списка комнат, к которым можно подключиться  
+<p>Класс, контролирующий все элементы списка комнат, к которым можно подключиться.  
  <a href="class_u_i_room_list_controller.html#details">Подробнее...</a></p>
 <div class="dynheader">
 Граф наследования:UIRoomListController:</div>
@@ -132,7 +132,7 @@ $(document).ready(function(){initNavTree('class_u_i_room_list_controller.html','
 <tr class="separator:a8f423bf4f286eb13f578207aec97a241"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
-<div class="textblock"><p>Класс, контролирующий все элементы списка комнат, к которым можно подключиться </p>
+<div class="textblock"><p>Класс, контролирующий все элементы списка комнат, к которым можно подключиться. </p>
 <p>Данный класс хранит информацию о всех существующий на данный момент комнатах. Он отображает эту информацию через элементы списка комнат, к которым можно подключиться.</p>
 <p>Так же данный класс связывается с <a class="el" href="class_network_manager.html" title="Класс, отвечающий за взаимодействие с сервером Photon.">NetworkManager</a> для получения информации о текущих комнатах. И отправляет запрос на подключение к выбранной комнате.</p>
 <p>Данному классу, через метод <a class="el" href="class_u_i_room_list_controller.html#a181487b97701539724a3f7da83785c3c" title="Метод установки типа комнаты.">SetRoomType()</a>, передается тип комнаты. После чего контроллер выведет на экран список из элементов <a class="el" href="class_room_list_item.html" title="Класс пункта списка комнат">RoomListItem</a>, для существующий комнат данного типа. При выборе одного из элементов списка, можно подключиться к указанной в нем комнате, при помощи метода <a class="el" href="class_u_i_room_list_controller.html#ab3cf9c3ef85a2080fd4e320400885852" title="Метод, осуществляющий попытку подключения к выбранной в текущей момент комнате.">ConnectToSelectedRoom()</a>. Так же данный класс создает новые комнаты с уникальным именем для комнат данного типа: имя_комнаты + ID_в_списке, через метод <a class="el" href="class_u_i_room_list_controller.html#a8f423bf4f286eb13f578207aec97a241" title="Метод, создающий новую комнату с ID равным количеству уже существующих комнат данного типа.">CreateNewRoom()</a>.</p>

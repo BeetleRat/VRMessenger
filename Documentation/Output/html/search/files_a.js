@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['rigidbodysycn_2ecs_0',['RigidBodySycn.cs',['../_rigid_body_sycn_8cs.html',1,'']]],
-  ['roomlistitem_2ecs_1',['RoomListItem.cs',['../_room_list_item_8cs.html',1,'']]]
+  ['objecttomaincamerarotator_2ecs_0',['ObjectToMainCameraRotator.cs',['../_object_to_main_camera_rotator_8cs.html',1,'']]],
+  ['ownershiptransfer_2ecs_1',['OwnershipTransfer.cs',['../_ownership_transfer_8cs.html',1,'']]]
 ];

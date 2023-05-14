@@ -1,13 +1,10 @@
 var dir_6f3fc9751db760227e98ac1a71462b7a =
 [
-    [ "ButtonTextChanger.cs", "_button_text_changer_8cs.html", "_button_text_changer_8cs" ],
-    [ "ChangeUILayer.cs", "_change_u_i_layer_8cs.html", "_change_u_i_layer_8cs" ],
-    [ "GifAnimation.cs", "_gif_animation_8cs.html", "_gif_animation_8cs" ],
-    [ "InterfaceHider.cs", "_interface_hider_8cs.html", "_interface_hider_8cs" ],
-    [ "MenuSwapper.cs", "_menu_swapper_8cs.html", "_menu_swapper_8cs" ],
-    [ "RoomListItem.cs", "_room_list_item_8cs.html", "_room_list_item_8cs" ],
-    [ "SetupRoomName.cs", "_setup_room_name_8cs.html", "_setup_room_name_8cs" ],
-    [ "UIRoomListController.cs", "_u_i_room_list_controller_8cs.html", "_u_i_room_list_controller_8cs" ],
-    [ "VRLogger.cs", "_v_r_logger_8cs.html", "_v_r_logger_8cs" ],
-    [ "VRLoggersManager.cs", "_v_r_loggers_manager_8cs.html", "_v_r_loggers_manager_8cs" ]
+    [ "AvatarsList", "dir_255b6d86f36ee6a229ef42a254313db2.html", "dir_255b6d86f36ee6a229ef42a254313db2" ],
+    [ "Keyboard", "dir_874fc51ef08d3136b0347b8a2025f892.html", "dir_874fc51ef08d3136b0347b8a2025f892" ],
+    [ "Menu", "dir_8a73cba247a92aae1987e879855ea927.html", "dir_8a73cba247a92aae1987e879855ea927" ],
+    [ "OneTaskScripts", "dir_0945c97839a15fce3216fcafa63f9d81.html", "dir_0945c97839a15fce3216fcafa63f9d81" ],
+    [ "RoomsList", "dir_8e334acf9db0d5c1cf8d303f78e8baf1.html", "dir_8e334acf9db0d5c1cf8d303f78e8baf1" ],
+    [ "VRLogger", "dir_541d31b274fb3d747017b7615f51f805.html", "dir_541d31b274fb3d747017b7615f51f805" ],
+    [ "ChangeUILayer.cs", "_change_u_i_layer_8cs.html", "_change_u_i_layer_8cs" ]
 ];

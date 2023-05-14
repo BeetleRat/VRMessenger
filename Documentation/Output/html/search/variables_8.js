@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['pinky_0',['Pinky',['../class_gesture_properties.html#a96426808f6f17859b49d01dbaffeb352',1,'GestureProperties']]],
-  ['playersinroom_1',['playersInRoom',['../class_room_settings.html#a14dcf0ae71f0faecde6821dec82a1d7f',1,'RoomSettings']]]
+  ['name_0',['name',['../class_room_settings.html#a6a86268a1accd88f521e5c65c614a5d6',1,'RoomSettings']]],
+  ['newmesh_1',['NewMesh',['../class_mesh_swapper.html#abdbe80a79967837e08241265123a8148',1,'MeshSwapper']]]
 ];

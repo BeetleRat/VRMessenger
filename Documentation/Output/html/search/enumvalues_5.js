@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['oculuscontroller_0',['OculusController',['../_controller_model_8cs.html#a81059b4122c9dd4608d347eb117ae8c9a916fc1c295e02732c591192a8b3fa69d',1,'ControllerModel.cs']]]
+  ['male_0',['Male',['../_r_p_m_avatar_parser_8cs.html#a3667e3c5ec056737c8789615a989324fa63889cfb9d3cbe05d1bd2be5cc9953fd',1,'RPMAvatarParser.cs']]]
 ];

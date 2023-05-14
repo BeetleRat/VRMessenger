@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['networkcode_0',['NetworkCode',['../_network_manager_8cs.html#af47c12507cac2281b0b90a2bc21d2014',1,'NetworkManager.cs']]]
+  ['handtype_0',['HandType',['../_gesture_properties_8cs.html#a812eb479932da74350ebf90be87ccf13',1,'GestureProperties.cs']]]
 ];

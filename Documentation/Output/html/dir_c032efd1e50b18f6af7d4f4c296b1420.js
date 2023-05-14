@@ -1,5 +1,6 @@
 var dir_c032efd1e50b18f6af7d4f4c296b1420 =
 [
+    [ "ChangeNetworkName.cs", "_change_network_name_8cs.html", "_change_network_name_8cs" ],
     [ "ComponentCatcher.cs", "_component_catcher_8cs.html", "_component_catcher_8cs" ],
     [ "NetworkManager.cs", "_network_manager_8cs.html", "_network_manager_8cs" ],
     [ "NetworkManagerProvider.cs", "_network_manager_provider_8cs.html", "_network_manager_provider_8cs" ],

@@ -7,10 +7,18 @@ var hierarchy =
     [ "IPunOwnershipCallbacks", null, [
       [ "OwnershipTransfer", "class_ownership_transfer.html", null ]
     ] ],
+    [ "MapRigTransform", "class_map_rig_transform.html", null ],
+    [ "MeshSwapper", "class_mesh_swapper.html", null ],
     [ "MonoBehaviour", null, [
       [ "AttachToPlayersBody", "class_attach_to_players_body.html", null ],
       [ "AudioController", "class_audio_controller.html", null ],
+      [ "AvatarInfo", "class_avatar_info.html", [
+        [ "RPMAvatarInfo", "class_r_p_m_avatar_info.html", null ]
+      ] ],
+      [ "AvatarList", "class_avatar_list.html", null ],
+      [ "AvatarListItem", "class_avatar_list_item.html", null ],
       [ "ButtonTextChanger", "class_button_text_changer.html", null ],
+      [ "ChangeNetworkName", "class_change_network_name.html", null ],
       [ "ChangeUILayer", "class_change_u_i_layer.html", null ],
       [ "ComponentCatcher", "class_component_catcher.html", null ],
       [ "ControllerEvents", "class_controller_events.html", null ],
@@ -29,18 +37,25 @@ var hierarchy =
       [ "HandView", "class_hand_view.html", null ],
       [ "IgnoreGrabbableObjects", "class_ignore_grabbable_objects.html", null ],
       [ "InterfaceHider", "class_interface_hider.html", null ],
+      [ "KeyboardButton", "class_keyboard_button.html", null ],
+      [ "KeyboardProvider", "class_keyboard_provider.html", null ],
+      [ "MapAvatarBody", "class_map_avatar_body.html", null ],
       [ "MenuSwapper", "class_menu_swapper.html", null ],
       [ "MicrophoneController", "class_microphone_controller.html", null ],
       [ "MicrophoneNetworkSettings", "class_microphone_network_settings.html", null ],
       [ "NetworkManagerProvider", "class_network_manager_provider.html", null ],
       [ "NetworkPlayer", "class_network_player.html", null ],
+      [ "ObjectToMainCameraRotator", "class_object_to_main_camera_rotator.html", null ],
+      [ "RPMAvatarParser", "class_r_p_m_avatar_parser.html", null ],
       [ "RigidBodySycn", "class_rigid_body_sycn.html", null ],
       [ "RoomListItem", "class_room_list_item.html", null ],
       [ "SceneChanger", "class_scene_changer.html", null ],
       [ "SetupRoomName", "class_setup_room_name.html", null ],
+      [ "UIDisplayPlayerName", "class_u_i_display_player_name.html", null ],
       [ "UIRoomListController", "class_u_i_room_list_controller.html", null ],
       [ "VRLogger", "class_v_r_logger.html", null ],
-      [ "VRLoggersManager", "class_v_r_loggers_manager.html", null ]
+      [ "VRLoggersManager", "class_v_r_loggers_manager.html", null ],
+      [ "VirtualKeyboardController", "class_virtual_keyboard_controller.html", null ]
     ] ],
     [ "MonoBehaviourPun", null, [
       [ "OwnershipTransfer", "class_ownership_transfer.html", null ]

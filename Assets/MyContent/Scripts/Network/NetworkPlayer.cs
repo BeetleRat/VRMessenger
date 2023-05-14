@@ -6,7 +6,7 @@ using Photon.Realtime;
 /**
  Класс, отвечающий за синхронизацию локального игрока и его отображения на сервере
 
-Данный класс используется в prefab-е игрока, находящегося по пути Assets/Resources.
+Данный класс используется в prefab-е игрока, находящегося по пути Assets/Resources/Avatars.
 
 
 Данный класс отвечает за:
@@ -26,7 +26,6 @@ using Photon.Realtime;
 @param rightHand Объект отображения правой руки на сервере (правая рука в prefab-е игрока).
 @param controllertTypeController Массив ControllerTypeController, которыми управляет данный класс.
 @param dublicateMainPlayer Если true, то пользователь будет видеть как его контроллеры отображаются на сервере.
-@param handsOpacity Прозрачность своих контроллеров на сервере (если dublicateMainPlayer == true).
 @see ControllerTypeController; HandView; ControllerEvents; NetworkVariables; ComponentCatcher
  */
 [RequireComponent(typeof(PhotonView))]
@@ -39,15 +38,15 @@ public class NetworkPlayer : MonoBehaviour
     [SerializeField] private ControllerTypeController[] _controllertTypeController;
 
     [SerializeField] private bool _dublicateMainPlayer;
-    [Range(0.0f, 1.0f)]
-    [SerializeField] private float _handsOpacity;
 
     private bool _isAttachToController;
 
+    /// Объект синхронизации Photon
     private PhotonView _photonView;
     private Transform _headRig;
     private Transform _leftHandRig;
     private Transform _rightHandRig;
+
 
     private HandView[] _handViews;
     private ControllerEvents _controllerChangeTypeEvent;
@@ -121,32 +120,25 @@ public class NetworkPlayer : MonoBehaviour
 
         }
 
-        if (!_dublicateMainPlayer)
+        if (_photonView.IsMine)
         {
-            foreach (Renderer renderer in GetComponentsInChildren<Renderer>())
-            {
-                renderer.enabled = false;
-            }
-        }
-        else
-        {
-            if (_photonView.IsMine)
+            if (!_dublicateMainPlayer)
             {
                 foreach (Renderer renderer in GetComponentsInChildren<Renderer>())
                 {
-                    for (int i = 0; i < renderer.materials.Length; i++)
-                    {
-                        // Устанавливаем прозрачность дублирующим рукам
-                        Color oldColor = renderer.materials[i].color;
-                        Color newColor = new Color(oldColor.r, oldColor.g, oldColor.b, _handsOpacity);
-                        renderer.materials[i].SetColor("_Color", newColor);
-                    }
+                    renderer.enabled = false;
                 }
             }
         }
+
     }
 
-    private void MapPosition(Transform target, Transform rigTransform)
+    /**
+     Метод для установки положения и поворота одного объекта, согласно соответствующим характеристикам другого объекта.
+    @param target Объект, которому устанавливаются положение и поворот.
+    @param rigTransform Объект, из которого берутся положение и поворот для первого объекта.
+     */
+    protected void MapPosition(Transform target, Transform rigTransform)
     {
         target.position = rigTransform.position;
         target.rotation = rigTransform.rotation;

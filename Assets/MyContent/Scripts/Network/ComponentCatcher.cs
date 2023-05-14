@@ -25,6 +25,7 @@ using UnityEngine.XR;
  - VRLoggersManager;
  - NetworkManager;
  - ControllerEvents;
+
 @param catchGestureAnimation Отлавливать ли в текущей сцене GestureAnimation.
 @param catchNetworkVariables Отлавливать ли в текущей сцене NetworkVariables.
 @see VRLoggersManager; NetworkManager; ControllerEvents; GestureAnimation; NetworkVariables
@@ -55,11 +56,13 @@ public class ComponentCatcher : MonoBehaviour
             { typeof(ControllerEvents), "ControllerEvents" },
             { typeof(GestureAnimation), "GestureAnimation" },
             { typeof(NetworkVariables), "NetworkVariables" },
+            { typeof(VirtualKeyboardController), "VirtualKeyboardController" },
 
             { typeof(object), "object" }
        };
 
     [Header("Catchable Components")]
+    [SerializeField] private bool _catchVirtualKeyboardController;
     [SerializeField] private bool _catchGestureAnimation;
     [SerializeField] private bool _catchNetworkVariables;
 
@@ -68,13 +71,13 @@ public class ComponentCatcher : MonoBehaviour
     private ControllerEvents _controllerEvents;
     private GestureAnimation _gestureAnimator;
     private NetworkVariables _networkVariables;
+    private VirtualKeyboardController _virtualKeyboardController;
 
 
     private void Start()
     {
         RefreshComponents();
     }
-
 
     private void RefreshComponents()
     {
@@ -95,6 +98,12 @@ public class ComponentCatcher : MonoBehaviour
         {
             _controllerEvents = FindObjectOfType<ControllerEvents>();
             CheckComponentState(_controllerEvents);
+        }
+
+        if (_catchVirtualKeyboardController && _virtualKeyboardController == null)
+        {
+            _virtualKeyboardController = FindObjectOfType<VirtualKeyboardController>();
+            CheckComponentState(_virtualKeyboardController);
         }
 
         if (_catchGestureAnimation && _gestureAnimator == null)
@@ -153,6 +162,17 @@ public class ComponentCatcher : MonoBehaviour
         TryToGetComponent(ref _controllerEvents);
 
         return _controllerEvents;
+    }
+
+    /**
+     Геттер VirtualKeyboardController
+    @return VirtualKeyboardController, если он был найден в сцене.
+     */
+    public VirtualKeyboardController GetVirtualKeyboard()
+    {
+        TryToGetComponent(ref _virtualKeyboardController);
+
+        return _virtualKeyboardController;
     }
 
     /**

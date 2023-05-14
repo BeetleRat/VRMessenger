@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /**
-Класс, обеспечивающий взаимодействие UI с NetworkManager
+Класс, обеспечивающий взаимодействие UI с NetworkManager.
 
-Взаимодействую с ComponentCatcher, данный класс предоставляет элементам UI взаимодействовать с NetworkManager.
+Взаимодействуя с ComponentCatcher, данный класс предоставляет элементам UI взаимодействовать с NetworkManager.
 
 @attention Для корректной работы данный класс требует, что бы в сцене присутствовали скрипты:
 - NetworkManager;

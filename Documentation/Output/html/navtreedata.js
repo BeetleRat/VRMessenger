@@ -51,7 +51,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_attach_to_players_body_8cs.html"
+"_attach_to_players_body_8cs.html",
+"class_virtual_keyboard_controller.html#a9d0bddf3ce40ad7313b23bb51a665125"
 ];
 
 var SYNCONMSG = 'нажмите на выключить для синхронизации панелей';

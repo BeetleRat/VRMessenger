@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['microphone_5fvolume_0',['MICROPHONE_VOLUME',['../class_players_property.html#ab16b039a41b6bf7d5c142ae3f7c88911',1,'PlayersProperty']]],
-  ['middle_1',['Middle',['../class_gesture_properties.html#aace3a45203f7f8acf13535e225f7973c',1,'GestureProperties']]]
+  ['index_0',['Index',['../class_gesture_properties.html#a0581fa1588e03a6bfe2750b48744a825',1,'GestureProperties']]],
+  ['instance_1',['Instance',['../class_easy_singleton.html#a7ac9a231087b82c2751004a2f56a7268',1,'EasySingleton']]],
+  ['isactive_2',['IsActive',['../class_mesh_swapper.html#a9f5e10002e295f6f5b02aca72b24841c',1,'MeshSwapper']]],
+  ['isroomvisible_3',['isRoomVisible',['../class_room_settings.html#ac1503c2eb521c2a699ab1ae81accb675',1,'RoomSettings']]]
 ];

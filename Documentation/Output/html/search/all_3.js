@@ -14,7 +14,7 @@ var searchData=
   ['changeuppercase_11',['ChangeUpperCase',['../class_keyboard_button.html#aa223039e359cc62e5a4fc197262e6b71',1,'KeyboardButton']]],
   ['clearcurrentloadroom_12',['ClearCurrentLoadRoom',['../class_u_i_room_list_controller.html#ad67d414c75e7411e09fb69392b9f32e8',1,'UIRoomListController']]],
   ['clearlog_13',['ClearLog',['../class_v_r_logger.html#a09b0c2165fe6227cb1ba66411028df17',1,'VRLogger']]],
-  ['closevirtualkeyboard_14',['CloseVirtualKeyboard',['../class_keyboard_provider.html#a2eb39d6d1ea95632841d79bfd1d54380',1,'KeyboardProvider.CloseVirtualKeyboard()'],['../class_virtual_keyboard_controller.html#a9d0bddf3ce40ad7313b23bb51a665125',1,'VirtualKeyboardController.CloseVirtualKeyboard()']]],
+  ['closevirtualkeyboard_14',['CloseVirtualKeyboard',['../class_virtual_keyboard_controller.html#a9d0bddf3ce40ad7313b23bb51a665125',1,'VirtualKeyboardController.CloseVirtualKeyboard()'],['../class_keyboard_provider.html#a2eb39d6d1ea95632841d79bfd1d54380',1,'KeyboardProvider.CloseVirtualKeyboard()']]],
   ['code_15',['Code',['../class_change_layers.html#ac9f2f8071e8a9185368b34473873fc60',1,'ChangeLayers']]],
   ['componentcatcher_16',['ComponentCatcher',['../class_component_catcher.html',1,'']]],
   ['componentcatcher_2ecs_17',['ComponentCatcher.cs',['../_component_catcher_8cs.html',1,'']]],
@@ -38,6 +38,8 @@ var searchData=
   ['controllertypechange_35',['ControllerTypeChange',['../class_controller_events.html#a1a8bdf79b20bba3217ee614e1a997c7e',1,'ControllerEvents']]],
   ['controllertypecontroller_36',['ControllerTypeController',['../class_controller_type_controller.html',1,'']]],
   ['controllertypecontroller_2ecs_37',['ControllerTypeController.cs',['../_controller_type_controller_8cs.html',1,'']]],
-  ['createnewroom_38',['CreateNewRoom',['../class_u_i_room_list_controller.html#a8f423bf4f286eb13f578207aec97a241',1,'UIRoomListController']]],
-  ['createvirtualkeyboard_39',['CreateVirtualKeyboard',['../class_virtual_keyboard_controller.html#a9d89b14622f2e47c918e4a898761ca14',1,'VirtualKeyboardController.CreateVirtualKeyboard()'],['../class_keyboard_provider.html#a0fc3a74483949353d231f562e441d443',1,'KeyboardProvider.CreateVirtualKeyboard()']]]
+  ['coordinateaxis_38',['CoordinateAxis',['../_scale_with_pointer_8cs.html#ad9c7b139125f57efbcee3b1e2b7ff6d1',1,'ScaleWithPointer.cs']]],
+  ['copyelectricity_39',['CopyElectricity',['../class_electricity.html#a41b2d146456c2fca6a73be1c041f00c4',1,'Electricity']]],
+  ['createnewroom_40',['CreateNewRoom',['../class_u_i_room_list_controller.html#a8f423bf4f286eb13f578207aec97a241',1,'UIRoomListController']]],
+  ['createvirtualkeyboard_41',['CreateVirtualKeyboard',['../class_virtual_keyboard_controller.html#a9d89b14622f2e47c918e4a898761ca14',1,'VirtualKeyboardController.CreateVirtualKeyboard()'],['../class_keyboard_provider.html#a0fc3a74483949353d231f562e441d443',1,'KeyboardProvider.CreateVirtualKeyboard()']]]
 ];

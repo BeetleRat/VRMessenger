@@ -917,7 +917,7 @@ WARN_LOGFILE           =
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  = C:/U/Git/VRMessenger/Assets/MyContent/Scripts \
+INPUT                  = ../Assets/ApplicationContent/Scripts \
                          C:/U/Git/VRMessenger/Documentation/Output/CustomPages
 
 # This tag can be used to specify the character encoding of the source files
@@ -1071,7 +1071,7 @@ EXAMPLE_RECURSIVE      = NO
 # that contain images that are to be included in the documentation (see the
 # \image command).
 
-IMAGE_PATH             =
+IMAGE_PATH             = Output/CustomPages/Images
 
 # The INPUT_FILTER tag can be used to specify a program that doxygen should
 # invoke to filter for each input file. Doxygen will invoke the filter program

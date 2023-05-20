@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['virtualkeyboardcontroller_0',['VirtualKeyboardController',['../class_virtual_keyboard_controller.html',1,'']]],
-  ['vrlogger_1',['VRLogger',['../class_v_r_logger.html',1,'']]],
-  ['vrloggersmanager_2',['VRLoggersManager',['../class_v_r_loggers_manager.html',1,'']]]
+  ['uidisplayplayername_0',['UIDisplayPlayerName',['../class_u_i_display_player_name.html',1,'']]],
+  ['uiroomlistcontroller_1',['UIRoomListController',['../class_u_i_room_list_controller.html',1,'']]]
 ];

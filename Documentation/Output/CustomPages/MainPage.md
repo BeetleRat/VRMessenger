@@ -16,10 +16,8 @@
 Скрипты NetworkManager, SceneChanger, NetworkVariables, VRLoggersManager, ControllerEvents должны всегда оставаться в сцене, и более того, при смене сцены они должны сохранять свое состояние. Для этого к ним применен паттерн Singleton, реализованный в скрипте EasySingleton.
 
 NetworkManager при подключении к комнате спавнит на сервере prefab игрока, который он берет из папки Resources в корне проекта. Рассмотрим данный prefab:
-
+\image html PlayerPrefab.png width=500
 <div style="text-align: center;">
-    <img src="../CustomPages/Images/PlayerPrefab.png" alt="PlayerPrefab" width="500"/>
-
     Prefab спавнемого игрока
 </div>
 

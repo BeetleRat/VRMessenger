@@ -11,6 +11,7 @@ var searchData=
   ['isactive_8',['IsActive',['../class_mesh_swapper.html#a9f5e10002e295f6f5b02aca72b24841c',1,'MeshSwapper']]],
   ['isattachtocontrollernow_9',['IsAttachToControllerNow',['../class_controller_events.html#aee5856e9656813d34bc5345ff285210b',1,'ControllerEvents']]],
   ['isavataractive_10',['IsAvatarActive',['../class_avatar_info.html#a027ec6a4a5d1e388b8ce5d55f74e2469',1,'AvatarInfo']]],
-  ['isroomvisible_11',['isRoomVisible',['../class_room_settings.html#ac1503c2eb521c2a699ab1ae81accb675',1,'RoomSettings']]],
-  ['isselected_12',['IsSelected',['../class_avatar_list_item.html#a17e560c859db3d4612e4603df314aaa8',1,'AvatarListItem']]]
+  ['iscircuitclosed_11',['IsCircuitClosed',['../class_electrical_circuit.html#a4e5e5c0c698b08f4d5c955bf12207275',1,'ElectricalCircuit']]],
+  ['isroomvisible_12',['isRoomVisible',['../class_room_settings.html#ac1503c2eb521c2a699ab1ae81accb675',1,'RoomSettings']]],
+  ['isselected_13',['IsSelected',['../class_avatar_list_item.html#a17e560c859db3d4612e4603df314aaa8',1,'AvatarListItem']]]
 ];

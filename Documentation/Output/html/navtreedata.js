@@ -26,13 +26,12 @@ var NAVTREE =
 [
   [ "VRMessenger", "index.html", [
     [ "Многопользовательский интерфейс для общения в виртуальной реальности с использованием аватаров", "index.html", "index" ],
-    [ "Ошибки", "bug.html", null ],
     [ "Классы", "annotated.html", [
       [ "Классы", "annotated.html", "annotated_dup" ],
       [ "Алфавитный указатель классов", "classes.html", null ],
       [ "Иерархия классов", "hierarchy.html", "hierarchy" ],
       [ "Члены классов", "functions.html", [
-        [ "Указатель", "functions.html", null ],
+        [ "Указатель", "functions.html", "functions_dup" ],
         [ "Функции", "functions_func.html", null ],
         [ "Переменные", "functions_vars.html", null ],
         [ "События", "functions_evnt.html", null ]
@@ -52,7 +51,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_attach_to_players_body_8cs.html",
-"class_virtual_keyboard_controller.html#a9d0bddf3ce40ad7313b23bb51a665125"
+"class_network_manager.html#a98ae49a486704046f5a604039463cfd2"
 ];
 
 var SYNCONMSG = 'нажмите на выключить для синхронизации панелей';

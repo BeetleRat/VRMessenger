@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['rig_0',['Rig',['../class_map_rig_transform.html#a82b632b0850f37a85d088c975d311068',1,'MapRigTransform']]],
-  ['rightgestchange_1',['RightGestChange',['../class_gesture_animation.html#a7a4e4a6474ba5dc22e939949b076b67e',1,'GestureAnimation']]],
-  ['ring_2',['Ring',['../class_gesture_properties.html#aa3f7df18380b3daf6cf1b36a1b3780ae',1,'GestureProperties']]],
-  ['room_5findex_3',['ROOM_INDEX',['../class_room_settings.html#ab2fc1334f002a485d3e40ec6245fe269',1,'RoomSettings']]]
+  ['pinky_0',['Pinky',['../class_gesture_properties.html#a96426808f6f17859b49d01dbaffeb352',1,'GestureProperties']]],
+  ['playersinroom_1',['playersInRoom',['../class_room_settings.html#a14dcf0ae71f0faecde6821dec82a1d7f',1,'RoomSettings']]],
+  ['power_5fsupply_2',['POWER_SUPPLY',['../class_electrical_element.html#aa96067a89f35aeeac9807269526c95fc',1,'ElectricalElement']]]
 ];

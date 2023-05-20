@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['keyboardbutton_2ecs_0',['KeyboardButton.cs',['../_keyboard_button_8cs.html',1,'']]],
-  ['keyboardprovider_2ecs_1',['KeyboardProvider.cs',['../_keyboard_provider_8cs.html',1,'']]]
+  ['ignoregrabbableobjects_2ecs_0',['IgnoreGrabbableObjects.cs',['../_ignore_grabbable_objects_8cs.html',1,'']]],
+  ['interfacehider_2ecs_1',['InterfaceHider.cs',['../_interface_hider_8cs.html',1,'']]]
 ];

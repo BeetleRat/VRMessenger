@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ee0e1d3679637e479b7f3e4d044cc67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isActive: 1
+  _isActive: 0
   _avatarImage: {fileID: 21300000, guid: 859a1ee580f9b4b439939df4377ade6c, type: 3}
   _avatarName: Avatars/GostHands/GostHandsAvatar
 --- !u!114 &9038313837189576999

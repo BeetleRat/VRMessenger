@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['backspace_0',['BACKSPACE',['../class_virtual_keyboard_controller.html#a0db7047e6671479ffe4ce9db7f7c4fd4',1,'VirtualKeyboardController']]],
-  ['browse_1',['BROWSE',['../class_virtual_keyboard_controller.html#adc1fde5b9b81c5f587eb44819384a01c',1,'VirtualKeyboardController']]]
+  ['amperage_0',['Amperage',['../class_electricity.html#ad70cab9657031424d38db6f04409f314',1,'Electricity']]],
+  ['ampermeter_1',['AMPERMETER',['../class_electrical_element.html#a3bfee7114002aec1e8938a4560bf21c9',1,'ElectricalElement']]]
 ];

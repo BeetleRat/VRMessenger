@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['rigidbodysycn_0',['RigidBodySycn',['../class_rigid_body_sycn.html',1,'']]],
-  ['roomlistitem_1',['RoomListItem',['../class_room_list_item.html',1,'']]],
-  ['roomsettings_2',['RoomSettings',['../class_room_settings.html',1,'']]],
-  ['rpmavatarinfo_3',['RPMAvatarInfo',['../class_r_p_m_avatar_info.html',1,'']]],
-  ['rpmavatarparser_4',['RPMAvatarParser',['../class_r_p_m_avatar_parser.html',1,'']]]
+  ['permissionrequester_0',['PermissionRequester',['../class_permission_requester.html',1,'']]],
+  ['playaudiowhenobjectmove_1',['PlayAudioWhenObjectMove',['../class_play_audio_when_object_move.html',1,'']]],
+  ['playersproperty_2',['PlayersProperty',['../class_players_property.html',1,'']]],
+  ['powersupply_3',['PowerSupply',['../class_power_supply.html',1,'']]]
 ];

@@ -21,6 +21,7 @@ var searchData=
   ['onroomlistupdate_18',['OnRoomListUpdate',['../class_network_manager.html#a6433e83098e4ba237c4d9132491750cc',1,'NetworkManager']]],
   ['onusernameinputfieldchanged_19',['OnUsernameInputFieldChanged',['../class_change_network_name.html#a35069d8da05eeabe553d0222e4d8492d',1,'ChangeNetworkName']]],
   ['original_20',['Original',['../class_mesh_swapper.html#a898ed4b0cb83e807b7672670dd326bb1',1,'MeshSwapper']]],
-  ['ownershiptransfer_21',['OwnershipTransfer',['../class_ownership_transfer.html',1,'']]],
-  ['ownershiptransfer_2ecs_22',['OwnershipTransfer.cs',['../_ownership_transfer_8cs.html',1,'']]]
+  ['outputtype_21',['OutputType',['../_wire_output_8cs.html#a4e0517338e6c4a31a2addafc06d4f3a3',1,'WireOutput.cs']]],
+  ['ownershiptransfer_22',['OwnershipTransfer',['../class_ownership_transfer.html',1,'']]],
+  ['ownershiptransfer_2ecs_23',['OwnershipTransfer.cs',['../_ownership_transfer_8cs.html',1,'']]]
 ];

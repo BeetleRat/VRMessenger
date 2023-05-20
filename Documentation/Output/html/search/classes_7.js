@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['keyboardbutton_0',['KeyboardButton',['../class_keyboard_button.html',1,'']]],
-  ['keyboardprovider_1',['KeyboardProvider',['../class_keyboard_provider.html',1,'']]]
+  ['ignoregrabbableobjects_0',['IgnoreGrabbableObjects',['../class_ignore_grabbable_objects.html',1,'']]],
+  ['interfacehider_1',['InterfaceHider',['../class_interface_hider.html',1,'']]]
 ];

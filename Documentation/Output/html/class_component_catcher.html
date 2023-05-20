@@ -29,7 +29,6 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="Foreground81.png"/></td>
   <td id="projectalign">
    <div id="projectname">VRMessenger<span id="projectnumber">&#160;1.0</span>
    </div>
@@ -130,6 +129,9 @@ $(document).ready(function(){initNavTree('class_component_catcher.html',''); ini
 <tr class="memitem:a262cdb3e4fa9bd926ae918cbd23e4c9f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_network_variables.html">NetworkVariables</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component_catcher.html#a262cdb3e4fa9bd926ae918cbd23e4c9f">GetNetworkVariables</a> ()</td></tr>
 <tr class="memdesc:a262cdb3e4fa9bd926ae918cbd23e4c9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Геттер <a class="el" href="class_network_variables.html" title="Класс работы с переменными сервера">NetworkVariables</a>.  <br /></td></tr>
 <tr class="separator:a262cdb3e4fa9bd926ae918cbd23e4c9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a619dcec1beb013c47a22a8f893a08da0"><td class="memItemLeft" align="right" valign="top">Recorder&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component_catcher.html#a619dcec1beb013c47a22a8f893a08da0">GetRecorder</a> ()</td></tr>
+<tr class="memdesc:a619dcec1beb013c47a22a8f893a08da0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Геттер Recorder.  <br /></td></tr>
+<tr class="separator:a619dcec1beb013c47a22a8f893a08da0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5012acd103f10a6ef1ba8962e57633aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_v_r_loggers_manager.html">VRLoggersManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component_catcher.html#a5012acd103f10a6ef1ba8962e57633aa">GetVRLoggersManager</a> ()</td></tr>
 <tr class="memdesc:a5012acd103f10a6ef1ba8962e57633aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Геттер <a class="el" href="class_v_r_loggers_manager.html" title="Скрипт, отвечающий за вывод логов во все VRLogger на сцене">VRLoggersManager</a>.  <br /></td></tr>
 <tr class="separator:a5012acd103f10a6ef1ba8962e57633aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -150,8 +152,10 @@ $(document).ready(function(){initNavTree('class_component_catcher.html',''); ini
 </dd></dl>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
+    <tr><td class="paramname">catchVirtualKeyboardController</td><td>Отлавливать ли в текущей сцене <a class="el" href="class_virtual_keyboard_controller.html" title="Класс контроллер виртуальной клавиатуры.">VirtualKeyboardController</a>. </td></tr>
     <tr><td class="paramname">catchGestureAnimation</td><td>Отлавливать ли в текущей сцене <a class="el" href="class_gesture_animation.html" title="Класс, вызывающий события смены жестов левой и правой руки">GestureAnimation</a>. </td></tr>
     <tr><td class="paramname">catchNetworkVariables</td><td>Отлавливать ли в текущей сцене <a class="el" href="class_network_variables.html" title="Класс работы с переменными сервера">NetworkVariables</a>. </td></tr>
+    <tr><td class="paramname">catchRecorder</td><td>Отлавливать ли в текущей сцене Recorder. </td></tr>
   </table>
   </dd>
 </dl>
@@ -266,6 +270,34 @@ $(document).ready(function(){initNavTree('class_component_catcher.html',''); ini
 
 <p>Геттер <a class="el" href="class_network_variables.html" title="Класс работы с переменными сервера">NetworkVariables</a>. </p>
 <dl class="section return"><dt>Возвращает</dt><dd><a class="el" href="class_network_variables.html" title="Класс работы с переменными сервера">NetworkVariables</a>, если он был найден в сцене. </dd></dl>
+
+</div>
+</div>
+<a id="a619dcec1beb013c47a22a8f893a08da0" name="a619dcec1beb013c47a22a8f893a08da0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a619dcec1beb013c47a22a8f893a08da0">&#9670;&#160;</a></span>GetRecorder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Recorder ComponentCatcher.GetRecorder </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Геттер Recorder. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>Recorder, если он был найден в сцене. </dd></dl>
 
 </div>
 </div>

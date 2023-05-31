@@ -18,7 +18,6 @@ public class MicrophoneNetworkSettings : MonoBehaviour
 {
     [SerializeField] private PhotonView _myPhotonView;
 
-    private Speaker _speaker;
     private AudioSource _audioSource;
     private NetworkVariables _networkVariables;
 
@@ -30,7 +29,6 @@ public class MicrophoneNetworkSettings : MonoBehaviour
         {
             _networkVariables.OnNetworkVariablesUpdate += OnPlayerPropertiesUpdate;
         }
-        _speaker = GetComponent<Speaker>();
         _audioSource = GetComponent<AudioSource>();
     }
 
@@ -49,11 +47,11 @@ public class MicrophoneNetworkSettings : MonoBehaviour
 
     private void OnPlayerPropertiesUpdate(Player targetPlayer, ExitGames.Client.Photon.Hashtable changedProps)
     {
-        if (changedProps.ContainsKey(PlayersProperty.MICROPHONE_VOLUME))
+        if (changedProps.ContainsKey(PhotonServerActions.MICROPHONE_VOLUME))
         {
-            if (targetPlayer == _myPhotonView.Owner)
+            if (!_myPhotonView.IsMine && targetPlayer == _myPhotonView.Owner)
             {
-                ChangeVolume((float)changedProps[PlayersProperty.MICROPHONE_VOLUME]);
+                ChangeVolume((float)changedProps[PhotonServerActions.MICROPHONE_VOLUME]);
             }
         }
     }

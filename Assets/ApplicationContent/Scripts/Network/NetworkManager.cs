@@ -59,16 +59,15 @@ public enum NetworkCode
  - Отключение от комнаты;
  - Отключение от лобби;
  - Отключение от сервера;
+ - Обновление списка созданных комнат;
  - Спавн игрока на сервере.
 
 @param vrLogger VRLoggersManager для вывода логов внутри игры.
 @param sceneChanger SceneChanger для перехода между сценами.
-@param playersPrefabName string название prefab-а игрока лежащего в Assets/Resources/Avatars. 
-Данный prefab будет заспавнен в комнате на сервере при подключении.
 @param defaultRooms Список RoomSettings комнат, к которым будет производиться подключение.
 @param autoStartTestRoom bool Параметр для отладки. 
 Если true, то автоматически подключает в первую комнату при запуске приложения.
-@see VRLoggersManager; SceneChanger; RoomSettings
+@see VRLoggersManager; SceneChanger; RoomSettings; NetworkCode
  */
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
@@ -79,9 +78,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     [SerializeField] private VRLoggersManager _vrLogger;
     [SerializeField] private SceneChanger _sceneChanger;
-    [SerializeField] private string _playersPrefabName;
     [SerializeField] private List<RoomSettings> _defaultRooms;
     [SerializeField] private bool _autoStartTestRoom;
+
+    private string _playersPrefabName;
 
     private bool _quitFromApplication;
     private bool _isConnectedToServer;
@@ -200,7 +200,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         NetworConnectionEvent?.Invoke(NetworkCode.CONNECT_TO_ROOM_COMPLETE);
         _vrLogger.Log("[" + this.name + "] You are join to the room.");
         SpawnPlayerPrefab();
-        NetworkVariables.SendPropertyToServer(PlayersProperty.UPDATE_STATUS, "Update");
+        NetworkVariables.SendPropertyToServer(PhotonServerActions.UPDATE_STATUS, "Update");
     }
 
     /// Метод, выполняемый при отключении от комнаты.
@@ -219,7 +219,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     /** 
     Метод, выполняемый при отключении от сервера.
-    @param cause Причина отключения от сервера.
+    @param [in] cause Причина отключения от сервера.
      */
     public override void OnDisconnected(DisconnectCause cause)
     {
@@ -256,7 +256,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     /** 
     Метод выполняемый, когда другой игрок подключился к комнате.
-    @param newPlayer Данные подключившегося игрока.
+    @param [in] newPlayer Данные подключившегося игрока.
      */
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
@@ -268,7 +268,10 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             + "is join to the room.");
     }
 
-    /// Метод выполняемый при обновлении списка комнат. При добавлении/удалении комнаты.
+    /** 
+    Метод выполняемый при обновлении списка комнат. При добавлении/удалении комнаты.
+    @param [in] roomList Список комнат RoomInfo, существующих на данный момент.
+     */
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
     {
         NetworConnectionEvent?.Invoke(NetworkCode.ROOM_LIST_UPDATE);
@@ -290,7 +293,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     /**
      Сеттер названия prefab-а игрока.
 
-    @param playersPrefabName string название prefab-а игрока лежащего в Assets/Resources/Avatars. 
+    @param [in] playersPrefabName string название prefab-а игрока лежащего в Assets/Resources/Avatars. 
      */
     public void SetPlayersPrefabName(string playersPrefabName)
     {

@@ -56,10 +56,8 @@ public class GestureAnimation : GestureDetector
             switch (gestureProperties.GetHandType())
             {
                 case HandType.Left:
-                    //LeftGestChange?.Invoke(new bool[5]);
                     break;
                 case HandType.Right:
-                    //RightGestChange?.Invoke(new bool[5]);
                     break;
                 default:
                     Debug.LogWarning("[" + this.name + "] Жесту не назначен тип руки.");

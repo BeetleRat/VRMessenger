@@ -20,7 +20,7 @@ public class MenuSwapper : MonoBehaviour
 
     /**
      Метод переключения на другую вкладку меню.
-    @param menuNumber Индекс вкладки, на которую необходимо переключиться.
+    @param [in] menuNumber Индекс вкладки, на которую необходимо переключиться.
      */
     public void SwitchMenu(int menuNumber)
     {

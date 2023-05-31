@@ -16,9 +16,8 @@ public class KeyboardButton : MonoBehaviour
 
     private bool _isSpecialButton;
 
-    private void Start()
+    private void Awake()
     {
-
         _text = _buttonText.text;
         _isSpecialButton =
             _text == VirtualKeyboardController.BACKSPACE
@@ -36,7 +35,7 @@ public class KeyboardButton : MonoBehaviour
     Все кнопки на клавиатуре контролируются классом VirtualKeyboardController.
     Когда данный класс собирает кнопки, которые он контролирует, 
     он так же должен через данный метод установить себя, как контролирующий класс для данной кнопки.
-    @param VirtualKeyboardController Контроллер клавиатуры данной кнопки.
+    @param [in] keyboardController Контроллер клавиатуры данной кнопки VirtualKeyboardController.
      */
     public void SetKeyboardController(VirtualKeyboardController keyboardController)
     {
@@ -46,7 +45,7 @@ public class KeyboardButton : MonoBehaviour
     /**
      Метод устанавливающий символ в заглавный или в строчный.
     Не производит действия на специальные кнопки.
-    @param isUpperCase Если true, то установит символ в заглавный.
+    @param [in] isUpperCase Если true, то установит символ в заглавный.
     Если false, то установит символ в строчный.
      */
     public void ChangeUpperCase(bool isUpperCase)
@@ -55,11 +54,17 @@ public class KeyboardButton : MonoBehaviour
         {
             if (isUpperCase)
             {
-                _text = _text.ToUpper();
+                if (_text != null)
+                {
+                    _text = _text.ToUpper();
+                }
             }
             else
             {
-                _text = _text.ToLower();
+                if (_text != null)
+                {
+                    _text = _text.ToLower();
+                }
             }
             _buttonText.text = _text;
         }

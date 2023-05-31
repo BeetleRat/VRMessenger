@@ -79,6 +79,10 @@ PrefabInstance:
       propertyPath: _redyPlayerMeAvatar
       value: 
       objectReference: {fileID: 5928381509002756493, guid: d6641ea3bfd19a64e9a4f7b91e551c63, type: 3}
+    - target: {fileID: 7291816717539230076, guid: 82e2f499be9ee90439af1cc2982aff6d, type: 3}
+      propertyPath: _dublicateMainPlayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8385372047467341881, guid: 82e2f499be9ee90439af1cc2982aff6d, type: 3}
       propertyPath: sceneViewId
       value: 0

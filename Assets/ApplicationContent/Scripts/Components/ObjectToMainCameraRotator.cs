@@ -14,7 +14,16 @@ public class ObjectToMainCameraRotator : MonoBehaviour
     {
         if (_camera == null)
         {
-            _camera = FindObjectOfType<Camera>();
+            Camera[] sceneCameras = new Camera[10];
+            Camera.GetAllCameras(sceneCameras);
+            foreach (Camera camera in sceneCameras)
+            {
+                if (camera.enabled)
+                {
+                    _camera = camera;
+                    break;
+                }
+            }
             if (_camera == null)
             {
                 Debug.LogWarning("[" + this.name + "] Scene does not contain a camera");

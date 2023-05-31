@@ -54,13 +54,14 @@ public class Voltmeter : ElectricalElement, ElectricityTransfer
 
     private void Update()
     {
-        if (_electricalCircuit != null)
+        if (_electricalCircuit != null && _electricalCircuit.IsCircuitClosed())
         {
-            if (_electricalCircuit.IsCircuitClosed())
-            {
-                _circuitCectionResistance = 0;
-                FindFirstMultiClema(this, _pluse.GetConnectedWire().GetWire());
-            }
+            _circuitCectionResistance = 0;
+            FindFirstMultiClema(this, _pluse.GetConnectedWire().GetWire());
+        }
+        else
+        {
+            _pointer.SetCurrentValue(0);
         }
         UpdateElectricityStatus();
     }

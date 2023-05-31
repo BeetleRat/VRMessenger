@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>VRMessenger: Основные классы приложения</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Foreground81.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">VRMessenger<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Многопользовательский интерфейс для общения в виртуальной реальности с использованием аватаров</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('_annex.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">Основные классы приложения</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h1><a class="anchor" id="autotoc_md0"></a>
+Используемые ассеты</h1>
+<ul>
+<li>PUN 2 – FREE - для реализации сетевого взаимодействия;</li>
+<li>Photon Voice 2 - для реализации голосового чата;</li>
+<li>Oculus Integration – для работы со шлемом виртуальной реальности Oculus Quest 2;</li>
+<li>LeanTween – для плавного перемещения объектов;</li>
+<li>ReadyPlayerMe - для загрузки моделей аватаров с сервиса Ready Player Me;</li>
+<li>WireBuilder - для создания проводов.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Менеджеры</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Название класса   </th><th class="markdownTableHeadNone">Краткое описание    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="class_network_manager.html" title="Класс, отвечающий за взаимодействие с сервером Photon.">NetworkManager</a>   </td><td class="markdownTableBodyNone">Класс, отвечающий за взаимодействие с сервером Photon    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="class_scene_changer.html" title="Скрипт, отвечающий за смену сцен в приложении">SceneChanger</a>   </td><td class="markdownTableBodyNone">Скрипт, отвечающий за смену сцен в приложении    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="class_network_variables.html" title="Класс работы с переменными сервера">NetworkVariables</a>   </td><td class="markdownTableBodyNone">Класс работы с переменными сервера    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="class_v_r_loggers_manager.html" title="Скрипт, отвечающий за вывод логов во все VRLogger на сцене">VRLoggersManager</a>   </td><td class="markdownTableBodyNone">Скрипт, отвечающий за вывод логов во все <a class="el" href="class_v_r_logger.html" title="Скрипт для вывода логов внутри игры">VRLogger</a> на сцене    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="class_controller_events.html" title="Класс, отслеживающий переключение с контроллеров на руки">ControllerEvents</a>   </td><td class="markdownTableBodyNone">Класс, отслеживающий переключение с контроллеров на руки    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="class_permission_requester.html" title="Компонент, запрашивающий разрешения шлема виртуальной реальности.">PermissionRequester</a>   </td><td class="markdownTableBodyNone">Компонент, запрашивающий разрешения шлема виртуальной реальности   </td></tr>
+</table>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Prefab игрока</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Название класса   </th><th class="markdownTableHeadNone">Краткое описание    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="class_map_avatar_body.html" title="Класс, отвечающий за синхронизацию положения тела аватара, с управляющими элементами.">MapAvatarBody</a>   </td><td class="markdownTableBodyNone">Класс, отвечающий за синхронизацию положения тела аватара, с управляющими элементами    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="class_map_rig_transform.html" title="Класс для установки положения и поворота кости скелета, в положение цели.">MapRigTransform</a>   </td><td class="markdownTableBodyNone">Класс для установки положения и поворота кости скелета, в положение цели    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="class_controller_type_controller.html" title="Класс, отвечающий за переключение типов контроллеров на сервере">ControllerTypeController</a>   </td><td class="markdownTableBodyNone">Класс, отвечающий за переключение типов контроллеров на сервере    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="class_controller_animation_updater.html" title="Класс обеспечивающий проигрывание анимации контроллеров Oculus на сервере">ControllerAnimationUpdater</a>   </td><td class="markdownTableBodyNone">Класс обеспечивающий проигрывание анимации контроллеров Oculus на сервере    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="class_gost_hand_transform_updater.html" title="Класс, отвечающий за синхронизацию положения рук на сервере">GostHandTransformUpdater</a>   </td><td class="markdownTableBodyNone">Класс, отвечающий за синхронизацию положения рук на сервере    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="class_avatar_info.html" title="Класс, хранящий информацию об аватаре.">AvatarInfo</a>   </td><td class="markdownTableBodyNone">Класс, хранящий информацию об аватаре    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="class_r_p_m_avatar_info.html" title="Класс, хранящий информацию об аватаре, использующим модель Ready Player Me.">RPMAvatarInfo</a>   </td><td class="markdownTableBodyNone">Класс, хранящий информацию об аватаре, использующим модель Ready Player Me    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="class_r_p_m_avatar_parser.html" title="Компонент для парсинга модели Ready Player Me в аватар.">RPMAvatarParser</a>   </td><td class="markdownTableBodyNone">Компонент для парсинга модели Ready Player Me в аватар    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="class_mesh_swapper.html" title="Класс для замены меша и материала оригинальной модели на указанную">MeshSwapper</a>   </td><td class="markdownTableBodyNone">Класс для замены меша и материала оригинальной модели на указанную    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="class_u_i_display_player_name.html" title="Компонент, отображающий имя игрока в текстовом поле.">UIDisplayPlayerName</a>   </td><td class="markdownTableBodyNone">Компонент, отображающий имя игрока в текстовом поле    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="class_object_to_main_camera_rotator.html" title="Компонент разварачивающий объект лицом к активной камере">ObjectToMainCameraRotator</a>   </td><td class="markdownTableBodyNone">Компонент разварачивающий объект лицом к активной камере    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="class_hand_view.html" title="Компонент якорь для отображения контроллеров на сервере">HandView</a>   </td><td class="markdownTableBodyNone">Компонент якорь для отображения контроллеров на сервере    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="class_attach_to_players_body.html" title="Скрипт, прикрепляющий объект к якорю весящему на игроке">AttachToPlayersBody</a>   </td><td class="markdownTableBodyNone">Скрипт, прикрепляющий объект к якорю весящему на игроке   </td></tr>
+</table>
+<h1><a class="anchor" id="autotoc_md3"></a>
+UI скрипты</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Название класса   </th><th class="markdownTableHeadNone">Краткое описание    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="class_network_manager_provider.html" title="Класс, обеспечивающий взаимодействие UI с NetworkManager.">NetworkManagerProvider</a>   </td><td class="markdownTableBodyNone">Класс, обеспечивающий взаимодействие UI с <a class="el" href="class_network_manager.html" title="Класс, отвечающий за взаимодействие с сервером Photon.">NetworkManager</a>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="class_change_u_i_layer.html" title="Класс отвечающий за плавную смену слоев на UI экране">ChangeUILayer</a>   </td><td class="markdownTableBodyNone">Класс отвечающий за плавную смену слоев на UI экране    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="class_room_list_item.html" title="Класс пункта списка комнат">RoomListItem</a>   </td><td class="markdownTableBodyNone">Класс пункта списка комнат    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="class_u_i_room_list_controller.html" title="Класс, контролирующий все элементы списка комнат, к которым можно подключиться.">UIRoomListController</a>   </td><td class="markdownTableBodyNone">Класс, контролирующий все элементы списка комнат, к которым можно подключиться    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="class_avatar_list.html" title="Класс, контролирующий все элементы списка доступных аватаров.">AvatarList</a>   </td><td class="markdownTableBodyNone">Класс, контролирующий все элементы списка доступных аватаров    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="class_avatar_list_item.html" title="Класс пункта списка аватаров">AvatarListItem</a>   </td><td class="markdownTableBodyNone">Класс пункта списка аватаров    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="class_change_network_name.html" title="Класс, изменяющий имя игрока в сети на значение, записанное в поле ввода.">ChangeNetworkName</a>   </td><td class="markdownTableBodyNone">Класс, изменяющий имя игрока в сети на значение, записанное в поле ввода    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="class_keyboard_button.html" title="Класс кнопки виртуальной клавиатуры.">KeyboardButton</a>   </td><td class="markdownTableBodyNone">Класс кнопки виртуальной клавиатуры    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="class_virtual_keyboard_controller.html" title="Класс контроллер виртуальной клавиатуры.">VirtualKeyboardController</a>   </td><td class="markdownTableBodyNone">Класс контроллер виртуальной клавиатуры    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="class_keyboard_provider.html" title="Класс, обеспечивающий взаимодействие UI с VirtualKeyboardController.">KeyboardProvider</a>   </td><td class="markdownTableBodyNone">Класс, обеспечивающий взаимодействие UI с <a class="el" href="class_virtual_keyboard_controller.html" title="Класс контроллер виртуальной клавиатуры.">VirtualKeyboardController</a>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="class_interface_hider.html" title="Скрипт для плавного появления/скрытия интерфейса">InterfaceHider</a>   </td><td class="markdownTableBodyNone">Скрипт для плавного появления/скрытия интерфейса    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="class_menu_swapper.html" title="Скрипт для переключения различных UI через InterfaceHider.">MenuSwapper</a>   </td><td class="markdownTableBodyNone">Скрипт для переключения различных UI через <a class="el" href="class_interface_hider.html" title="Скрипт для плавного появления/скрытия интерфейса">InterfaceHider</a>   </td></tr>
+</table>
+<h1><a class="anchor" id="autotoc_md4"></a>
+Скрипты для устранения возникших ошибок</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Название класса   </th><th class="markdownTableHeadNone">Краткое описание    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="class_ownership_transfer.html" title="Скрипт, передающий права на объект">OwnershipTransfer</a>   </td><td class="markdownTableBodyNone">Скрипт, передающий права на объект    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="class_rigid_body_sycn.html" title="Скрипт для синхронизации RigidBody на сервере">RigidBodySycn</a>   </td><td class="markdownTableBodyNone">Скрипт для синхронизации RigidBody на сервере   </td></tr>
+</table>
+<h1><a class="anchor" id="autotoc_md5"></a>
+Скрипты для взаимодействия с аудио</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Название класса   </th><th class="markdownTableHeadNone">Краткое описание    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="class_microphone_controller.html" title="Класс отвечающий за взаимодействие с локальным микрофоном">MicrophoneController</a>   </td><td class="markdownTableBodyNone"></td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="class_microphone_network_settings.html" title="Класс взаимодействия с компонентами воспроизводящими звук с микрофона на сервере">MicrophoneNetworkSettings</a>   </td><td class="markdownTableBodyNone"></td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="class_audio_controller.html" title="Класс, манипулирующий звуками сцены">AudioController</a>   </td><td class="markdownTableBodyNone">Класс, манипулирующий звуками сцены   </td></tr>
+</table>
+<h1><a class="anchor" id="autotoc_md6"></a>
+Скрипты для расопзнования жестов</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Название класса   </th><th class="markdownTableHeadNone">Краткое описание    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="class_gesture_detector.html" title="Абстрактный суперкласс для распознавания жестов">GestureDetector</a>   </td><td class="markdownTableBodyNone">Абстрактный суперкласс для распознавания жестов    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="class_gesture_properties.html" title="Компонент, хранящий в себе свойства жеста.">GestureProperties</a>   </td><td class="markdownTableBodyNone">Компонент, хранящий в себе свойства жеста   </td></tr>
+</table>
+<h1><a class="anchor" id="autotoc_md7"></a>
+Вспомогательные скрипты</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Название класса   </th><th class="markdownTableHeadNone">Краткое описание    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="class_button_text_changer.html" title="Компонент меняющий текст в текстовом поле при наведении курсора на кнопку">ButtonTextChanger</a>   </td><td class="markdownTableBodyNone">Компонент меняющий текст в текстовом поле при наведении курсора на кнопку    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="class_gif_animation.html" title="Скрипт для воспроизведения gif анимации в UI.">GifAnimation</a>   </td><td class="markdownTableBodyNone">Скрипт для воспроизведения gif анимации в UI    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="class_setup_room_name.html" title="Скрипт для установки имени текущей комнаты в указанное текстовое поле">SetupRoomName</a>   </td><td class="markdownTableBodyNone">Скрипт для установки имени текущей комнаты в указанное текстовое поле    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="class_back_from_floor.html" title="Класс возвращающий объект в стартовое положение, если объект упал на пол.">BackFromFloor</a>   </td><td class="markdownTableBodyNone">Класс возвращающий объект в стартовое положение, если объект упал на пол    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="class_easy_singleton.html" title="Компонент обеспечивающий паттерн Singleton для того объекта, к которому он применен">EasySingleton</a>   </td><td class="markdownTableBodyNone">Компонент обеспечивающий паттерн Singleton для того объекта, к которому он применен    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="class_component_catcher.html" title="Класс, отлавливающий определенные компоненты в текущей сцене">ComponentCatcher</a>   </td><td class="markdownTableBodyNone">Класс, отлавливающий определенные компоненты в текущей сцене   </td></tr>
+</table>
+<h1><a class="anchor" id="autotoc_md8"></a>
+Скрипты электрической цепи</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Название класса   </th><th class="markdownTableHeadNone">Краткое описание    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="class_electrical_circuit.html" title="Класс электрической цепи.">ElectricalCircuit</a>   </td><td class="markdownTableBodyNone">Класс электрической цепи    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="class_electrical_element.html" title="Суперкласс всех элементов электрической схемы ElectricalCircuit.">ElectricalElement</a>   </td><td class="markdownTableBodyNone">Суперкласс всех элементов электрической схемы <a class="el" href="class_electrical_circuit.html" title="Класс электрической цепи.">ElectricalCircuit</a>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="class_power_supply.html" title="Класс источника электрического тока.">PowerSupply</a>   </td><td class="markdownTableBodyNone">Класс источника электрического тока    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="class_milliammeter.html" title="Класс миллиамперметра.">Milliammeter</a>   </td><td class="markdownTableBodyNone">Класс миллиамперметра    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="class_voltmeter.html" title="Класс вольтметра.">Voltmeter</a>   </td><td class="markdownTableBodyNone">Класс вольтметра    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="class_resistor.html" title="Класс резистора">Resistor</a>   </td><td class="markdownTableBodyNone">Класс резистора    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="class_rheostat.html" title="Класс реостата">Rheostat</a>   </td><td class="markdownTableBodyNone">Класс реостата    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="class_multi_clema.html" title="Класс переходника на 3 входа.">MultiClema</a>   </td><td class="markdownTableBodyNone">Класс переходника на 3 входа    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="class_wire_element.html" title="Класс провода">WireElement</a>   </td><td class="markdownTableBodyNone">Класс провода    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="class_move_closer_if_distance_is_large.html" title="Компонент для синхронизации относительного положения концов провода">MoveCloserIfDistanceIsLarge</a>   </td><td class="markdownTableBodyNone">Компонент для синхронизации относительного положения концов провода    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><a class="el" href="class_play_audio_when_object_move.html" title="Класс, проигрывающий указанный AudioSource при изменении положения/поворота объекта">PlayAudioWhenObjectMove</a>   </td><td class="markdownTableBodyNone">Класс, проигрывающий указанный AudioSource при изменении положения/поворота объекта    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><a class="el" href="class_scale_with_pointer.html" title="Класс шкалы с указателем.">ScaleWithPointer</a>   </td><td class="markdownTableBodyNone">Класс шкалы с указателем   </td></tr>
+</table>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7 </li>
+  </ul>
+</div>
+</body>
+</html>

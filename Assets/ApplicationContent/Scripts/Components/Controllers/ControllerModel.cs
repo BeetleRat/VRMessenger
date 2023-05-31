@@ -55,6 +55,7 @@ public class ControllerModel : MonoBehaviour
      Установка существования данного объекта. 
  
      Когда мы переключаемся на другое отображение контроллеров, мы должны отключить предыдущее и включить новое отображение.
+    @param [in] isActive Существует ли данный объект.
      */
     public void SetActive(bool isActive)
     {

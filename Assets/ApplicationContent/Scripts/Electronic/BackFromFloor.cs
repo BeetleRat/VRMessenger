@@ -77,5 +77,4 @@ public class BackFromFloor : MonoBehaviour
             collider.enabled = isActive;
         }
     }
-
 }

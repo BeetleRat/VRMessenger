@@ -68,9 +68,9 @@ public class ComponentCatcher : MonoBehaviour
     [SerializeField] private bool _catchGestureAnimation;
     [SerializeField] private bool _catchNetworkVariables;
     [SerializeField] private bool _catchRecorder;
-
-    private VRLoggersManager _vrLogger;
+    
     private NetworkManager _networkManager;
+    private VRLoggersManager _vrLogger;
     private ControllerEvents _controllerEvents;
     private GestureAnimation _gestureAnimator;
     private NetworkVariables _networkVariables;

@@ -12,6 +12,7 @@ using UnityEngine.UI;
 @param selectCheckboxImage Image выбранного checkbox-а.
 @param unselectCheckboxImage Image невыбранного checkbox-а.
 @param selectFrameImage Image рамки вокруг изображения аватара.
+@see AvatarList
  */
 public class AvatarListItem : MonoBehaviour
 {
@@ -34,7 +35,7 @@ public class AvatarListItem : MonoBehaviour
 
     /**
      Сеттер изображения аватара.
-    @param image Sprite изображения аватара.
+    @param [in] image Sprite изображения аватара.
      */
     public void SetAvatarImage(Sprite image)
     {
@@ -43,7 +44,7 @@ public class AvatarListItem : MonoBehaviour
 
     /**
      Сеттер названия аватара.
-    @param name Название аватара.
+    @param [in] name Название аватара.
      */
     public void SetAvatarName(string name)
     {
@@ -52,7 +53,7 @@ public class AvatarListItem : MonoBehaviour
 
     /**
      Сеттер состояния элемента списка.
-    @param isSelected Выбран ли элемент.
+    @param [in] isSelected Выбран ли элемент.
      */
     public void SetSelected(bool isSelected)
     {
@@ -61,7 +62,7 @@ public class AvatarListItem : MonoBehaviour
 
     /**
      Сеттер списка управляющего данным элементом.
-    @param controllerList AvatarList управляющий данным элементом.
+    @param [in] controllerList AvatarList управляющий данным элементом.
      */
     public void SetControllerList(AvatarList controllerList)
     {
@@ -87,7 +88,6 @@ public class AvatarListItem : MonoBehaviour
     }
 
     /// Метод выбирающий данный элемент, если он не выбран.
-
     public void OnClick()
     {
         if (!_isSelected)
@@ -95,5 +95,4 @@ public class AvatarListItem : MonoBehaviour
             _controllerList?.ChangeCurrentElement(this);
         }
     }
-
 }

@@ -14,5 +14,4 @@
         </activity>
     </application>
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-feature android:name="oculus.software.overlay_keyboard" android:required="false"/>
 </manifest>

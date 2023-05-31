@@ -21,11 +21,13 @@ public class RigidBodySycn : MonoBehaviour
     private Rigidbody _rigidbody;
     private NetworkVariables _networkVariables;
     private bool _isKinematic;
+    private bool _isInit;
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
         _isKinematic = _rigidbody.isKinematic;
+        _isInit = false;
     }
 
     private void Start()
@@ -58,7 +60,8 @@ public class RigidBodySycn : MonoBehaviour
         if (_rigidbody.isKinematic != _isKinematic)
         {
             _isKinematic = _rigidbody.isKinematic;
-            NetworkVariables.SendPropertyToServer(PlayersProperty.CHANGE_KINEMATIC, _isKinematic);
+            NetworkVariables.SendPropertyToServer(PhotonServerActions.CHANGE_KINEMATIC, _isKinematic);
+            _isInit = true;
         }
     }
 
@@ -69,14 +72,23 @@ public class RigidBodySycn : MonoBehaviour
 
     private void OnPlayerPropertiesUpdate(Player targetPlayer, ExitGames.Client.Photon.Hashtable changedProps)
     {
-        if (changedProps.ContainsKey(PlayersProperty.CHANGE_KINEMATIC))
+        if (changedProps.ContainsKey(PhotonServerActions.CHANGE_KINEMATIC))
         {
             if (!_photonView.IsMine)
             {
                 if (targetPlayer == _photonView.Owner)
                 {
-                    ChangeKinematic((bool)changedProps[PlayersProperty.CHANGE_KINEMATIC]);
+                    ChangeKinematic((bool)changedProps[PhotonServerActions.CHANGE_KINEMATIC]);
+                    _isInit = true;
                 }
+            }
+        }
+
+        if (changedProps.ContainsKey(PhotonServerActions.UPDATE_STATUS))
+        {
+            if (_isInit)
+            {
+                NetworkVariables.SendPropertyToServer(PhotonServerActions.CHANGE_KINEMATIC, _isKinematic);
             }
         }
     }

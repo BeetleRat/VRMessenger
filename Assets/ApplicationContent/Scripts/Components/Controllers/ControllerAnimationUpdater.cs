@@ -4,10 +4,10 @@
 Класс обеспечивающий проигрывание анимации контроллеров Oculus на сервере
 
 Данный класс обновляет анимацию моделей контроллера на сервере, в зависимости от нажатых на локальном контроллере кнопок/стиков/триггеров.
+@param animator Аниматор, который используется для анимации модели контроллера.
  */
 public class ControllerAnimationUpdater : ControllerModel
 {
-    /// Аниматор, который используется для анимации модели контроллера.
     [SerializeField] private Animator _animator;
 
     private void Update()
@@ -30,5 +30,4 @@ public class ControllerAnimationUpdater : ControllerModel
             animator.SetFloat("Grip", OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, _controllerType));
         }
     }
-
 }

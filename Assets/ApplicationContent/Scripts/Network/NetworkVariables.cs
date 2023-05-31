@@ -4,7 +4,7 @@ using Photon.Realtime;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 /// Класс, хранящий константы действий, совершаемых на сервере.
-public class PlayersProperty
+public class PhotonServerActions
 {
     /// Изменить тип контроллера.
     public const string CONTROLLER_TYPE = "ControllerType";
@@ -16,6 +16,8 @@ public class PlayersProperty
     public const string MICROPHONE_VOLUME = "MicrophoneVolume";
     /// Изменить kinematic объекта
     public const string CHANGE_KINEMATIC = "ChangeKinematic";
+    /// Изменить видимость объекта InterfaceHider
+    public const string CHANGE_HIDER = "ChangeHider";
 }
 
 /**
@@ -31,7 +33,7 @@ public class NetworkVariables : MonoBehaviourPunCallbacks
 
     /**
     Метод отправки на сервер переменной.
-    @param [in] propertyName string имя переменной из класса PlayersProperty.
+    @param [in] propertyName string имя переменной из класса PhotonServerActions.
     @param [in] property Переменная, отправляемая на сервер.
      */
     public static void SendPropertyToServer<T>(string propertyName, T property)
@@ -43,8 +45,8 @@ public class NetworkVariables : MonoBehaviourPunCallbacks
 
     /**
     Метод, вызываемый при пришествии новых переменных на сервер.
-    @param targetPlayer Игрок, приславший переменные.
-    @param changedProps Хеш таблица Photon, содержащая переменные, присланные на сервер.
+    @param [in] targetPlayer Игрок, приславший переменные.
+    @param [in] changedProps Хеш таблица Photon, содержащая переменные, присланные на сервер.
      */
     public override void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps)
     {

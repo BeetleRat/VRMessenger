@@ -89,7 +89,7 @@ public class HandsAnimaionUpdater : ControllerModel
         if (_myPhotonView.IsMine)
         {
             ChangeLocalHandPose(fingers);
-            NetworkVariables.SendPropertyToServer(PlayersProperty.GESTURE_FINGERS, fingers);
+            NetworkVariables.SendPropertyToServer(PhotonServerActions.GESTURE_FINGERS, fingers);
         }
     }
 
@@ -100,13 +100,13 @@ public class HandsAnimaionUpdater : ControllerModel
 
     private void OnPlayerPropertiesUpdate(Player targetPlayer, ExitGames.Client.Photon.Hashtable changedProps)
     {
-        if (changedProps.ContainsKey(PlayersProperty.GESTURE_FINGERS))
+        if (changedProps.ContainsKey(PhotonServerActions.GESTURE_FINGERS))
         {
             if (!_myPhotonView.IsMine)
             {
                 if (targetPlayer == _myPhotonView.Owner)
                 {
-                    ChangeLocalHandPose((bool[])changedProps[PlayersProperty.GESTURE_FINGERS]);
+                    ChangeLocalHandPose((bool[])changedProps[PhotonServerActions.GESTURE_FINGERS]);
                 }
             }
         }

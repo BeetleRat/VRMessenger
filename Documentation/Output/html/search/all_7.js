@@ -1,7 +1,7 @@
 var searchData=
 [
   ['gender_0',['Gender',['../_r_p_m_avatar_parser_8cs.html#a3667e3c5ec056737c8789615a989324f',1,'RPMAvatarParser.cs']]],
-  ['gesture_5ffingers_1',['GESTURE_FINGERS',['../class_players_property.html#aa8c2dce2193e83a3b530ceeef5852153',1,'PlayersProperty']]],
+  ['gesture_5ffingers_1',['GESTURE_FINGERS',['../class_photon_server_actions.html#a445d86ffee614f0e5a6bd8988a788fb4',1,'PhotonServerActions']]],
   ['gestureanimation_2',['GestureAnimation',['../class_gesture_animation.html',1,'']]],
   ['gestureanimation_2ecs_3',['GestureAnimation.cs',['../_gesture_animation_8cs.html',1,'']]],
   ['gesturedetector_4',['GestureDetector',['../class_gesture_detector.html',1,'']]],

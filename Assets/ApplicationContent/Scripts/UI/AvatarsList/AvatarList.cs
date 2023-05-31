@@ -53,7 +53,7 @@ public class AvatarList : MonoBehaviour
 
     Данный метод делает не выбранными все элементы списка, кроме переданного ему во входном параметре.
     Так же в данном методе устанавливается новое имя спавнемого prefab-а игрока(аватара).
-    @param newSelectedElement AvatarListItem выбранный в данный момент.
+    @param [in] newSelectedElement AvatarListItem выбранный в данный момент.
      */
     public void ChangeCurrentElement(AvatarListItem newSelectedElement)
     {

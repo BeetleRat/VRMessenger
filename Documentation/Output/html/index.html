@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>VRMessenger: Многопользовательский интерфейс для общения в виртуальной реальности с использованием аватаров</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -29,6 +29,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Foreground81.png"/></td>
   <td id="projectalign">
    <div id="projectname">VRMessenger<span id="projectnumber">&#160;1.0</span>
    </div>
@@ -51,7 +52,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Создано системой Doxygen 1.9.6 -->
+<!-- Создано системой Doxygen 1.9.7 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
@@ -100,103 +101,127 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
 <div class="toc"><h3>Оглавление</h3>
-<ul><li class="level1"><a href="#section_water">Общее описание работы скриптов</a></li>
-<li class="level1"><a href="#section1">Скрипты для работы с сетью</a></li>
-<li class="level1"><a href="#section2">Скрипты для работы с компонентами</a></li>
-<li class="level1"><a href="#section3">Скрипты для работы с жестами</a></li>
-<li class="level1"><a href="#section4">Скрипты для работы с UI</a></li>
-<li class="level1"><a href="#section5">Прочие скрипты</a></li>
+<ul><li class="level1"><a href="#section_water">Общее описание работы скриптов</a><ul><li class="level2"><a href="#autotoc_md9">Дополнительные ассеты</a></li>
+<li class="level2"><a href="#autotoc_md10">Менеджеры</a></li>
+<li class="level2"><a href="#autotoc_md11">Prefab игрока</a></li>
+<li class="level2"><a href="#autotoc_md12">UI скрипты</a></li>
+<li class="level2"><a href="#autotoc_md13">Скрипты для устранения возникших ошибок</a></li>
+<li class="level2"><a href="#autotoc_md14">Скрипты для взаимодействия с аудио</a></li>
+<li class="level2"><a href="#autotoc_md15">Скрипты для расопзнования жестов</a></li>
+<li class="level2"><a href="#autotoc_md16">Вспомогательные скрипты</a></li>
+<li class="level2"><a href="#autotoc_md17">Скрипты электрической цепи</a></li>
+</ul>
+</li>
+<li class="level1"><a href="#section_bugs">Известные ошибки</a><ul><li class="level2"><a href="#autotoc_md18">Не синхронизировано состояние микрофона</a></li>
+<li class="level2"><a href="#autotoc_md19">Периодически kinematic не устанавливается обратно в false</a></li>
+<li class="level2"><a href="#autotoc_md20">Объекты нельзя бросать рукой</a></li>
+<li class="level2"><a href="#autotoc_md21">Баги, которые пока что не получилось воспроизвести</a></li>
+</ul>
+</li>
+<li class="level1"><a href="#section_future">Планы на будущее</a></li>
 </ul>
 </div>
 <div class="textblock"><h1><a class="anchor" id="section_water"></a>
 Общее описание работы скриптов</h1>
-<p>Основным скриптом является <a class="el" href="class_network_manager.html" title="Класс, отвечающий за взаимодействие с сервером Photon.">NetworkManager</a>. В нем осуществляется подключение к серверу, отключение от сервера, создание и подключение к лобби, создание и подключение к комнате, отключение от комнаты, отключение от лобби, отключение от сервера, спавн игрока на сервере. В полях данного скрипта указываются типы доступных комнат, а также имя prefab-а игрока спавнемого на сервере. Данный prefab должен храниться в папке Resources в корне проекта.</p>
+<h2><a class="anchor" id="autotoc_md9"></a>
+Дополнительные ассеты</h2>
+<p>Для реализации логики работы приложения в проект были импортированы дополнительные ассеты:</p><ul>
+<li><a href="https://assetstore.unity.com/packages/tools/integration/oculus-integration-82022">Oculus Integration</a> - для работы со шлемом виртуальной реальности Oculus Quest 2;</li>
+<li><a href="https://assetstore.unity.com/packages/tools/network/pun-2-free-119922">PUN 2 - FREE</a> - для реализации сетевого взаимодействия;</li>
+<li><a href="https://assetstore.unity.com/packages/tools/audio/photon-voice-2-130518">Photon Voice 2</a> - для реализации голосового чата;</li>
+<li><a href="https://assetstore.unity.com/packages/tools/animation/leantween-3595">LeanTween</a> - для плавного перемещения объектов;</li>
+<li><a href="https://docs.readyplayer.me/ready-player-me/integration-guides/unity/quickstart">ReadyPlayerMe</a> - для загрузки моделей аватаров созданных при помощи сервиса Ready Player Me;</li>
+<li><a href="https://www.patreon.com/login?ru=https%3A%2F%2Fwww.patreon.com%2Ffile%3Fh%3D77014259%26i%3D12762600">WireBuilder</a> - для создания проводов.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md10"></a>
+Менеджеры</h2>
+<p>Основным скриптом является <a class="el" href="class_network_manager.html" title="Класс, отвечающий за взаимодействие с сервером Photon.">NetworkManager</a>. В нем осуществляется подключение к серверу, отключение от сервера, создание и подключение к лобби, создание и подключение к комнате, отключение от комнаты, отключение от лобби, отключение от сервера, обновление списка существующих комнат, спавн игрока на сервере, а также генерация случайного изначального имени игрока. В полях данного скрипта указываются типы доступных комнат в формате класса <a class="el" href="class_room_settings.html" title="Класс, хранящий настройки комнаты">RoomSettings</a>. <a class="el" href="class_room_settings.html" title="Класс, хранящий настройки комнаты">RoomSettings</a> это класс, хранящий параметры комнат, к которым будет производится подключение: название комнаты, name, количество игроков в комнате, будет ли комната видима, ID сцены, из которой будет создана комната.</p>
 <p>Скрипту <a class="el" href="class_network_manager.html" title="Класс, отвечающий за взаимодействие с сервером Photon.">NetworkManager</a> необходимо загружать различные сцены. Для этой цели ему передается скрипт <a class="el" href="class_scene_changer.html" title="Скрипт, отвечающий за смену сцен в приложении">SceneChanger</a>, отвечающий за смену сцен.</p>
 <p>В процессе работы приложения регулярно необходимо будет синхронизировать состояния объектов с сервером. Для отправки текущего состояния на сервер, а также обработки пришедших на сервер состояний используется скрипт <a class="el" href="class_network_variables.html" title="Класс работы с переменными сервера">NetworkVariables</a>.</p>
 <p>Для отладки приложения необходимо логгировать отлаживаемые компоненты. При разработке не всегда удобно, а иногда и невозможно смотреть в консоль движка Unity. С этой целью был написан скрипт <a class="el" href="class_v_r_logger.html" title="Скрипт для вывода логов внутри игры">VRLogger</a>, выводящий приходящие в него логи на текстовое поле интерфейса внутри приложения. Таких скриптов в сцене может быть много. Мы можем дать каждому игроку по экрану лога. Что бы при логгировании не искать каждый раз все <a class="el" href="class_v_r_logger.html" title="Скрипт для вывода логов внутри игры">VRLogger</a> в сцене, был написан скрипт <a class="el" href="class_v_r_loggers_manager.html" title="Скрипт, отвечающий за вывод логов во все VRLogger на сцене">VRLoggersManager</a>. <a class="el" href="class_v_r_loggers_manager.html" title="Скрипт, отвечающий за вывод логов во все VRLogger на сцене">VRLoggersManager</a> выводит лог во все <a class="el" href="class_v_r_logger.html" title="Скрипт для вывода логов внутри игры">VRLogger</a> на сцене.</p>
 <p>Игрок может переключаться между типами контроллеров. Он может осуществлять взаимодействие с виртуальной реальностью при помощи контроллеров Oculus Touch, а может отложить их в сторону и начать взаимодействовать при помощи своих собственных рук. Подобное переключение необходимо отслеживать. Это нужно как для корректного отображения типа контроллеров на сервере, так и для использования корректных якорей на теле игрока. С целью отслеживания данного переключения создан скрипт <a class="el" href="class_controller_events.html" title="Класс, отслеживающий переключение с контроллеров на руки">ControllerEvents</a>.</p>
-<p>Скрипты <a class="el" href="class_network_manager.html" title="Класс, отвечающий за взаимодействие с сервером Photon.">NetworkManager</a>, <a class="el" href="class_scene_changer.html" title="Скрипт, отвечающий за смену сцен в приложении">SceneChanger</a>, <a class="el" href="class_network_variables.html" title="Класс работы с переменными сервера">NetworkVariables</a>, <a class="el" href="class_v_r_loggers_manager.html" title="Скрипт, отвечающий за вывод логов во все VRLogger на сцене">VRLoggersManager</a>, <a class="el" href="class_controller_events.html" title="Класс, отслеживающий переключение с контроллеров на руки">ControllerEvents</a> должны всегда оставаться в сцене, и более того, при смене сцены они должны сохранять свое состояние. Для этого к ним применен паттерн Singleton, реализованный в скрипте <a class="el" href="class_easy_singleton.html" title="Компонент обеспечивающий паттерн Singleton для того объекта, к которому он применен">EasySingleton</a>.</p>
-<p><a class="el" href="class_network_manager.html" title="Класс, отвечающий за взаимодействие с сервером Photon.">NetworkManager</a> при подключении к комнате спавнит на сервере prefab игрока, который он берет из папки Resources в корне проекта. Рассмотрим данный prefab: </p><div class="image">
+<p>Приложению необходим доступ к микрофону, для работы голосового чата. Однако в стартовой сцене нет компонентов, требующих доступа к микрофону, т.к. в стартовой сцене отсутствует голосовой чат. Таким образом возникает проблема: пользователь запускает приложение, не давая ему разрешение на доступ к микрофону, и лишь установив соединение с сервером и перейдя в комнату голосового чата приложение запросит доступ к микрофону. В таком случае операционная система остановит приложение и попросит пользователя предоставить доступ к микрофону, остановка приложения во время того, как пользователь присоединился к комнате будет расценена Photon, как отключение от сервера и пользователя выкинет из приложения, даже если он предоставит доступ. Во избежание такой ситуации, необходимо запросить доступ к микрофону сразу при запуске приложения. С этой целью был создан скрипт <a class="el" href="class_permission_requester.html" title="Компонент, запрашивающий разрешения шлема виртуальной реальности.">PermissionRequester</a>. Данный скрипт запрашивает разрешение при запуске приложения и отключается.</p>
+<p>Скрипты <a class="el" href="class_network_manager.html" title="Класс, отвечающий за взаимодействие с сервером Photon.">NetworkManager</a>, <a class="el" href="class_scene_changer.html" title="Скрипт, отвечающий за смену сцен в приложении">SceneChanger</a>, <a class="el" href="class_network_variables.html" title="Класс работы с переменными сервера">NetworkVariables</a>, <a class="el" href="class_v_r_loggers_manager.html" title="Скрипт, отвечающий за вывод логов во все VRLogger на сцене">VRLoggersManager</a>, <a class="el" href="class_controller_events.html" title="Класс, отслеживающий переключение с контроллеров на руки">ControllerEvents</a>, <a class="el" href="class_permission_requester.html" title="Компонент, запрашивающий разрешения шлема виртуальной реальности.">PermissionRequester</a> должны всегда оставаться в сцене, и более того, при смене сцены они должны сохранять свое состояние. Для этого к ним применен паттерн Singleton, реализованный в скрипте <a class="el" href="class_easy_singleton.html" title="Компонент обеспечивающий паттерн Singleton для того объекта, к которому он применен">EasySingleton</a>.</p>
+<h2><a class="anchor" id="autotoc_md11"></a>
+Prefab игрока</h2>
+<p><a class="el" href="class_network_manager.html" title="Класс, отвечающий за взаимодействие с сервером Photon.">NetworkManager</a> при подключении к комнате спавнит на сервере prefab игрока. Рассмотрим, что это такое:</p>
+<div class="image">
 <img src="PlayerPrefab.png" alt="" width="500"/>
 </div>
- <div style="text-align: center;"> Prefab спавнемого игрока </div><p>Данный prefab имеет голову, левую и правую руки.</p>
-<p>Голова состоит из модели головы и компонента Speaker, отвечающего за передачу голоса на сервер.</p>
+ <div style="text-align: center;"> Prefab спавнемого игрока </div><p>Данный prefab содержит голову, левую и правую руки, аватар пользователя, UI табличку с именем пользователя. Голова содержит компонент Speaker, отвечающий за передачу голоса на сервер. Так же положение головы и рук связано с соответствующими частями тела аватара пользователя при помощи скрипта <a class="el" href="class_map_avatar_body.html" title="Класс, отвечающий за синхронизацию положения тела аватара, с управляющими элементами.">MapAvatarBody</a>, который связывает части тела с контроллерами при помощи класса <a class="el" href="class_map_rig_transform.html" title="Класс для установки положения и поворота кости скелета, в положение цели.">MapRigTransform</a>.</p>
 <p>В руках храниться компонент <a class="el" href="class_controller_type_controller.html" title="Класс, отвечающий за переключение типов контроллеров на сервере">ControllerTypeController</a>, отвечающий за смету типа отображаемых на сервере контроллеров. Внутри этого компонента хранятся отображаемые контроллеры: Controller и Hand. Controller управляется скриптом <a class="el" href="class_controller_animation_updater.html" title="Класс обеспечивающий проигрывание анимации контроллеров Oculus на сервере">ControllerAnimationUpdater</a>. Этот скрипт осуществляет синхронизацию анимации контроллера, отображаемого локально и контроллера, отображаемого на сервере. Hand, в свою очередь, управляется скриптом <a class="el" href="class_gost_hand_transform_updater.html" title="Класс, отвечающий за синхронизацию положения рук на сервере">GostHandTransformUpdater</a>. Данный скрипт синхронизирует положение и поворот всех суставов отображаемой на сервере руки и HandSynthetic локального игрока.</p>
+<p>Компонент <a class="el" href="class_avatar_info.html" title="Класс, хранящий информацию об аватаре.">AvatarInfo</a> определяет основные настройки аватара: активен ли аватар; путь до prefab-а, который будет передан скрипту <a class="el" href="class_network_manager.html" title="Класс, отвечающий за взаимодействие с сервером Photon.">NetworkManager</a>; изображение аватара в меню.</p>
+<p>Аватар игрока создается из модели Ready Player Me. Для работы с моделями Ready Player Me был создан подкласс <a class="el" href="class_avatar_info.html" title="Класс, хранящий информацию об аватаре.">AvatarInfo</a> хранящий в себе модель Ready Player Me и пол модели (мужской или женский) – <a class="el" href="class_r_p_m_avatar_info.html" title="Класс, хранящий информацию об аватаре, использующим модель Ready Player Me.">RPMAvatarInfo</a>.</p>
+<p>В prefab-е игрока хранятся две стандартные модели Ready Player Me – мужская и женская. Благодаря параметру класса <a class="el" href="class_r_p_m_avatar_info.html" title="Класс, хранящий информацию об аватаре, использующим модель Ready Player Me.">RPMAvatarInfo</a>, выбирается одна из этих моделей и ее составные части заменяются на части модели указанной в <a class="el" href="class_r_p_m_avatar_info.html" title="Класс, хранящий информацию об аватаре, использующим модель Ready Player Me.">RPMAvatarInfo</a>. За замену частей стандартной модели на части модели из <a class="el" href="class_r_p_m_avatar_info.html" title="Класс, хранящий информацию об аватаре, использующим модель Ready Player Me.">RPMAvatarInfo</a> отвечает класс <a class="el" href="class_r_p_m_avatar_parser.html" title="Компонент для парсинга модели Ready Player Me в аватар.">RPMAvatarParser</a>. Для замены конкретной части тела <a class="el" href="class_r_p_m_avatar_parser.html" title="Компонент для парсинга модели Ready Player Me в аватар.">RPMAvatarParser</a> использует класс <a class="el" href="class_mesh_swapper.html" title="Класс для замены меша и материала оригинальной модели на указанную">MeshSwapper</a>.</p>
+<p>Для вывода имени в табличку имени пользователя используется скрипт <a class="el" href="class_u_i_display_player_name.html" title="Компонент, отображающий имя игрока в текстовом поле.">UIDisplayPlayerName</a>. Что бы табличка всегда поворачивалась лицом к пользователю, используется скрипт <a class="el" href="class_object_to_main_camera_rotator.html" title="Компонент разварачивающий объект лицом к активной камере">ObjectToMainCameraRotator</a>.</p>
 <p>Весь prefab игрока контролируется скриптом <a class="el" href="class_network_player.html" title="Класс, отвечающий за синхронизацию локального игрока и его отображения на сервере">NetworkPlayer</a>, который обеспечивает синхронизацию положения контроллеров/рук и головы игрока локального и отображения этих частей на сервере. Так же данный скрипт следит за синхронизацией состояния типа контроллеров.</p>
 <p>Если <a class="el" href="class_network_player.html" title="Класс, отвечающий за синхронизацию локального игрока и его отображения на сервере">NetworkPlayer</a> работает на стороне сервера, то на стороне клиента присутствует компонент <a class="el" href="class_hand_view.html" title="Компонент якорь для отображения контроллеров на сервере">HandView</a>, к которому <a class="el" href="class_network_player.html" title="Класс, отвечающий за синхронизацию локального игрока и его отображения на сервере">NetworkPlayer</a> обращается за текущим положением и состоянием рук.</p>
 <p><a class="el" href="class_hand_view.html" title="Компонент якорь для отображения контроллеров на сервере">HandView</a> должен быть прикреплен к рукам локального игрока, чтобы корректно передавать их положение на сервер. Причем при смене типа контроллера он должен перепрыгивать с рук на контроллеры и наоборот. Вручную размещать данные компоненты на игроке неудобно. А потому был написан скрипт <a class="el" href="class_attach_to_players_body.html" title="Скрипт, прикрепляющий объект к якорю весящему на игроке">AttachToPlayersBody</a>. Данный скрипт прикрепляет компонент к якорю, указанному в его свойствах. Таким образом, мы создаем якорь на руках и контроллерах, а скрипт <a class="el" href="class_attach_to_players_body.html" title="Скрипт, прикрепляющий объект к якорю весящему на игроке">AttachToPlayersBody</a> во время запуска игры крепит к данным якорям указанный компонент. Это позволяет хранить все прикрепляемые к игроку объекты в отдельном месте, а prefab игрока открывать только для настроек игрока и добавления якорей.</p>
-<p>В лобби присутствуют UI кнопки, которые должны обращаться к <a class="el" href="class_network_manager.html" title="Класс, отвечающий за взаимодействие с сервером Photon.">NetworkManager</a>, но <a class="el" href="class_network_manager.html" title="Класс, отвечающий за взаимодействие с сервером Photon.">NetworkManager</a> нельзя добавлять в OnClick события, т.к. после смены сцен, в лобби вернется текущий <a class="el" href="class_network_manager.html" title="Класс, отвечающий за взаимодействие с сервером Photon.">NetworkManager</a>, а указанный в изначальной сцене будет уничтожен. С целью исправить это, а так же предоставить кнопкам удобный интерфейс взаимодействия с <a class="el" href="class_network_manager.html" title="Класс, отвечающий за взаимодействие с сервером Photon.">NetworkManager</a> через OnClick события, был создан компонент <a class="el" href="class_network_manager_provider.html" title="Класс, обеспечивающий взаимодействие UI с NetworkManager.">NetworkManagerProvider</a>.</p>
+<h2><a class="anchor" id="autotoc_md12"></a>
+UI скрипты</h2>
+<p>В лобби присутствуют UI кнопки, которые должны обращаться к <a class="el" href="class_network_manager.html" title="Класс, отвечающий за взаимодействие с сервером Photon.">NetworkManager</a>, но <a class="el" href="class_network_manager.html" title="Класс, отвечающий за взаимодействие с сервером Photon.">NetworkManager</a> нельзя добавлять в OnClick события, т.к. после смены сцен, в лобби вернется текущий <a class="el" href="class_network_manager.html" title="Класс, отвечающий за взаимодействие с сервером Photon.">NetworkManager</a>, а указанный в изначальной сцене будет уничтожен. С целью исправить это, а также предоставить кнопкам удобный интерфейс взаимодействия с <a class="el" href="class_network_manager.html" title="Класс, отвечающий за взаимодействие с сервером Photon.">NetworkManager</a> через OnClick события, был создан компонент <a class="el" href="class_network_manager_provider.html" title="Класс, обеспечивающий взаимодействие UI с NetworkManager.">NetworkManagerProvider</a>.</p>
 <p>Развивая идеи <a class="el" href="class_network_manager_provider.html" title="Класс, обеспечивающий взаимодействие UI с NetworkManager.">NetworkManagerProvider</a>, появился компонент <a class="el" href="class_component_catcher.html" title="Класс, отлавливающий определенные компоненты в текущей сцене">ComponentCatcher</a>. В сцене могут появляться объекты изначально там не находящиеся. Это singleton объекты пришедшие из другой сцены, спавнемые аватары или просто объекты. И всем им могут быть нужны различные объекты из текущей сцены. <a class="el" href="class_component_catcher.html" title="Класс, отлавливающий определенные компоненты в текущей сцене">ComponentCatcher</a> это компонент, настраиваемый instance которого находиться в каждой сцене. Данный компонент при старте сцены отлавливает все часто используемые объекты и объекты, до которых не добраться во время редактирования сцены: <a class="el" href="class_v_r_loggers_manager.html" title="Скрипт, отвечающий за вывод логов во все VRLogger на сцене">VRLoggersManager</a>, <a class="el" href="class_network_manager.html" title="Класс, отвечающий за взаимодействие с сервером Photon.">NetworkManager</a>, <a class="el" href="class_controller_events.html" title="Класс, отслеживающий переключение с контроллеров на руки">ControllerEvents</a> и подобные. В дальнейшем, если какому-либо скрипту понадобиться <a class="el" href="class_network_manager.html" title="Класс, отвечающий за взаимодействие с сервером Photon.">NetworkManager</a>, он обратиться за ним к <a class="el" href="class_component_catcher.html" title="Класс, отлавливающий определенные компоненты в текущей сцене">ComponentCatcher</a>.</p>
+<p>В лобби состояние главного меню должно изменяться в зависимости от текущего состояния подключения к серверу. Например, пока происходит подключение меню должно отображать preloader, а когда подключение завершилось скрыть его и показать пункты меню. За динамическую смену слоев интерфейса главного меню в зависимости от сигналов приходящих от <a class="el" href="class_network_manager.html" title="Класс, отвечающий за взаимодействие с сервером Photon.">NetworkManager</a>, отвечает компонент <a class="el" href="class_change_u_i_layer.html" title="Класс отвечающий за плавную смену слоев на UI экране">ChangeUILayer</a>.</p>
+<p>При выборе комнаты игроку должен предоставляться список комнат активных в данный момент. Этот список реализуется скриптами <a class="el" href="class_room_list_item.html" title="Класс пункта списка комнат">RoomListItem</a> – элемент списка, и <a class="el" href="class_u_i_room_list_controller.html" title="Класс, контролирующий все элементы списка комнат, к которым можно подключиться.">UIRoomListController</a> – непосредственно список, показывающий <a class="el" href="class_room_list_item.html" title="Класс пункта списка комнат">RoomListItem</a> в UI.</p>
+<p>Схожим образом организован список аватаров. Список аватаров реализован в скрипте <a class="el" href="class_avatar_list.html" title="Класс, контролирующий все элементы списка доступных аватаров.">AvatarList</a>. Данный список сканирует папку Resources/Avatars на наличие prefab-ов с компонентом <a class="el" href="class_avatar_info.html" title="Класс, хранящий информацию об аватаре.">AvatarInfo</a>. Если были найдены prefab-ы с таким компонентом, у которого установлен флаг активности, из такого prefab-а создается пункт списка <a class="el" href="class_avatar_list_item.html" title="Класс пункта списка аватаров">AvatarListItem</a>.</p>
+<p>В исходной сцене находится UI элемент для установки имени пользователя. За установку имени пользователя отвечает скрипт <a class="el" href="class_change_network_name.html" title="Класс, изменяющий имя игрока в сети на значение, записанное в поле ввода.">ChangeNetworkName</a>. Если оно не задано, его генерирует скрипт <a class="el" href="class_network_manager.html" title="Класс, отвечающий за взаимодействие с сервером Photon.">NetworkManager</a>.</p>
+<p>Для ввода имени пользователя используется виртуальная UI клавиатура. Логика работы кнопки клавиатуры описывается в скрипте <a class="el" href="class_keyboard_button.html" title="Класс кнопки виртуальной клавиатуры.">KeyboardButton</a>. А логика самой клавиатуры в скрипте <a class="el" href="class_virtual_keyboard_controller.html" title="Класс контроллер виртуальной клавиатуры.">VirtualKeyboardController</a>. Для предоставления UI элементам удобного доступа к виртуальной клавиатуре используется скрипт <a class="el" href="class_keyboard_provider.html" title="Класс, обеспечивающий взаимодействие UI с VirtualKeyboardController.">KeyboardProvider</a>.</p>
+<p>У игрока на запястье присутствует несколько меню. Эти меню не всегда включены и когда одно меню становится видимым, предыдущее исчезает. Для скрытия/появления меню используется скрипт <a class="el" href="class_interface_hider.html" title="Скрипт для плавного появления/скрытия интерфейса">InterfaceHider</a>. А для смены одного меню на другое используется скрипт <a class="el" href="class_menu_swapper.html" title="Скрипт для переключения различных UI через InterfaceHider.">MenuSwapper</a>.</p>
+<h2><a class="anchor" id="autotoc_md13"></a>
+Скрипты для устранения возникших ошибок</h2>
 <p>При взаимодействии игрока с предметами возникал ряд ошибок, следующие скрипты были написаны для исправления данных ошибок:</p><ul>
-<li><a class="el" href="class_ignore_grabbable_objects.html" title="Скрипт позволяющий коллайдеру игроки игнорировать коллайдеры интерактивных объектов">IgnoreGrabbableObjects</a> – исправление ошибки, из-за которой коллайдер взятого объекта сталкивался с коллайдером игрока, и игрок двигал сам себя.</li>
 <li><a class="el" href="class_ownership_transfer.html" title="Скрипт, передающий права на объект">OwnershipTransfer</a> - В Photon у интерактивных объектов есть владелец. И Photon синхронизирует с сервером только данные владельца объекта. Владельцем становится первый схвативший объект. Но нам необходимо, что бы все пользователи могли взаимодействовать с объектами. Для этого необходимо передавать владение объектом тому пользователю, который взял объект. <a class="el" href="class_ownership_transfer.html" title="Скрипт, передающий права на объект">OwnershipTransfer</a> совершает передачу прав владения объектом тому, кто взял этот объект.</li>
 <li><a class="el" href="class_rigid_body_sycn.html" title="Скрипт для синхронизации RigidBody на сервере">RigidBodySycn</a> – Photon синхронизирует положение, скорость, ускорение объекта. Но не синхронизирует isKinematic. Из-за чего происходит ошибка: когда игрок берет предмет, локально, данный предмет становиться Kinematic, а на сервере получается, что объект поднят в воздух и он начинает падать, пока Photon снова не синхронизирует его положение. Из-за данной ошибки взятый в руку предмет начинает прыгать в руку и вниз. <a class="el" href="class_rigid_body_sycn.html" title="Скрипт для синхронизации RigidBody на сервере">RigidBodySycn</a> синхронизирует isKinematic объекта с сервером и исправляет данную ошибку.</li>
 </ul>
+<h2><a class="anchor" id="autotoc_md14"></a>
+Скрипты для взаимодействия с аудио</h2>
 <p>Взаимодействие с микрофоном осуществляется скриптами <a class="el" href="class_microphone_controller.html" title="Класс отвечающий за взаимодействие с локальным микрофоном">MicrophoneController</a> и <a class="el" href="class_microphone_network_settings.html" title="Класс взаимодействия с компонентами воспроизводящими звук с микрофона на сервере">MicrophoneNetworkSettings</a>. <a class="el" href="class_microphone_controller.html" title="Класс отвечающий за взаимодействие с локальным микрофоном">MicrophoneController</a> контролирует локальные действия с микрофоном, а <a class="el" href="class_microphone_network_settings.html" title="Класс взаимодействия с компонентами воспроизводящими звук с микрофона на сервере">MicrophoneNetworkSettings</a> отвечает за синхронизацию локальных действий на сервере.</p>
 <p>В некоторых сценах играет фоновая музыка. Она может отвлекать или просто не нравиться пользователю. Для контроля нескольких источников звука, в частности фоновой музыки, используется скрипт <a class="el" href="class_audio_controller.html" title="Класс, манипулирующий звуками сцены">AudioController</a>.</p>
-<p>В лобби состояние главного меню должно изменяться в зависимости от текущего состояния подключения к серверу. Например, пока происходит подключение меню должно отображать preloader, а когда подключение завершилось скрыть его и показать пункты меню. За динамическую смену слоев интерфейса главного меню в зависимости от сигналов приходящих от <a class="el" href="class_network_manager.html" title="Класс, отвечающий за взаимодействие с сервером Photon.">NetworkManager</a>, отвечает компонент <a class="el" href="class_change_u_i_layer.html" title="Класс отвечающий за плавную смену слоев на UI экране">ChangeUILayer</a>.</p>
-<p>При выборе комнаты игроку должен предоставляться список комнат активных в данный момент. Этот список реализуется скриптами <a class="el" href="class_room_list_item.html" title="Класс пункта списка комнат">RoomListItem</a> – элемент списка, и <a class="el" href="class_u_i_room_list_controller.html" title="Класс, контролирующий все элементы списка комнат, к которым можно подключиться.">UIRoomListController</a> – непосредственно список отрисовывающий <a class="el" href="class_room_list_item.html" title="Класс пункта списка комнат">RoomListItem</a> в UI.</p>
-<p>У игрока на запястье присутствует несколько меню. Эти меню не всегда включены и когда одно меню становится видимым, предыдущее исчезает. Для скрытия/появления меню используется скрипт <a class="el" href="class_interface_hider.html" title="Скрипт для плавного появления/скрытия интерфейса">InterfaceHider</a>. А для смены одного меню на другое используется скрипт <a class="el" href="class_menu_swapper.html" title="Скрипт для переключения различных UI через InterfaceHider.">MenuSwapper</a>.</p>
+<h2><a class="anchor" id="autotoc_md15"></a>
+Скрипты для расопзнования жестов</h2>
 <p>Для распознавания жестов используется абстрактный класс <a class="el" href="class_gesture_detector.html" title="Абстрактный суперкласс для распознавания жестов">GestureDetector</a>. Его наследники могут отслеживать жесты и осуществлять действия при их обнаружении.</p>
-<p>Компонент <a class="el" href="class_gesture_properties.html" title="Компонент, хранящий в себе свойства жеста.">GestureProperties</a> хранит в себе информацию о пальцах загнутых в указанном жесте.</p>
-<p>Вспомогательные маленькие скрипты:</p><ul>
-<li><a class="el" href="class_button_text_changer.html" title="Компонент меняющий текст в текстовом поле при наведении курсора на кнопку">ButtonTextChanger</a> – при наведении на UI кнопку записывает в указанное текстовое поле указанный текст;</li>
-<li><a class="el" href="class_gif_animation.html" title="Скрипт для воспроизведения gif анимации в UI.">GifAnimation</a> – создает анимацию из входных кадров;</li>
-<li><a class="el" href="class_setup_room_name.html" title="Скрипт для установки имени текущей комнаты в указанное текстовое поле">SetupRoomName</a> – записывает имя текущей комнаты в указанное текстовое поле.</li>
-</ul>
-<h1><a class="anchor" id="section1"></a>
-Скрипты для работы с сетью</h1>
+<p>Компонент <a class="el" href="class_gesture_properties.html" title="Компонент, хранящий в себе свойства жеста.">GestureProperties</a> хранит в себе информацию о пальцах, загнутых в указанном жесте.</p>
+<h2><a class="anchor" id="autotoc_md16"></a>
+Вспомогательные скрипты</h2>
+<p><a class="el" href="class_button_text_changer.html" title="Компонент меняющий текст в текстовом поле при наведении курсора на кнопку">ButtonTextChanger</a> – при наведении на UI кнопку записывает в указанное текстовое поле указанный текст;</p>
+<p><a class="el" href="class_gif_animation.html" title="Скрипт для воспроизведения gif анимации в UI.">GifAnimation</a> – создает анимацию из входных кадров;</p>
+<p><a class="el" href="class_setup_room_name.html" title="Скрипт для установки имени текущей комнаты в указанное текстовое поле">SetupRoomName</a> – записывает имя текущей комнаты в указанное текстовое поле;</p>
+<p><a class="el" href="class_back_from_floor.html" title="Класс возвращающий объект в стартовое положение, если объект упал на пол.">BackFromFloor</a> – возвращает объект в исходное положение если он соприкоснулся с объектом <a class="el" href="class_floor.html" title="Компонент определяющий объект как пол.">Floor</a>.</p>
+<h2><a class="anchor" id="autotoc_md17"></a>
+Скрипты электрической цепи</h2>
+<p>Для демонстрации возможности проведения лабораторной работы в виртуальной реальности, была разработана симуляция эксперимента по расчету силы тока и напряжения в электрической цепи.</p>
+<p>Логика изменения параметров электрической цепи описывается скриптом <a class="el" href="class_electrical_circuit.html" title="Класс электрической цепи.">ElectricalCircuit</a>. Электрическая цепь состоит из подклассов класса <a class="el" href="class_electrical_element.html" title="Суперкласс всех элементов электрической схемы ElectricalCircuit.">ElectricalElement</a>: <a class="el" href="class_power_supply.html" title="Класс источника электрического тока.">PowerSupply</a>, <a class="el" href="class_milliammeter.html" title="Класс миллиамперметра.">Milliammeter</a>, <a class="el" href="class_voltmeter.html" title="Класс вольтметра.">Voltmeter</a>, <a class="el" href="class_resistor.html" title="Класс резистора">Resistor</a>, <a class="el" href="class_rheostat.html" title="Класс реостата">Rheostat</a>, <a class="el" href="class_multi_clema.html" title="Класс переходника на 3 входа.">MultiClema</a>, <a class="el" href="class_wire_element.html" title="Класс провода">WireElement</a>.</p>
+<p>Элементы присоединяются друг к другу при помощи клемм, имеющих компоненты <a class="el" href="class_wire_input.html" title="Компонент, обозначающий данный объект местом для крепления провода">WireInput</a> и <a class="el" href="class_wire_output.html" title="Компонент конца провода">WireOutput</a>. Провод <a class="el" href="class_wire_element.html" title="Класс провода">WireElement</a> на своих концах имеет компонент <a class="el" href="class_wire_output.html" title="Компонент конца провода">WireOutput</a>. А остальные элементы имеют в своем составе две клеммы с компонентом <a class="el" href="class_wire_input.html" title="Компонент, обозначающий данный объект местом для крепления провода">WireInput</a>.</p>
+<p>Если два конца провода будут слишком далеко от друга, то в текстуре провода будут появляется глитчи. Во избежание этого, к концам провода прикреплен компонент <a class="el" href="class_move_closer_if_distance_is_large.html" title="Компонент для синхронизации относительного положения концов провода">MoveCloserIfDistanceIsLarge</a>.</p>
+<p>Указатель реостата (<a class="el" href="class_rheostat.html" title="Класс реостата">Rheostat</a>) при перемещении издает щелкающий звук. Воспроизведение звука при перемещении объекта реализовано в скрипте <a class="el" href="class_play_audio_when_object_move.html" title="Класс, проигрывающий указанный AudioSource при изменении положения/поворота объекта">PlayAudioWhenObjectMove</a>.</p>
+<p>Вольтметр (<a class="el" href="class_voltmeter.html" title="Класс вольтметра.">Voltmeter</a>) и миллиамперметр (<a class="el" href="class_milliammeter.html" title="Класс миллиамперметра.">Milliammeter</a>) имеют в своем составе шкалу измерений и стрелку, которая поворачивается в зависимости от текущего значения параметра прибора. Реализация поворота стрелки, в зависимости от текущего значения описывается в скрипте <a class="el" href="class_scale_with_pointer.html" title="Класс шкалы с указателем.">ScaleWithPointer</a>.</p>
+<h1><a class="anchor" id="section_bugs"></a>
+Известные ошибки</h1>
+<h2><a class="anchor" id="autotoc_md18"></a>
+Не синхронизировано состояние микрофона</h2>
+<p>При заходе нового игрока в сцену он не слышит уже находящихся в ней людей, а они его, до тех пор, пока игроки не включат/выключат компонент Recorder. Баг воспроизводиться только при запуске с различных устройств, подключенных к различным точкам доступа (при запуске 2-х приложений с одного компьютера все работает правильно).</p>
+<p>Баг может быть связан со скриптами <a class="el" href="class_microphone_controller.html" title="Класс отвечающий за взаимодействие с локальным микрофоном">MicrophoneController</a>, <a class="el" href="class_microphone_network_settings.html" title="Класс взаимодействия с компонентами воспроизводящими звук с микрофона на сервере">MicrophoneNetworkSettings</a> и <a class="el" href="class_component_catcher.html" title="Класс, отлавливающий определенные компоненты в текущей сцене">ComponentCatcher</a>. В данных скриптах используется компонент Recorder. Так же при внесении случайных изменений в эти скрипты, баг исчезал. Так же возможно он связан с настройкой компонентов Photon: Recorder, Speaker, Pun Voice Client.</p>
+<p>Предполагаемый путь решения. Создать новую сцену. Убрать из нее элементы WatchMenu, которые взаимодействуют с микрофоном. Попробовать в чистой сцене получить состояние, при котором все работает. Добавлять компоненты по одному, чтобы найти какой компонент вызывает ошибку.</p>
+<h2><a class="anchor" id="autotoc_md19"></a>
+Периодически kinematic не устанавливается обратно в false</h2>
+<p>Данная ошибка была выявлена при тестировании. Возникает она когда пользователь берет предмет не из пространства, а из рук другого пользователя (или собственных). <a class="el" href="class_ownership_transfer.html" title="Скрипт, передающий права на объект">OwnershipTransfer</a> и <a class="el" href="class_rigid_body_sycn.html" title="Скрипт для синхронизации RigidBody на сервере">RigidBodySycn</a> задействованы при данном процессе, скорее всего нужно переписать скрипт <a class="el" href="class_rigid_body_sycn.html" title="Скрипт для синхронизации RigidBody на сервере">RigidBodySycn</a>.</p>
+<p><em>Возможно нужно избавиться от скрипта <a class="el" href="class_rigid_body_sycn.html" title="Скрипт для синхронизации RigidBody на сервере">RigidBodySycn</a> вовсе и найти другой способ решения проблемы синхронизации RigidBody, при подключении нового игрока к серверу.</em></p>
+<h2><a class="anchor" id="autotoc_md20"></a>
+Объекты нельзя бросать рукой</h2>
+<p>По идее у Oculus Integration для бросков есть механизм. Но скрипт <a class="el" href="class_rigid_body_sycn.html" title="Скрипт для синхронизации RigidBody на сервере">RigidBodySycn</a> скорее всего препятствует его корректной работе.</p>
+<p>Нужно попробовать бросать объекты без <a class="el" href="class_rigid_body_sycn.html" title="Скрипт для синхронизации RigidBody на сервере">RigidBodySycn</a>, если получиться, то добавить скрипт и изменять его таким образом, чтобы броски работали.</p>
+<p><em>Возможно нужно избавиться от скрипта <a class="el" href="class_rigid_body_sycn.html" title="Скрипт для синхронизации RigidBody на сервере">RigidBodySycn</a> вовсе и найти другой способ решения проблемы синхронизации RigidBody, при подключении нового игрока к серверу.</em></p>
+<h2><a class="anchor" id="autotoc_md21"></a>
+Баги, которые пока что не получилось воспроизвести</h2>
+<p><em>Данные ошибки были замечены, но при попытке воспроизвести условия при которых произошла ошибка – ошибка не повторялась.</em></p>
+<p>NetworkManeger может отключить человека от комнаты, но не перенести в стартовую сцену - приложение в таком случае софтлочится, т.к. из комнаты не выйти.</p>
+<p>После возвращения в первую сцену выход перестает работать (в билде).</p>
+<h1><a class="anchor" id="section_future"></a>
+Планы на будущее</h1>
 <ul>
-<li><a class="el" href="class_network_manager.html" title="Класс, отвечающий за взаимодействие с сервером Photon.">NetworkManager</a>;</li>
-<li><a class="el" href="class_network_player.html" title="Класс, отвечающий за синхронизацию локального игрока и его отображения на сервере">NetworkPlayer</a>;</li>
-<li><a class="el" href="class_component_catcher.html" title="Класс, отлавливающий определенные компоненты в текущей сцене">ComponentCatcher</a>;</li>
-<li><a class="el" href="class_network_variables.html" title="Класс работы с переменными сервера">NetworkVariables</a>;</li>
-<li><a class="el" href="class_ownership_transfer.html" title="Скрипт, передающий права на объект">OwnershipTransfer</a>;</li>
-<li><a class="el" href="class_rigid_body_sycn.html" title="Скрипт для синхронизации RigidBody на сервере">RigidBodySycn</a>;</li>
-<li><a class="el" href="class_network_manager_provider.html" title="Класс, обеспечивающий взаимодействие UI с NetworkManager.">NetworkManagerProvider</a>;</li>
-</ul>
-<h1><a class="anchor" id="section2"></a>
-Скрипты для работы с компонентами</h1>
-<ul>
-<li><a class="el" href="class_controller_model.html" title="Суперкласс хранящий информацию о отображаемом на сервере контроллере">ControllerModel</a>;</li>
-<li><a class="el" href="class_controller_animation_updater.html" title="Класс обеспечивающий проигрывание анимации контроллеров Oculus на сервере">ControllerAnimationUpdater</a>;</li>
-<li><a class="el" href="class_hands_animaion_updater.html" title="Скрипт обеспечивающий проигрывание анимации моделей рук на сервере">HandsAnimaionUpdater</a>;</li>
-<li><a class="el" href="class_gost_hand_transform_updater.html" title="Класс, отвечающий за синхронизацию положения рук на сервере">GostHandTransformUpdater</a>;</li>
-<li><a class="el" href="class_microphone_controller.html" title="Класс отвечающий за взаимодействие с локальным микрофоном">MicrophoneController</a>;</li>
-<li><a class="el" href="class_microphone_network_settings.html" title="Класс взаимодействия с компонентами воспроизводящими звук с микрофона на сервере">MicrophoneNetworkSettings</a>;</li>
-<li><a class="el" href="class_audio_controller.html" title="Класс, манипулирующий звуками сцены">AudioController</a>;</li>
-<li><a class="el" href="class_controller_type_controller.html" title="Класс, отвечающий за переключение типов контроллеров на сервере">ControllerTypeController</a>;</li>
-<li><a class="el" href="class_controller_events.html" title="Класс, отслеживающий переключение с контроллеров на руки">ControllerEvents</a>;</li>
-<li><a class="el" href="class_attach_to_players_body.html" title="Скрипт, прикрепляющий объект к якорю весящему на игроке">AttachToPlayersBody</a>;</li>
-<li><a class="el" href="class_hand_view.html" title="Компонент якорь для отображения контроллеров на сервере">HandView</a>;</li>
-<li><a class="el" href="class_easy_singleton.html" title="Компонент обеспечивающий паттерн Singleton для того объекта, к которому он применен">EasySingleton</a>;</li>
-<li><a class="el" href="class_ignore_grabbable_objects.html" title="Скрипт позволяющий коллайдеру игроки игнорировать коллайдеры интерактивных объектов">IgnoreGrabbableObjects</a>;</li>
-</ul>
-<h1><a class="anchor" id="section3"></a>
-Скрипты для работы с жестами</h1>
-<ul>
-<li><a class="el" href="class_gesture_detector.html" title="Абстрактный суперкласс для распознавания жестов">GestureDetector</a>;</li>
-<li><a class="el" href="class_gesture_animation.html" title="Класс, вызывающий события смены жестов левой и правой руки">GestureAnimation</a>;</li>
-<li><a class="el" href="class_gesture_properties.html" title="Компонент, хранящий в себе свойства жеста.">GestureProperties</a>;</li>
-</ul>
-<h1><a class="anchor" id="section4"></a>
-Скрипты для работы с UI</h1>
-<ul>
-<li><a class="el" href="class_change_u_i_layer.html" title="Класс отвечающий за плавную смену слоев на UI экране">ChangeUILayer</a>;</li>
-<li><a class="el" href="class_button_text_changer.html" title="Компонент меняющий текст в текстовом поле при наведении курсора на кнопку">ButtonTextChanger</a>;</li>
-<li><a class="el" href="class_u_i_room_list_controller.html" title="Класс, контролирующий все элементы списка комнат, к которым можно подключиться.">UIRoomListController</a>;</li>
-<li><a class="el" href="class_gif_animation.html" title="Скрипт для воспроизведения gif анимации в UI.">GifAnimation</a>;</li>
-<li><a class="el" href="class_room_list_item.html" title="Класс пункта списка комнат">RoomListItem</a>;</li>
-<li><a class="el" href="class_setup_room_name.html" title="Скрипт для установки имени текущей комнаты в указанное текстовое поле">SetupRoomName</a>;</li>
-<li><a class="el" href="class_interface_hider.html" title="Скрипт для плавного появления/скрытия интерфейса">InterfaceHider</a>;</li>
-<li><a class="el" href="class_menu_swapper.html" title="Скрипт для переключения различных UI через InterfaceHider.">MenuSwapper</a>;</li>
-<li><a class="el" href="class_v_r_logger.html" title="Скрипт для вывода логов внутри игры">VRLogger</a>;</li>
-<li><a class="el" href="class_v_r_loggers_manager.html" title="Скрипт, отвечающий за вывод логов во все VRLogger на сцене">VRLoggersManager</a>;</li>
-</ul>
-<h1><a class="anchor" id="section5"></a>
-Прочие скрипты</h1>
-<ul>
-<li><a class="el" href="class_scene_changer.html" title="Скрипт, отвечающий за смену сцен в приложении">SceneChanger</a> </li>
+<li>Создать лекционную аудиторию. В аудитории должен быть UI в который загружается презентация Power Point;</li>
+<li>Переработать watchmenu;</li>
+<li>Добавить меню помощи в watchmenu. В данном окне будут инструкции по телепортации в сценах. </li>
 </ul>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
@@ -204,7 +229,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7 </li>
   </ul>
 </div>
 </body>

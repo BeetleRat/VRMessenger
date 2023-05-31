@@ -51,9 +51,14 @@ public class VirtualKeyboardController : MonoBehaviour
     private bool _isEnKeyboard;
     private bool _isNumberKey;
 
+    private void Awake()
+    {
+        _hider = GetComponent<InterfaceHider>();
+    }
+
     private void Start()
     {
-        _isShift = false;
+        _isShift = true;
         _isCapsLock = false;
         _isEnKeyboard = true;
         _isNumberKey = false;
@@ -64,8 +69,6 @@ public class VirtualKeyboardController : MonoBehaviour
         FiilButtonsArray(_ruKeyboard);
         FiilButtonsArray(_numberKeyboard);
 
-        _hider = GetComponent<InterfaceHider>();
-
         ChangeLetterKeyboard();
         transform.localScale = Vector3.zero;
     }
@@ -75,7 +78,7 @@ public class VirtualKeyboardController : MonoBehaviour
 
     Данный метод вызывается текстовым полем ввода.
     Входным параметром является поле ввода, в которое будет вводить текст данная клавиатура.
-    @param inputText TMP_InputField, в которое будет вводить текст данная клавиатура.
+    @param [in] inputText TMP_InputField, в которое будет вводить текст данная клавиатура.
      */
     public void CreateVirtualKeyboard(TMP_InputField inputText)
     {
@@ -104,7 +107,7 @@ public class VirtualKeyboardController : MonoBehaviour
     то произойдет ввод текста кнопки в текстовое поле.
     Если данный метод вызывается специальной кнопкой,
     то произойдет действие соответствующие специальной кнопке.
-    @param buttonName Имя кнопки, вызывающей данный метод.
+    @param [in] buttonName Имя кнопки, вызывающей данный метод.
      */
     public void ButtonAction(string buttonName)
     {
@@ -130,7 +133,14 @@ public class VirtualKeyboardController : MonoBehaviour
                 ChangeLetterKeyboard();
                 break;
             case ENTER:
-                EnterText("\n");
+                if (_inputText as TMP_InputField != null)
+                {
+                    CloseVirtualKeyboard();
+                }
+                else
+                {
+                    EnterText("\n");
+                }
                 break;
             case ESCAPE:
                 CloseVirtualKeyboard();
@@ -188,6 +198,7 @@ public class VirtualKeyboardController : MonoBehaviour
             _ruKeyboard.gameObject.SetActive(true);
             _numberKeyboard.gameObject.SetActive(false);
         }
+        ChangeUpperCase(_isCapsLock || _isShift);
     }
 
     private void Backspace()

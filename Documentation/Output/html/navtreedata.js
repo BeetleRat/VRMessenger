@@ -26,6 +26,20 @@ var NAVTREE =
 [
   [ "VRMessenger", "index.html", [
     [ "Многопользовательский интерфейс для общения в виртуальной реальности с использованием аватаров", "index.html", "index" ],
+    [ "Основные классы приложения", "_annex.html", [
+      [ "Используемые ассеты", "_annex.html#autotoc_md0", null ],
+      [ "Менеджеры", "_annex.html#autotoc_md1", null ],
+      [ "Prefab игрока", "_annex.html#autotoc_md2", null ],
+      [ "UI скрипты", "_annex.html#autotoc_md3", null ],
+      [ "Скрипты для устранения возникших ошибок", "_annex.html#autotoc_md4", null ],
+      [ "Скрипты для взаимодействия с аудио", "_annex.html#autotoc_md5", null ],
+      [ "Скрипты для расопзнования жестов", "_annex.html#autotoc_md6", null ],
+      [ "Вспомогательные скрипты", "_annex.html#autotoc_md7", null ],
+      [ "Скрипты электрической цепи", "_annex.html#autotoc_md8", null ]
+    ] ],
+    [ "Инструкция пользователя", "_instruction.html", [
+      [ "Стартовая сцена", "_instruction.html#instruction_section", null ]
+    ] ],
     [ "Классы", "annotated.html", [
       [ "Классы", "annotated.html", "annotated_dup" ],
       [ "Алфавитный указатель классов", "classes.html", null ],
@@ -50,8 +64,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_attach_to_players_body_8cs.html",
-"class_network_manager.html#a98ae49a486704046f5a604039463cfd2"
+"_annex.html",
+"class_network_manager.html"
 ];
 
 var SYNCONMSG = 'нажмите на выключить для синхронизации панелей';

@@ -129,13 +129,12 @@ public class NetworkPlayer : MonoBehaviour
                 }
             }
         }
-
     }
 
     /**
      Метод для установки положения и поворота одного объекта, согласно соответствующим характеристикам другого объекта.
-    @param target Объект, которому устанавливаются положение и поворот.
-    @param rigTransform Объект, из которого берутся положение и поворот для первого объекта.
+    @param [in] target Объект, которому устанавливаются положение и поворот.
+    @param [in] rigTransform Объект, из которого берутся положение и поворот для первого объекта.
      */
     protected void MapPosition(Transform target, Transform rigTransform)
     {
@@ -164,7 +163,7 @@ public class NetworkPlayer : MonoBehaviour
         // Обновляем локального player-a
         ChangeLocalControllerView(type);
         // Обновляем player-a на сервере через свойства photon
-        NetworkVariables.SendPropertyToServer(PlayersProperty.CONTROLLER_TYPE, type);
+        NetworkVariables.SendPropertyToServer(PhotonServerActions.CONTROLLER_TYPE, type);
     }
 
     private void ChangeLocalControllerView(ControllerType type)
@@ -177,18 +176,18 @@ public class NetworkPlayer : MonoBehaviour
 
     private void OnPlayerPropertiesUpdate(Player targetPlayer, ExitGames.Client.Photon.Hashtable changedProps)
     {
-        if (changedProps.ContainsKey(PlayersProperty.CONTROLLER_TYPE))
+        if (changedProps.ContainsKey(PhotonServerActions.CONTROLLER_TYPE))
         {
             if (!_photonView.IsMine)
             {
                 if (targetPlayer == _photonView.Owner)
                 {
-                    ChangeLocalControllerView((ControllerType)changedProps[PlayersProperty.CONTROLLER_TYPE]);
+                    ChangeLocalControllerView((ControllerType)changedProps[PhotonServerActions.CONTROLLER_TYPE]);
                 }
             }
         }
 
-        if (changedProps.ContainsKey(PlayersProperty.UPDATE_STATUS))
+        if (changedProps.ContainsKey(PhotonServerActions.UPDATE_STATUS))
         {
             OnControllerChange(_isAttachToController);
         }

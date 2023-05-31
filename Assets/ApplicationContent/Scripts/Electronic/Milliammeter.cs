@@ -46,6 +46,10 @@ public class Milliammeter : ElectricalElement, ElectricityTransfer
         {
             _pointer.SetCurrentValue(_electricalCircuit.GetAmperage() * _valueScaler * _multiplier);
         }
+        else
+        {
+            _pointer.SetCurrentValue(0);
+        }
 
         UpdateElectricityStatus();
     }

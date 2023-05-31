@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
-<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>VRMessenger: Класс NetworkManager</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -29,6 +29,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Foreground81.png"/></td>
   <td id="projectalign">
    <div id="projectname">VRMessenger<span id="projectnumber">&#160;1.0</span>
    </div>
@@ -51,7 +52,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Создано системой Doxygen 1.9.6 -->
+<!-- Создано системой Doxygen 1.9.7 -->
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 var searchBox = new SearchBox("searchBox", "search/",'.html');
@@ -149,7 +150,7 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
 <tr class="memdesc:a3dc46f673d499dd599d05dab242092f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Метод выполняемый, когда другой игрок подключился к комнате.  <br /></td></tr>
 <tr class="separator:a3dc46f673d499dd599d05dab242092f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6433e83098e4ba237c4d9132491750cc"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_manager.html#a6433e83098e4ba237c4d9132491750cc">OnRoomListUpdate</a> (List&lt; RoomInfo &gt; roomList)</td></tr>
-<tr class="memdesc:a6433e83098e4ba237c4d9132491750cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Метод выполняемый при обновлении списка комнат. При добавлении/удалении комнаты.  <br /></td></tr>
+<tr class="memdesc:a6433e83098e4ba237c4d9132491750cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Метод выполняемый при обновлении списка комнат.  <br /></td></tr>
 <tr class="separator:a6433e83098e4ba237c4d9132491750cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7cadf8645347796615a7dab473281e58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_network_manager.html#a7cadf8645347796615a7dab473281e58">SetPlayersPrefabName</a> (string playersPrefabName)</td></tr>
 <tr class="memdesc:a7cadf8645347796615a7dab473281e58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сеттер названия prefab-а игрока.  <br /></td></tr>
@@ -174,28 +175,25 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
 <li>Отключение от комнаты;</li>
 <li>Отключение от лобби;</li>
 <li>Отключение от сервера;</li>
+<li>Обновление списка созданных комнат;</li>
 <li>Спавн игрока на сервере.</li>
 </ul>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
     <tr><td class="paramname">vrLogger</td><td><a class="el" href="class_v_r_loggers_manager.html" title="Скрипт, отвечающий за вывод логов во все VRLogger на сцене">VRLoggersManager</a> для вывода логов внутри игры. </td></tr>
     <tr><td class="paramname">sceneChanger</td><td><a class="el" href="class_scene_changer.html" title="Скрипт, отвечающий за смену сцен в приложении">SceneChanger</a> для перехода между сценами. </td></tr>
-    <tr><td class="paramname">playersPrefabName</td><td>string название prefab-а игрока лежащего в Assets/Resources/Avatars. Данный prefab будет заспавнен в комнате на сервере при подключении. </td></tr>
     <tr><td class="paramname">defaultRooms</td><td>Список <a class="el" href="class_room_settings.html" title="Класс, хранящий настройки комнаты">RoomSettings</a> комнат, к которым будет производиться подключение. </td></tr>
     <tr><td class="paramname">autoStartTestRoom</td><td>bool Параметр для отладки. Если true, то автоматически подключает в первую комнату при запуске приложения. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>См. также</dt><dd><a class="el" href="class_v_r_loggers_manager.html" title="Скрипт, отвечающий за вывод логов во все VRLogger на сцене">VRLoggersManager</a>; <a class="el" href="class_scene_changer.html" title="Скрипт, отвечающий за смену сцен в приложении">SceneChanger</a>; <a class="el" href="class_room_settings.html" title="Класс, хранящий настройки комнаты">RoomSettings</a> </dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="class_v_r_loggers_manager.html" title="Скрипт, отвечающий за вывод логов во все VRLogger на сцене">VRLoggersManager</a>; <a class="el" href="class_scene_changer.html" title="Скрипт, отвечающий за смену сцен в приложении">SceneChanger</a>; <a class="el" href="class_room_settings.html" title="Класс, хранящий настройки комнаты">RoomSettings</a>; <a class="el" href="_network_manager_8cs.html#af47c12507cac2281b0b90a2bc21d2014" title="Коды состояний сервера">NetworkCode</a> </dd></dl>
 </div><h2 class="groupheader">Методы</h2>
 <a id="aa079da652b2fd90e86f433a3b10e9ef6" name="aa079da652b2fd90e86f433a3b10e9ef6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa079da652b2fd90e86f433a3b10e9ef6">&#9670;&#160;</a></span>ConnectToServer()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void NetworkManager.ConnectToServer </td>
@@ -204,11 +202,6 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Осуществить подключение к серверу. </p>
@@ -220,9 +213,6 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void NetworkManager.DisconnectedFromServer </td>
@@ -232,11 +222,6 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Отключиться от сервера. </p>
@@ -254,9 +239,6 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void NetworkManager.InitRoom </td>
@@ -276,11 +258,6 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Создание/подключение к комнате. </p>
@@ -299,9 +276,6 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void NetworkManager.JoinRoom </td>
@@ -311,11 +285,6 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Подключение к комнате. </p>
@@ -334,9 +303,6 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void NetworkManager.LeaveRoom </td>
@@ -345,11 +311,6 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Покинуть текущую комнату </p>
@@ -361,9 +322,6 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">override void NetworkManager.OnConnectedToMaster </td>
@@ -372,11 +330,6 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Метод, выполняемый при подключении к серверу. </p>
@@ -388,9 +341,6 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">override void NetworkManager.OnDisconnected </td>
@@ -400,17 +350,12 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Метод, выполняемый при отключении от сервера. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">cause</td><td>Причина отключения от сервера. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cause</td><td>Причина отключения от сервера. </td></tr>
   </table>
   </dd>
 </dl>
@@ -422,9 +367,6 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">override void NetworkManager.OnJoinedLobby </td>
@@ -433,11 +375,6 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Метод, выполняемый при подключении к лобби. </p>
@@ -449,9 +386,6 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">override void NetworkManager.OnJoinedRoom </td>
@@ -460,11 +394,6 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Метод, выполняемый при подключении к комнате. </p>
@@ -476,9 +405,6 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">override void NetworkManager.OnLeftRoom </td>
@@ -487,11 +413,6 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Метод, выполняемый при отключении от комнаты. </p>
@@ -503,9 +424,6 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">override void NetworkManager.OnPlayerEnteredRoom </td>
@@ -515,17 +433,12 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Метод выполняемый, когда другой игрок подключился к комнате. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">newPlayer</td><td>Данные подключившегося игрока. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">newPlayer</td><td>Данные подключившегося игрока. </td></tr>
   </table>
   </dd>
 </dl>
@@ -537,9 +450,6 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">override void NetworkManager.OnRoomListUpdate </td>
@@ -549,14 +459,15 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Метод выполняемый при обновлении списка комнат. При добавлении/удалении комнаты. </p>
+<p>Метод выполняемый при обновлении списка комнат. </p>
+<p>При добавлении/удалении комнаты. </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">roomList</td><td>Список комнат RoomInfo, существующих на данный момент. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -565,9 +476,6 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void NetworkManager.SetPlayersPrefabName </td>
@@ -577,17 +485,12 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Сеттер названия prefab-а игрока. </p>
 <dl class="params"><dt>Аргументы</dt><dd>
   <table class="params">
-    <tr><td class="paramname">playersPrefabName</td><td>string название prefab-а игрока лежащего в Assets/Resources/Avatars. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">playersPrefabName</td><td>string название prefab-а игрока лежащего в Assets/Resources/Avatars. </td></tr>
   </table>
   </dd>
 </dl>
@@ -633,7 +536,7 @@ $(document).ready(function(){initNavTree('class_network_manager.html',''); initR
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_network_manager.html">NetworkManager</a></li>
-    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7 </li>
   </ul>
 </div>
 </body>

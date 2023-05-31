@@ -10,7 +10,7 @@ var searchData=
   ['menuswapper_7',['MenuSwapper',['../class_menu_swapper.html',1,'']]],
   ['menuswapper_2ecs_8',['MenuSwapper.cs',['../_menu_swapper_8cs.html',1,'']]],
   ['meshswapper_9',['MeshSwapper',['../class_mesh_swapper.html',1,'']]],
-  ['microphone_5fvolume_10',['MICROPHONE_VOLUME',['../class_players_property.html#ab16b039a41b6bf7d5c142ae3f7c88911',1,'PlayersProperty']]],
+  ['microphone_5fvolume_10',['MICROPHONE_VOLUME',['../class_photon_server_actions.html#a056226859ccfee221d60c0d46dc3e1ee',1,'PhotonServerActions']]],
   ['microphonecontroller_11',['MicrophoneController',['../class_microphone_controller.html',1,'']]],
   ['microphonecontroller_2ecs_12',['MicrophoneController.cs',['../_microphone_controller_8cs.html',1,'']]],
   ['microphonenetworksettings_13',['MicrophoneNetworkSettings',['../class_microphone_network_settings.html',1,'']]],

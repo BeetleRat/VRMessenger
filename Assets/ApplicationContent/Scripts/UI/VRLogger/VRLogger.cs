@@ -24,7 +24,7 @@ public class VRLogger : MonoBehaviour
 
     /**
      Метод для вывода лога.
-    @param text string текст выводимого лога.
+    @param [in] text string текст выводимого лога.
      */
     public void Log(string text)
     {
@@ -50,7 +50,7 @@ public class VRLogger : MonoBehaviour
 
     /** 
      Сеттер множества строк логов, через список строк логов.
-     @param lines Список строк логов.
+     @param [in] lines Список строк логов.
      */
     public void SetLoggerLines(List<string> lines)
     {

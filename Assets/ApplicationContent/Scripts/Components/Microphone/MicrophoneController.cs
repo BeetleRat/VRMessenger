@@ -26,6 +26,11 @@ public class MicrophoneController : MonoBehaviour
     private float _currentMicrophoneVolume;
     private NetworkVariables _networkVariables;
 
+    private void Awake()
+    {
+        _currentMicrophoneVolume = 1.0f;
+    }
+
     private void Start()
     {
         _microphone = _catcher.GetRecorder();
@@ -41,7 +46,6 @@ public class MicrophoneController : MonoBehaviour
         {
             _microphone.RecordingEnabled = isMicrophoneActive;
         }
-        _currentMicrophoneVolume = 1.0f;
     }
 
     private void OnDestroy()
@@ -64,18 +68,21 @@ public class MicrophoneController : MonoBehaviour
         }
     }
 
-    /// Изменить громкость микрофона через UI компонент Slider.
+    /** 
+    Изменить громкость микрофона через UI компонент Slider.
+    @param [in] slider Slider, в соответствии со значением которого устанавливается текущая громкость микрофона.
+     */
     public void ChangeMicrophoneVolume(Slider slider)
     {
         _currentMicrophoneVolume = (float)slider.value;
-        NetworkVariables.SendPropertyToServer(PlayersProperty.MICROPHONE_VOLUME, _currentMicrophoneVolume);
+        NetworkVariables.SendPropertyToServer(PhotonServerActions.MICROPHONE_VOLUME, _currentMicrophoneVolume);
     }
 
     private void OnPlayerPropertiesUpdate(Player targetPlayer, ExitGames.Client.Photon.Hashtable changedProps)
     {
-        if (changedProps.ContainsKey(PlayersProperty.UPDATE_STATUS))
+        if (changedProps.ContainsKey(PhotonServerActions.UPDATE_STATUS))
         {
-            NetworkVariables.SendPropertyToServer(PlayersProperty.MICROPHONE_VOLUME, _currentMicrophoneVolume);
+            NetworkVariables.SendPropertyToServer(PhotonServerActions.MICROPHONE_VOLUME, _currentMicrophoneVolume);
         }
     }
 }

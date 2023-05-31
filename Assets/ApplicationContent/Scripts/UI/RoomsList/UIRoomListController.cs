@@ -70,7 +70,7 @@ public class UIRoomListController : MonoBehaviour
     /**
      Метод установки типа комнаты.
 
-    @param roomType Индекс типа комнаты в поле defaultRooms компонента NetworkManager.
+    @param [in] roomType Индекс типа комнаты в поле defaultRooms компонента NetworkManager.
      */
     public void SetRoomType(int roomType)
     {
@@ -82,7 +82,7 @@ public class UIRoomListController : MonoBehaviour
      Метод изменения текущего выбранного компонента списка.
 
     Данный метод вызовет элемент списка, когда на него кликнут и в качестве входного параметра он передаст себя.
-    @param selectedButton Новый выбранный элемент списка.
+    @param [in] selectedButton Новый выбранный элемент списка.
      */
     public void ChangeCurrentLoadRoom(GameObject selectedButton)
     {

@@ -33,7 +33,7 @@ public class OwnershipTransfer : MonoBehaviourPun, IPunOwnershipCallbacks
     private void Awake()
     {
         PhotonNetwork.AddCallbackTarget(this);
-        _grabbable = GetComponent<Grabbable>();        
+        _grabbable = GetComponent<Grabbable>();
         _grabbable.WhenPointerEventRaised += OnObjectGrabChange;
         _isGrab = false;
     }
@@ -47,7 +47,7 @@ public class OwnershipTransfer : MonoBehaviourPun, IPunOwnershipCallbacks
         }
         else
         {
-            _vrLogger = catcher.GetVRLoggersManager();            
+            _vrLogger = catcher.GetVRLoggersManager();
         }
     }
 
@@ -65,7 +65,7 @@ public class OwnershipTransfer : MonoBehaviourPun, IPunOwnershipCallbacks
                 if (!_isGrab)
                 {
                     _isGrab = true;
-                    base.photonView.RequestOwnership();                    
+                    base.photonView.RequestOwnership();
                 }
                 break;
             case PointerEventType.Unselect:
@@ -79,8 +79,8 @@ public class OwnershipTransfer : MonoBehaviourPun, IPunOwnershipCallbacks
 
     /**
      Метод, вызываемый при запросе на смену владельца.
-    @param targetView PhotonView данного объекта.
-    @param requestingPlayer Player, который хочет стать владельцем.
+    @param [in] targetView PhotonView данного объекта.
+    @param [in] requestingPlayer Player, который хочет стать владельцем.
      */
     public void OnOwnershipRequest(PhotonView targetView, Player requestingPlayer)
     {
@@ -94,8 +94,8 @@ public class OwnershipTransfer : MonoBehaviourPun, IPunOwnershipCallbacks
 
     /**
      Метод, вызываемый по окончании передачи прав на объект.
-    @param targetView PhotonView данного объекта.
-    @param previousOwner Player предыдущего владельца.
+    @param [in] targetView PhotonView данного объекта.
+    @param [in] previousOwner Player предыдущего владельца.
      */
     public void OnOwnershipTransfered(PhotonView targetView, Player previousOwner)
     {
@@ -109,8 +109,8 @@ public class OwnershipTransfer : MonoBehaviourPun, IPunOwnershipCallbacks
 
     /**
      Метод, вызываемый при ошибке передачи прав на объект.
-    @param targetView PhotonView данного объекта.
-    @param requestingPlayer Player, который пытался стать владельцем.
+    @param [in] targetView PhotonView данного объекта.
+    @param [in] senderOfFailedRequest Player, который пытался стать владельцем.
      */
     public void OnOwnershipTransferFailed(PhotonView targetView, Player senderOfFailedRequest)
     {

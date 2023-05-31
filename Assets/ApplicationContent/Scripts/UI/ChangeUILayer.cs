@@ -121,7 +121,7 @@ public class ChangeUILayer : MonoBehaviour
 
     /**
      Метод для произвольной смены слоя, не зависимо от состояния сервера.
-    @param layer Canvas, который мы хотим отобразить. Данный Canvas должен быть указан в layers.
+    @param [in] layer Canvas, который мы хотим отобразить. Данный Canvas должен быть указан в layers.
      */
     public void ChangeLayer(CanvasGroup layer)
     {

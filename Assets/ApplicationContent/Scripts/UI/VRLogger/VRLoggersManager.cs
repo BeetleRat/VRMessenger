@@ -60,7 +60,7 @@ public class VRLoggersManager : MonoBehaviour
 
     /**
      Метод для вывода лога.
-    @param text string текст выводимого лога.
+    @param [in] log string текст выводимого лога.
      */
     public void Log(string log)
     {
@@ -81,7 +81,7 @@ public class VRLoggersManager : MonoBehaviour
     /**
      Сеттер NetworkManager-а. 
     @attention Для корректной работы vrLogger-а необходимо перед началом работы установить ему NetworkManager.
-    @param networkManager NetworkManager.
+    @param [in] networkManager NetworkManager.
      */
     public void SetNetworkManager(NetworkManager networkManager)
     {

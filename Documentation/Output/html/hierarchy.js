@@ -56,7 +56,6 @@ var hierarchy =
       [ "GestureProperties", "class_gesture_properties.html", null ],
       [ "GifAnimation", "class_gif_animation.html", null ],
       [ "HandView", "class_hand_view.html", null ],
-      [ "IgnoreGrabbableObjects", "class_ignore_grabbable_objects.html", null ],
       [ "InterfaceHider", "class_interface_hider.html", null ],
       [ "KeyboardButton", "class_keyboard_button.html", null ],
       [ "KeyboardProvider", "class_keyboard_provider.html", null ],
@@ -91,6 +90,6 @@ var hierarchy =
       [ "NetworkManager", "class_network_manager.html", null ],
       [ "NetworkVariables", "class_network_variables.html", null ]
     ] ],
-    [ "PlayersProperty", "class_players_property.html", null ],
+    [ "PhotonServerActions", "class_photon_server_actions.html", null ],
     [ "RoomSettings", "class_room_settings.html", null ]
 ];
